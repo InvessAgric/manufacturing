@@ -1,15 +1,67 @@
+import { useAtom } from 'jotai'
 import { Link } from 'react-router-dom'
-import productHeader from '../assets/images/productheader.png'
-import productBanner from '../assets/images/productbanner.png'
-import { products } from '../data/products'
+import { productHeaderImage, productBannerImage } from '../assets/assetRegistry'
+import { productsAtom, productPaginationAtom } from '../store/productsStore'
 
-// Product page component: lists product features and offerings
+// Small reusable component for the product-list pagination controls.
+function PaginationControls({ title, helperText, currentSet, totalSets, canPrev, canNext, onPrev, onNext }) {
+  return (
+    <div className="flex flex-col gap-3 rounded-[1.5rem] border border-slate-200 bg-white/80 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        {title ? <p className="text-sm uppercase tracking-[0.3em] text-emerald-700">{title}</p> : null}
+        {helperText ? <p className="text-sm text-slate-600">{helperText}</p> : null}
+      </div>
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={onPrev}
+          disabled={!canPrev}
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          ‹
+        </button>
+        {currentSet && totalSets ? (
+          <span className="min-w-[5rem] text-center text-sm font-medium text-slate-600">
+            Set {currentSet}/{totalSets}
+          </span>
+        ) : null}
+        <button
+          type="button"
+          onClick={onNext}
+          disabled={!canNext}
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          ›
+        </button>
+      </div>
+    </div>
+  )
+}
+
+// Product page component: displays the product catalog in paginated sets.
 function Product() {
+  // Read the product catalog and pagination state from Jotai atoms.
+  const [products] = useAtom(productsAtom)
+  const [pagination, setPagination] = useAtom(productPaginationAtom)
+  const { startIndex, pageSize } = pagination
+
+  // Determine which products are visible for the current page window.
+  const visibleProducts = products.slice(startIndex, startIndex + pageSize)
+  const canPrev = startIndex > 0
+  const canNext = startIndex + pageSize < products.length
+  const currentSet = Math.floor(startIndex / pageSize) + 1
+  const totalSets = Math.ceil(products.length / pageSize)
+
+  // Update the pagination state when the user moves to a different set.
+  const updatePagination = (nextStartIndex) => {
+    setPagination((prev) => ({ ...prev, startIndex: nextStartIndex }))
+  }
+
   return (
     <section className="bg-slate-50 text-slate-900">
       <div className="relative overflow-hidden bg-emerald-900/95">
         <img
-          src={productHeader}
+          src={productHeaderImage}
           alt="Product header"
           className="h-72 w-full object-cover opacity-80 sm:h-96"
         />
@@ -58,28 +110,53 @@ function Product() {
         </section>
  
           <img
-            src={productBanner}
+            src={productBannerImage}
             alt="Product banner"
             className="h-52 w-full object-contain shadow-2xl shadow-slate-500   sm:h-72"
           />
-       
-              <section className="grid gap-8 lg:grid-cols-3">
-          {products.map((product) => (
-            <article key={product.slug} className="rounded-[2rem] bg-white p-6 shadow-2xl shadow-slate-500">
-              <div className="mb-6 h-48 overflow-hidden rounded-[1.5rem] bg-slate-100 flex items-center justify-center">
-                <img src={product.image} alt={product.alt} className="h-full object-contain" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900">{product.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{product.summary}</p>
-              <Link
-                to={`/product/${product.slug}`}
-                className="mt-6 inline-flex rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
-              >
-                View details
-              </Link>
-            </article>
+        <PaginationControls
+          title="Featured products"
+          currentSet={currentSet}
+          totalSets={totalSets}
+          canPrev={canPrev}
+          canNext={canNext}
+          onPrev={() => updatePagination(Math.max(startIndex - pageSize, 0))}
+          onNext={() => updatePagination(Math.min(startIndex + pageSize, products.length - pageSize))}
+        />
+
+        <section className="grid gap-5 lg:grid-cols-3">
+          {visibleProducts.map((product) => (
+            <Link
+              key={product.slug}
+              to={`/product/${product.slug}`}
+              className="group rounded-[1.5rem] bg-white p-4 shadow-lg shadow-slate-300 transition duration-200 hover:-translate-y-1 hover:bg-emerald-50"
+              aria-label={`View details for ${product.title}`}
+            >
+              <article>
+                <div className="mb-4 flex  h-36 items-center justify-center overflow-hidden rounded-[1.25rem] bg-slate-100">
+                  <img src={product.image} alt={product.alt} className="h-full object-contain" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900">{product.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{product.description}</p>
+                <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                  {product.bullets.map((bullet) => (
+                    <li key={bullet}>• {bullet}</li>
+                  ))}
+                </ul>
+              </article>
+            </Link>
           ))}
         </section>
+
+        <PaginationControls
+          helperText={`Showing products from set ${currentSet} of ${totalSets}`}
+          currentSet={currentSet}
+          totalSets={totalSets}
+          canPrev={canPrev}
+          canNext={canNext}
+          onPrev={() => updatePagination(Math.max(startIndex - pageSize, 0))}
+          onNext={() => updatePagination(Math.min(startIndex + pageSize, products.length - pageSize))}
+        />
       </div>
     </section>
   )

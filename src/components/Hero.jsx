@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
-import heroBg from '../assets/images/bg.jpg'
+import { heroBackground } from '../assets/assetRegistry'
 
+// Hero section for the landing page; introduces the brand and provides primary calls to action.
 export default function Hero() {
   return (
     <div className="relative h-screen overflow-hidden text-white">
       <img
-        src={heroBg}
+        src={heroBackground}
         alt="Hero background"
         className="absolute inset-0 h-full w-full object-cover"
       />

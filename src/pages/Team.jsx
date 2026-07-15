@@ -1,7 +1,6 @@
-import instagramIcon from '../assets/Icons/instagram.png'
-import linkedinIcon from '../assets/Icons/linkedin.png'
+import { socialInstagramIcon, socialLinkedInIcon } from '../assets/assetRegistry'
 
-// Team page: founder spotlight followed by management, finance, warehouse, and sales teams
+// Team page: highlights the founder and the broader leadership and support teams.
 function Team() {
 	const founder = {
 		name: 'Francis Dei',
@@ -10,8 +9,8 @@ function Team() {
 		extra: 'With over 14 years of experience in the field of agronomy and the agro-business industry in Ghana and Africa, Francis is widely recognized for his expertise. He has provided consulting services to renowned multinational companies, including Dupont Pioneer, Unifert, Acron, and Glofert Limited, showcasing his in-depth knowledge and valuable contributions to the sector. His academic background and extensive practical experience make him a valuable asset in driving IAL’s agricultural initiatives and ensuring the delivery of high-quality products and services.',
 		socials: [
 			{ name: 'Facebook', href: 'https://www.facebook.com/invessagric/', icon: 'facebook' },
-			{ name: 'LinkedIn', href: 'https://gh.linkedin.com/company/invess-agriculture-ltd', icon: linkedinIcon },
-			{ name: 'Instagram', href: 'https://www.instagram.com/invess_agric/', icon: instagramIcon },
+			{ name: 'LinkedIn', href: 'https://gh.linkedin.com/company/invess-agriculture-ltd', icon: socialLinkedInIcon },
+			{ name: 'Instagram', href: 'https://www.instagram.com/invess_agric/', icon: socialInstagramIcon },
 		],
 	}
 

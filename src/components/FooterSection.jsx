@@ -1,8 +1,6 @@
-import emailIcon from "../assets/Icons/email.png";
-import instagramIcon from "../assets/Icons/instagram.png";
-import linkedinIcon from "../assets/Icons/linkedin.png";
-import placeholderIcon from "../assets/Icons/placeholder.png";
+import { socialEmailIcon, socialInstagramIcon, socialLinkedInIcon, socialPlaceholderIcon, brandLogo } from "../assets/assetRegistry";
 
+// FooterSection: renders the global site footer with contact details, navigation links, and social actions.
 export default function FooterSection() {
   return (
     <footer className="border-t border-slate-800 bg-gradient-to-r from-slate-950 via-emarald-700 to- bg-emerald-800 py-8 text-slate-200  ">
@@ -11,7 +9,7 @@ export default function FooterSection() {
           <div className="lg:max-w-lg md:flex items-center gap-3">
             <div>
               <img
-                src="/src/assets/images/logo.png"
+                src={brandLogo}
                 alt="Invess Agric logo"
                 className="h-14 w-auto rounded-full bg-white/10 p-2"
               />
@@ -25,20 +23,20 @@ export default function FooterSection() {
               </p>
               <div className="mt-4 space-y-2 text-sm text-slate-300">
                 <p className="flex items-center gap-2">
-                  <img src={emailIcon} alt="Email icon" className="h-4 w-4" />
+                  <img src={socialEmailIcon} alt="Email icon" className="h-4 w-4" />
                   <span>info@invessagric.com</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <img
-                    src={placeholderIcon}
+                    src={socialPlaceholderIcon}
                     alt="Location icon"
                     className="h-4 w-4"
                   />
-                  <span>No. 269 Daya Square, Kwei Okyerema Street, Dzorwulu Box CT 278, Cantonments, Accra</span>
+                  <span>No. 269 Daya Square, Kwei Okyerema Street, Dzorwulu</span>
                 </p>
                 <p className="text-green-300 hover:text-white">
                   <a
-                    href="https://www.google.com/maps?q=5.610656,-0.196835&entry=gps&g_ep=CAESBzI2LjI3LjEYACCenQoqiwEsOTQyNjc3MjcsOTQyOTIxOTUsOTQyOTk1MzIsMTAwNzk2NDk4LDEwMDc5Nzc2MSwxMDA4MjA2OTEsMTAwNzk2NTM1LDk0MjgwNTc2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE4NjUzLDk0MjI5ODM5LDk0Mjc1MTY4LDk0Mjc5NjE5QgJHSA%3D%3D&skid=a7a642a8-8665-4de0-bfdf-3e53849e6c69&shorturl=1"
+                    href="https://www.google.com/maps?q=JR63%2B57X%20Invess%20Agriculture%20and%20Manufacturing%20limited%2C%20Kojo%20Ashong%20Ave%2C%20Accra%2C%20Ghana"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -118,7 +116,7 @@ export default function FooterSection() {
                   rel="noreferrer"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
-                  <img src={linkedinIcon} alt="LinkedIn" className="h-5 w-5" />
+                  <img src={socialLinkedInIcon} alt="LinkedIn" className="h-5 w-5" />
                 </a>
                 <a
                   href="https://www.instagram.com/invess_agric/"
@@ -127,7 +125,7 @@ export default function FooterSection() {
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
                   <img
-                    src={instagramIcon}
+                    src={socialInstagramIcon}
                     alt="Instagram"
                     className="h-5 w-5"
                   />
@@ -136,7 +134,7 @@ export default function FooterSection() {
                   href="mailto:info@invessagric.com"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
-                  <img src={emailIcon} alt="Email" className="h-5 w-5" />
+                  <img src={socialEmailIcon} alt="Email" className="h-5 w-5" />
                 </a>
               </div>
             </div>

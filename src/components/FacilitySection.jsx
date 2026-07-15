@@ -1,13 +1,13 @@
-import facilityImage from '../assets/images/Facility.jpg'
+import { facilityMainImage } from '../assets/assetRegistry'
 
-// FacilitySection: edit the heading and feature cards to describe your plant
+// FacilitySection: explains the manufacturing plant and highlights the key operational strengths.
 export default function FacilitySection() {
   return (
     <section id="manufacturing" className="bg-white py-16 text-slate-900">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="relative h-96 overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100 shadow-sm">
-            <img src={facilityImage} alt="Manufacturing plant" className="h-full w-full object-cover" />
+            <img src={facilityMainImage} alt="Manufacturing plant" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950/40 to-transparent" />
           </div>
 

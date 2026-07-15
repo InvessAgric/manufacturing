@@ -1,11 +1,9 @@
-import aboutImage1 from '../assets/images/aboutimage1.jpg'
-import aboutImage2 from '../assets/images/aboutimage2.jpg'
-import aboutImage3 from '../assets/images/aboutimage3.jpg'
+import { galleryImageOne, galleryImageTwo, galleryImageThree } from '../assets/assetRegistry'
 
-// About page: information about Invess Agric Manufacturing Limited
+// About page: introduces the company story, values, mission, and public-facing impact.
 function About() {
   return (
-    <section className="bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.14),_transparent_40%),linear-gradient(180deg,#f8fafc_0%,#eaf7ec_100%)] px-6 py-16 text-slate-900">
+    <section className="bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.14),transparent_40%),linear-gradient(180deg,#f8fafc_0%,#eaf7ec_100%)] px-6 py-16 text-slate-900">
       <div className="mx-auto max-w-6xl space-y-20">
         <header className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="space-y-6">
@@ -26,14 +24,14 @@ function About() {
                 <p className="text-3xl font-semibold text-emerald-800">2018</p>
                 <p className="mt-2 text-sm text-slate-600">Year founded in Ghana with a farmer-first mission.</p>
               </div>
-              <div className="rounded-3xl bg-gradient-to-br from-emerald-50 via-white to-slate-50 p-6 shadow-sm ring-1 ring-emerald-100 border-l-4 border-emerald-500/25">
+              <div className="rounded-3xl bg-linear-to-br from-emerald-50 via-white to-slate-50 p-6 shadow-sm ring-1 ring-emerald-100 border-l-4 border-emerald-500/25">
                 <p className="text-3xl font-semibold text-emerald-800">CS077792018</p>
                 <p className="mt-2 text-sm text-slate-600">Registered Company number for Invess Agric Manufacturing Limited.</p>
               </div>
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.18),_transparent_42%)] p-6 shadow-2xl">
+          <div className="overflow-hidden rounded-4xl bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.18),transparent_42%)] p-6 shadow-2xl">
             <div className="space-y-4 rounded-[1.75rem] bg-slate-900/95 p-8 text-white">
               <p className="text-sm uppercase tracking-[0.28em] text-slate-300">Our approach</p>
               <h2 className="text-3xl font-semibold">Quality products, technical support, farmer success.</h2>
@@ -149,9 +147,9 @@ function About() {
               From humble beginnings, the company has grown through practical innovation, strong partnerships, and a relentless focus on farmer success.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={aboutImage1} alt="Invess Agric event image 1" />
-              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={aboutImage2} alt="Invess Agric event image 2" />
-              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={aboutImage3} alt="Invess Agric event image 3" />
+              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageOne} alt="Invess Agric event image 1" />
+              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageTwo} alt="Invess Agric event image 2" />
+              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageThree} alt="Invess Agric event image 3" />
             </div>
           </div>
         </section>

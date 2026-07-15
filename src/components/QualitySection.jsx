@@ -1,4 +1,4 @@
-// QualitySection: edit the steps and labels to match your process flow
+// QualitySection: outlines the production and quality-control journey from intake to dispatch.
 export default function QualitySection() {
   const steps = [
     'Raw material intake',

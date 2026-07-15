@@ -1,15 +1,12 @@
-import galleryExterior from '../assets/images/aboutimage1.jpg'
-import galleryMixing from '../assets/images/aboutimage2.jpg'
-import galleryPacking from '../assets/images/aboutimage3.jpg'
-import galleryWarehouse from '../assets/images/bg.jpg'
+import { galleryImageOne, galleryImageTwo, galleryImageThree, heroBackground } from '../assets/assetRegistry'
 
-// GallerySection: update titles to reflect factory zones or add image cards later
+// GallerySection: presents a visual overview of the plant and production environment.
 export default function GallerySection() {
   const items = [
-    { label: 'Factory exterior', img: galleryExterior },
-    { label: 'Mixing area', img: galleryMixing },
-    { label: 'Packing line', img: galleryPacking },
-    { label: 'Warehouse', img: galleryWarehouse },
+    { label: 'Factory exterior', img: galleryImageOne },
+    { label: 'Mixing area', img: galleryImageTwo },
+    { label: 'Packing line', img: galleryImageThree },
+    { label: 'Warehouse', img: heroBackground },
   ]
 
   return (

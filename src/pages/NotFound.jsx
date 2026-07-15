@@ -1,3 +1,4 @@
+// Fallback page shown when the browser requests a route that does not exist.
 function NotFound() {
   return (
     <section>

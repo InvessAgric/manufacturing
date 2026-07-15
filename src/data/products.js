@@ -1,6 +1,4 @@
-import Bag1 from '../assets/images/Invess-Chaleee-NPK-nobg.png'
-import Bag2 from '../assets/images/Invess-SOA-Sulphate-of-Ammonia-nobg.png'
-import Bag3 from '../assets/images/Invess-Chaleee-Urea-nobg.png'
+import { productNpkBagNoBg, productAmmoniaBagNoBg, productUreaBagNoBg } from '../assets/assetRegistry'
 
 export const products = [
   {
@@ -14,7 +12,7 @@ export const products = [
       'Anti-acid formula for stable soil pH',
       'Packaged in 50kg bags for easy handling',
     ],
-    image: Bag1,
+    image: productNpkBagNoBg,
     alt: 'Chaleee NPK 20:10:10+7S',
   },
   {
@@ -28,7 +26,7 @@ export const products = [
       'Helps maintain soil acidity balance',
       'Available in farm-friendly 50kg bags',
     ],
-    image: Bag2,
+    image: productAmmoniaBagNoBg,
     alt: 'Sulphate of Ammonia',
   },
   {
@@ -42,7 +40,7 @@ export const products = [
       'Delivers fast crop response',
       'Supplied in durable 50kg packaging',
     ],
-    image: Bag3,
+    image: productUreaBagNoBg,
     alt: 'Chaleee Urea 46%N',
   },
   {
@@ -56,7 +54,7 @@ export const products = [
       'Supports healthy foliage and stems',
       'Structured for reliable field performance',
     ],
-    image: Bag1,
+    image: productNpkBagNoBg,
     alt: 'Chaleee NPK 15:15:15',
   },
   {
@@ -70,7 +68,7 @@ export const products = [
       'Encourages early crop establishment',
       'Provides steady nutrient release',
     ],
-    image: Bag2,
+    image: productAmmoniaBagNoBg,
     alt: 'Chaleee NPK 10:20:10',
   },
   {
@@ -84,7 +82,7 @@ export const products = [
       'Supports plant metabolism',
       'Enhances stress tolerance',
     ],
-    image: Bag3,
+    image: productUreaBagNoBg,
     alt: 'Invess MicroBoost',
   },
   {
@@ -98,7 +96,7 @@ export const products = [
       'Improves water retention',
       'Supports long-term field health',
     ],
-    image: Bag1,
+    image: productNpkBagNoBg,
     alt: 'SoilGuard Compost',
   },
   {
@@ -112,7 +110,7 @@ export const products = [
       'Reduces emergence stress',
       'Provides uniform nutrient support',
     ],
-    image: Bag2,
+    image: productAmmoniaBagNoBg,
     alt: 'CropShield Starter',
   },
   {
@@ -126,7 +124,7 @@ export const products = [
       'Corrects deficiencies quickly',
       'Supports greener foliage',
     ],
-    image: Bag3,
+    image: productUreaBagNoBg,
     alt: 'GrowthMax Foliar',
   },
   {
@@ -140,7 +138,7 @@ export const products = [
       'Improves crop quality',
       'Balances late-season nutrition',
     ],
-    image: Bag1,
+    image: productNpkBagNoBg,
     alt: 'HarvestPro Blend',
   },
   {
@@ -154,7 +152,7 @@ export const products = [
       'Maintains crop vigor',
       'Designed for high-yield systems',
     ],
-    image: Bag2,
+    image: productAmmoniaBagNoBg,
     alt: 'PowerPlant NPK',
   },
   {
@@ -168,7 +166,7 @@ export const products = [
       'Encourages fast growth',
       'Supports heavy nitrogen demand',
     ],
-    image: Bag3,
+    image: productUreaBagNoBg,
     alt: 'FieldForce Urea',
   },
   {
@@ -182,7 +180,7 @@ export const products = [
       'Aids oil and seed formation',
       'Balances crop nutrition',
     ],
-    image: Bag1,
+    image: productNpkBagNoBg,
     alt: 'AgroPlus Sulphate',
   },
 ]

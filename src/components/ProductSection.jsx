@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
-import Bag1 from '../assets/images/Invess-Chaleee-NPK-nobg.png'
-import Bag2 from '../assets/images/Invess-SOA-Sulphate-of-Ammonia-nobg.png'
-import Bag3 from '../assets/images/Invess-Chaleee-Urea-nobg.png'
+import { productNpkBagNoBg, productAmmoniaBagNoBg, productUreaBagNoBg } from '../assets/assetRegistry'
 
+// ProductSection: highlights a few flagship products and directs visitors into the full catalog.
 export default function ProductSection() {
   return (
     <section id="product" className="bg-white py-10 text-slate-900">
@@ -32,7 +31,7 @@ export default function ProductSection() {
           </div>
 
           <div className="overflow-hidden flex justify-center ">
-            <img src={Bag1} alt="Chaleee NPK 20:10:10+7S" className="h-70 max-h-80 object-fill object-center" />
+            <img src={productNpkBagNoBg} alt="Chaleee NPK 20:10:10+7S" className="h-70 max-h-80 object-fill object-center" />
           </div>
         </div>
 
@@ -45,12 +44,12 @@ export default function ProductSection() {
           </svg>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-3 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1 overflow-hidden flex justify-center">
-            <img src={Bag2} alt="Sulphate of Ammonia 21%N 24%S" className="h-70 max-h-80 object-fill object-center" />
+            <img src={productAmmoniaBagNoBg} alt="Sulphate of Ammonia 21%N 24%S" className="h-70 max-h-80 object-fill object-center" />
           </div>
 
-          <div className="order-1 lg:order-2 space-y-5">
+          <div className="order-1 lg:order-2 space-y-3">
             <p className="text-lg font-semibold text-slate-900">Sulphate of Ammonia — 21%N 24%S</p>
             <p className="text-sm leading-7 text-slate-600">Anti-Acid Formula | 50kg</p>
             <p className="text-sm leading-7 text-slate-600">
@@ -59,14 +58,14 @@ export default function ProductSection() {
             <p className="text-sm leading-7 text-slate-600">
               Best for: cocoa, oil palm, brassicas, onions, sugarcane.
             </p>
-            <div className="mt-4">
+            <div className="mt-2">
               <Link to="/product" className="text-green-500 hover:underline text-sm">View Sulphate of Ammonia</Link>
             </div>
           </div>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-4">
+        <div className="grid gap-3 lg:grid-cols-2 lg:items-center">
+          <div className="space-y-2">
             <p className="text-lg font-semibold text-slate-900">Chaleee Urea 46%N</p>
             <p className="text-sm leading-7 text-slate-600">Registration: PFRD/PR/18/149-4 | Anti-Acid | 50kg</p>
             <p className="text-sm leading-7 text-slate-600">
@@ -81,7 +80,7 @@ export default function ProductSection() {
           </div>
 
           <div className="overflow-hidden rounded-4xl flex justify-center">
-            <img src={Bag3} alt="Chaleee Urea 46%N" className="h-70 max-h-80 object-fill object-center" />
+            <img src={productUreaBagNoBg} alt="Chaleee Urea 46%N" className="h-70 max-h-80 object-fill object-center" />
           </div>
         </div>
          <div className="mt-8">

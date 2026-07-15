@@ -1,4 +1,6 @@
-// EquipmentSection: replace or extend the equipment cards with your own machinery details
+import { facilityHopperImage, facilityConveyorImage, facilityFeedersImage } from '../assets/assetRegistry'
+
+// EquipmentSection: showcases the plant equipment used in the manufacturing process.
 export default function EquipmentSection() {
   return (
     <section id="equipment" className="bg-slate-50 py-16 text-slate-900">
@@ -8,7 +10,7 @@ export default function EquipmentSection() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/StorageHopper.jpg')] bg-cover bg-center opacity-90"></div>
+            <div className="absolute inset-0 bg-cover bg-center opacity-90" style={{ backgroundImage: `url(${facilityHopperImage})` }}></div>
             <div className="relative min-h-[240px] bg-slate-950/40 p-6">
               <h3 className="text-xl font-semibold text-white">Storage Hopper</h3>
               <p className="mt-3 text-slate-200">
@@ -17,7 +19,7 @@ export default function EquipmentSection() {
             </div>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/ConveyorSystem.jpg')] bg-cover bg-center opacity-90"></div>
+            <div className="absolute inset-0 bg-cover bg-center opacity-90" style={{ backgroundImage: `url(${facilityConveyorImage})` }}></div>
             <div className="relative min-h-[240px] bg-slate-950/40 p-6">
               <h3 className="text-xl font-semibold text-white">Conveyor systems</h3>
               <p className="mt-3 text-slate-200">
@@ -26,7 +28,7 @@ export default function EquipmentSection() {
             </div>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/Feeders.jpg')] bg-cover bg-center opacity-90"></div>
+            <div className="absolute inset-0 bg-cover bg-center opacity-90" style={{ backgroundImage: `url(${facilityFeedersImage})` }}></div>
             <div className="relative min-h-[240px] bg-slate-950/40 p-6">
               <h3 className="text-xl font-semibold text-white">Feeders</h3>
               <p className="mt-3 text-slate-200">

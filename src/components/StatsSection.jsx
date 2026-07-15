@@ -1,4 +1,4 @@
-// StatsSection: replace numbers or labels to match your production statistics
+// StatsSection: displays the key company metrics in a compact grid.
 export default function StatsSection() {
   return (
     <section id="stats" className="bg-slate-50  text-slate-900">

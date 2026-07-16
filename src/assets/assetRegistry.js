@@ -18,17 +18,20 @@ import facilityFeedersImage from './images/facility/Feeders.webp'
 // Product and catalog visuals
 import productHeaderImage from './images/products/productheader.webp'
 import productBannerImage from './images/products/productbanner.webp'
-import productNpkBagImage from './images/products/Invess-Chaleee-NPK.webp'
+import productNpkBagImage from './images/products/Invess-Chaleee-NPK-nobg.webp'
 import productNpkBagNoBg from './images/products/Invess-Chaleee-NPK-nobg.webp'
-import productUreaBagImage from './images/products/Invess-Chaleee-Urea.webp'
+import productUreaBagImage from './images/products/Invess-Chaleee-Urea-nobg.webp'
 import productUreaBagNoBg from './images/products/Invess-Chaleee-Urea-nobg.webp'
-import productAmmoniaBagImage from './images/products/Invess-SOA-Sulphate-of-Ammonia.webp'
+import productAmmoniaBagImage from './images/products/Invess-SOA-Sulphate-of-Ammonia-nobg.webp'
 import productAmmoniaBagNoBg from './images/products/Invess-SOA-Sulphate-of-Ammonia-nobg.webp'
-
+import productActivateBagImage from './images/products/ACTIVATE.webp'
+import productPotassiumBagImage from './images/products/Potassium_Nitrate.webp'
+import productBlessCocoaBagImage from './images/products/BLESS_COCOA.webp'
 // Gallery and story visuals
 import galleryImageOne from './images/gallery/aboutimage1.webp'
 import galleryImageTwo from './images/gallery/aboutimage2.webp'
 import galleryImageThree from './images/gallery/aboutimage3.webp'
+import founderImage from './images/gallery/founder.webp'
 
 // Social and UI icons
 import socialEmailIcon from './icons/social/email.webp'
@@ -49,12 +52,16 @@ export {
   facilityFeedersImage,
   productHeaderImage,
   productBannerImage,
-  productNpkBagImage,
   productNpkBagNoBg,
+  productNpkBagImage,
+  productActivateBagImage,
+  productBlessCocoaBagImage,
+  productPotassiumBagImage,
   productUreaBagImage,
   productUreaBagNoBg,
   productAmmoniaBagImage,
   productAmmoniaBagNoBg,
+  founderImage,
   galleryImageOne,
   galleryImageTwo,
   galleryImageThree,
@@ -70,7 +77,7 @@ export const assetCategories = {
   brand: ['brandLogo', 'brandLogoAlt'],
   hero: ['heroBackground', 'heroPattern'],
   facility: ['facilityMainImage', 'facilityHopperImage', 'facilityConveyorImage', 'facilityFeedersImage'],
-  products: ['productHeaderImage', 'productBannerImage', 'productNpkBagImage', 'productUreaBagImage', 'productAmmoniaBagImage'],
+  products: ['productHeaderImage', 'productBannerImage', 'productNpkBagImage', 'productUreaBagImage', 'productAmmoniaBagImage','productActivateBagImage','productPotassiumBagImage','productBlessCocoaBagImage'],
   gallery: ['galleryImageOne', 'galleryImageTwo', 'galleryImageThree'],
   icons: ['socialEmailIcon', 'socialInstagramIcon', 'socialLinkedInIcon', 'socialPlaceholderIcon', 'socialWhatsappIcon'],
 }

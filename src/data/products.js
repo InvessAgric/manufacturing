@@ -1,4 +1,4 @@
-import { productNpkBagNoBg, productAmmoniaBagNoBg, productUreaBagNoBg } from '../assets/assetRegistry'
+import { productNpkBagNoBg, productAmmoniaBagNoBg, productUreaBagNoBg ,productActivateBagImage,productPotassiumBagImage,productBlessCocoaBagImage} from '../assets/assetRegistry'
 
 export const products = [
   {
@@ -54,7 +54,7 @@ export const products = [
       'Supports healthy foliage and stems',
       'Structured for reliable field performance',
     ],
-    image: productNpkBagNoBg,
+    image: productActivateBagImage,
     alt: 'Chaleee NPK 15:15:15',
   },
   {
@@ -68,7 +68,7 @@ export const products = [
       'Encourages early crop establishment',
       'Provides steady nutrient release',
     ],
-    image: productAmmoniaBagNoBg,
+    image: productBlessCocoaBagImage,
     alt: 'Chaleee NPK 10:20:10',
   },
   {
@@ -82,7 +82,7 @@ export const products = [
       'Supports plant metabolism',
       'Enhances stress tolerance',
     ],
-    image: productUreaBagNoBg,
+    image: productPotassiumBagImage,
     alt: 'Invess MicroBoost',
   },
   {

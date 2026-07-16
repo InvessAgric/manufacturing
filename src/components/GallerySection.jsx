@@ -14,19 +14,28 @@ export default function GallerySection() {
       <div className="mx-auto max-w-6xl px-6 text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-green-700/70">Factory gallery</p>
         <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">A closer look at the plant</h2>
+<div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 xl:grid-cols-4">
+  {items.map((item) => (
+    <div
+      key={item.label}
+      className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+    >
+      <div className="relative aspect-square w-full overflow-hidden">
+        <img
+          src={item.img}
+          alt={item.label}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-2">
-          {items.map((item) => (
-            <div key={item.label} className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-              <div className="relative h-56 overflow-hidden bg-slate-100">
-                <img src={item.img} alt={item.label} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent px-4 py-4 text-left">
-                  <p className="text-sm font-semibold items-center text-center  mx-auto  bg-white rounded-3xl w-37.5 text-green-400">{item.label}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="absolute inset-x-0 bottom-3 bg-black/30">
+          <span className="rounded-full bg-white px-3 py-2 text-center text-sm font-semibold text-green-500 shadow">
+            {item.label}
+          </span>
         </div>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </section>
   )

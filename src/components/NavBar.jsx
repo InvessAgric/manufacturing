@@ -14,19 +14,18 @@ function NavBar() {
   return (
     <>
       {/* Main navigation bar (fixed/floating) */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1126px] flex items-center justify-between bg-white/10 text-white px-4 py-3 rounded-2xl shadow-xl backdrop-blur-md z-50">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[1050px] flex items-center justify-between bg-white/10 text-white px-3 py-2 rounded-xl shadow-xl backdrop-blur-md z-50">
         {/* Left: logo area */}
         <div className="nav-left shrink-0">
           {/* Logo links back to home and closes mobile menu when clicked */}
           <Link to="/" className="logo-link inline-flex items-center" onClick={close}>
             {/* Logo image element */}
-            <img src={brandLogoAlt} alt="InvessAgric" className=" h-10" />
+            <img src={brandLogoAlt} alt="InvessAgric" className=" h-8 lg:h-9" />
           </Link>
         </div>
 
         {/* Center: navigation links (visible on md+ screens) */}
-        <div className="nav-center bg-linear-to-r from-slate-950 via-slate-600 to-emerald-700 px-2 rounded-1xl hidden md:flex flex-wrap items-center pb-2">
-          {/* Section anchors with animated underline */}
+<div className="nav-center bg-linear-to-r from-slate-950 via-slate-600 to-emerald-700 px-2 rounded-xl hidden lg:flex items-center gap-1">          {/* Section anchors with animated underline */}
           <NavLink to="/" end className="relative inline-block px-2 py-1 group">
             {({ isActive }) => (
               <>

@@ -43,8 +43,8 @@ function About() {
           </div>
         </header>
 
-        <section className="rounded-[2rem] mx-auto w-[80%] bg-white p-8 shadow-sm ring-1 ring-emerald-100">
-          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <section className=" flex rounded-[2rem] mx-auto w-[80%] bg-white p-8 shadow-sm ring-1 ring-emerald-100">
+          <div className="grid gap-6 :grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div className="space-y-4">
               <p className="text-sm uppercase tracking-[0.3em] text-emerald-600">Founder</p>
               <h2 className="text-3xl font-semibold text-slate-900">Meet the founder driving the vision.</h2>

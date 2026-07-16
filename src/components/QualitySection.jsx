@@ -50,7 +50,7 @@ export default function QualitySection() {
           <div className="inline-flex min-w-full items-center justify-between gap-6 px-2 sm:px-0">
             {steps.map((step, index) => (
               <div key={step} className="relative flex w-40 flex-col items-center gap-4 sm:w-[180px]">
-                <div className="relative flex h-24 w-24 items-center justify-center rounded-full border-2 border-green-700 bg-white shadow-sm">
+                <div className="relative flex h-15 w-15 items-center justify-center rounded-full border-2 border-green-700 bg-white shadow-sm">
                   {stepIcons[index]}
                 </div>
                 <p className="text-sm font-semibold text-slate-900">{step}</p>

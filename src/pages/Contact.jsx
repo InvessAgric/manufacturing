@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom'
 import { socialWhatsappIcon } from '../assets/assetRegistry'
 
@@ -30,8 +30,8 @@ function Contact() {
       .join('\n')
 
     emailjs.send(
-      'service_xxx',
-      'template_xxx',
+      'service_oxiv95g',
+      'template_msg',
       {
         from_name: name,
         from_email: email,

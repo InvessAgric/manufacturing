@@ -34,12 +34,12 @@ import galleryImageThree from './images/gallery/aboutimage3.webp'
 import founderImage from './images/gallery/founder.webp'
 
 // Social and UI icons
-import socialEmailIcon from './icons/social/email.webp'
-import socialInstagramIcon from './icons/social/instagram.webp'
-import socialLinkedInIcon from './icons/social/linkedin.webp'
-import socialPlaceholderIcon from './icons/social/placeholder.webp'
-import socialWhatsappIcon from './icons/social/whatsapp.webp'
-import socialWhatsappPng from './icons/social/whatsapp.png'
+import socialEmailIcon from './Icons/social/email.webp'
+import socialInstagramIcon from './Icons/social/instagram.webp'
+import socialLinkedInIcon from './Icons/social/linkedin.webp'
+import socialPlaceholderIcon from './Icons/social/placeholder.webp'
+import socialWhatsappIcon from './Icons/social/whatsapp.webp'
+import socialWhatsappPng from './Icons/social/whatsapp.png'
 
 export {
   brandLogo,

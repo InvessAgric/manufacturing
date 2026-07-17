@@ -5,7 +5,7 @@ export default function StatsSection() {
       <div className="mx-auto max-w-6xl  text-center">
         <div className="grid  grid-cols-2 sm:grid-cols-4 ">
           <div className=" bg-white p-6 shadow-sm border border-slate-200 text-center">
-            <span className="block text-4xl font-bold">10,000+</span>
+            <span className="block text-4xl font-bold">400,000+</span>
             <span className="mt-2 block text-sm text-slate-500">MT annual capacity</span>
           </div>
           <div className=" bg-white p-6 shadow-sm border border-slate-200 text-center">

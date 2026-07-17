@@ -4,11 +4,12 @@ import babel from '@rolldown/plugin-babel'
 import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
+ 
+  base: '/website_7c2aa4e4/',
   plugins: [
     react(),
-  
-    
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
 })
+

@@ -1,18 +1,11 @@
 import { useState, useEffect } from 'react'
 import {
-  facilityMainImage,
   fleetBg,
   truckImage,
   truckImage1,
   truckImage2,
   truckImage3,
-  truckImage4,
-  truckImage5,
-  truckImage6,
-  truckImage7,
-  truckImage8,
-  truckImage9,
-  truckImage10
+  truckImage4
 } from '../assets/assetRegistry'
 
 const carouselImages = [
@@ -29,7 +22,7 @@ export default function Fleet() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length)
-    }, 4000) // Changes image every 4 seconds
+    }, 4000)
 
     return () => clearInterval(timer)
   }, [])
@@ -37,8 +30,8 @@ export default function Fleet() {
   const highlights = [
     { value: '100', label: 'Trucks in operation' },
     { value: '6', label: 'Commodity lines hauled' },
-    { value: 'Ghana + Burkina Faso', label: 'Routes covered' },
-    { value: 'GPS-Tracked', label: 'Every trip, every truck' }
+    { value: 'Ghana + BF', label: 'Cross-border routes' },
+    { value: 'GPS-Tracked', label: 'Real-time monitoring' }
   ]
 
   const services = [
@@ -76,68 +69,72 @@ export default function Fleet() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      {/* Header Banner */}
-      <section
-        className="relative overflow-hidden px-6 py-24 pt-28 text-white sm:py-28 sm:pt-32"
-        style={{ backgroundImage: `linear-gradient(rgba(2, 44, 34, 0.78), rgba(2, 44, 34, 0.82)), url(${fleetBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-      >
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/90">Invess Logistics &amp; Haulage</p>
-          <h1 className="mt-3 max-w-4xl text-2xl font-semibold leading-tight sm:text-3xl">
-            Moving Ghana&apos;s fertilizer, cement, and cocoa — on our own fleet
-          </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-100/95 sm:text-base">
-            From Tema Port to farms across Ghana and into Burkina Faso, our haulage fleet keeps fertilizer moving on time, every season — because we don&apos;t just manufacture crop nutrition, we deliver it ourselves.
-          </p>
+      
+      {/* Aligned Full-Screen Header with Integrated Stats Grid */}
+    <section className="relative min-h-screen flex flex-col justify-between px-6 pt-24 pb-0 text-white overflow-hidden">
+  {/* Blended Green Background Layout */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: `url(${fleetBg})` }}
+  />
+  <div className="absolute inset-0 bg-emerald-950/85 mix-blend-multiply z-0" />
+  
+  {/* Top/Center Text Content Wrapper */}
+  <div className="relative mx-auto max-w-6xl w-full z-10 flex-grow flex flex-col justify-center pb-12">
+    <div className="max-w-4xl space-y-4">
+      <p className="text-xs uppercase tracking-[0.3em] text-emerald-300 font-medium">Invess Logistics &amp; Haulage</p>
+      <h1 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl tracking-tight">
+        Moving Ghana&apos;s fertilizer, cement, and cocoa — on our own fleet
+      </h1>
+      <p className="max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
+        From Tema Port to farms across Ghana and into Burkina Faso, our haulage fleet keeps fertilizer moving on time, every season. We don&apos;t just manufacture crop nutrition; we deliver it ourselves.
+      </p>
+      <div className="flex flex-wrap gap-2.5 pt-2">
+        <a href="/contact" className="rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white shadow transition hover:bg-emerald-500">
+          Request Haulage Quote
+        </a>
+        <a href="#fleet-overview" className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+          View Fleet Details
+        </a>
+      </div>
+    </div>
+  </div>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            <a href="/contact" className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500">
-              Request Haulage Quote
-            </a>
-            <a href="#fleet-overview" className="rounded-full border border-emerald-400/40 bg-white/90 px-4 py-2 text-sm font-semibold text-slate-800 transition hover:bg-white">
-              View Our Fleet
-            </a>
-          </div>
+  {/* Pinned Bottom Stats Grid Layer */}
+  <div className="relative z-10 w-full border-t border-white/10 bg-emerald-950/40 backdrop-blur-md">
+    <div className="mx-auto max-w-6xl px-6 py-4 grid gap-3 grid-cols-2 lg:grid-cols-4">
+      {highlights.map((item) => (
+        <div key={item.label} className="rounded-xl bg-slate-900/40 border border-white/5 p-3.5 text-center">
+          <p className="text-xl font-bold text-emerald-400 sm:text-2xl">{item.value}</p>
+          <p className="mt-0.5 text-xxs sm:text-xs text-slate-300 font-medium tracking-wide">{item.label}</p>
         </div>
-      </section>
-
-      {/* Highlights Grid */}
-      <section id="fleet-overview" className="px-6 py-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-3 rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-2 lg:grid-cols-4">
-            {highlights.map((item) => (
-              <div key={item.label} className="rounded-2xl bg-slate-50 p-3 text-center">
-                <p className="text-xl font-semibold text-emerald-700">{item.value}</p>
-                <p className="mt-1 text-xs text-slate-600">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* Main Core Layout */}
-      <section className="px-6 py-3">
+      <section id="fleet-overview" className="px-6 py-8">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2 lg:items-start">
           
           {/* Column 1: What we haul */}
           <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80">What we haul</p>
-            <h2 className="mt-2 text-xl font-semibold sm:text-2xl">A fleet built for six kinds of cargo — not just one.</h2>
-            <p className="mt-3 leading-7 text-sm text-slate-600">
+            <h2 className="mt-2 text-xl font-semibold sm:text-2xl tracking-tight">A fleet built for six kinds of cargo — not just one.</h2>
+            <p className="mt-2 text-xs leading-relaxed text-slate-600">
               Our trucks move more than fertilizer. The fleet is built to run efficiently across multiple commodities, so trucks stay working instead of sitting idle between fertilizer seasons.
             </p>
 
             <ul className="mt-4 space-y-2">
               {services.map((service) => (
-                <li key={service.title} className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-700">
+                <li key={service.title} className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3 text-xs text-slate-700">
                   <p className="font-semibold text-slate-900">{service.title}</p>
-                  <p className="mt-1 leading-6 text-slate-600">{service.text}</p>
+                  <p className="mt-1 text-slate-600 leading-normal">{service.text}</p>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 2: Auto-Changing Carousel Container & Fleet Ownership Details */}
+          {/* Column 2: Sticky Image Carousel & Fleet Ownership Details */}
           <div className="space-y-6 lg:sticky lg:top-24">
             {/* Auto-Changing Carousel Image Card */}
             <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-3 shadow-sm">
@@ -172,10 +169,10 @@ export default function Fleet() {
             {/* Why Invess runs its own fleet Container */}
             <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80">Fleet Ownership</p>
-              <h2 className="mt-2 text-xl font-semibold">Because fertilizer can&apos;t wait — and neither can farmers.</h2>
-              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+              <h2 className="mt-2 text-xl font-semibold tracking-tight">Because fertilizer can&apos;t wait — and neither can farmers.</h2>
+              <ul className="mt-4 space-y-2 text-xs text-slate-700">
                 {reasons.map((reason) => (
-                  <li key={reason} className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2">
+                  <li key={reason} className="rounded-xl border border-slate-100 bg-slate-50 px-3.5 py-2.5 leading-normal">
                     {reason}
                   </li>
                 ))}
@@ -190,9 +187,9 @@ export default function Fleet() {
       <section className="px-6 py-3">
         <div className="mx-auto max-w-6xl rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
           <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80">Routes we cover</p>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
             {routes.map((route) => (
-              <div key={route} className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-700">
+              <div key={route} className="rounded-2xl border border-slate-100 bg-slate-50 px-3.5 py-3 text-xs text-slate-700 font-medium">
                 {route}
               </div>
             ))}
@@ -206,18 +203,18 @@ export default function Fleet() {
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80">Reliability &amp; fleet controls</p>
-              <h2 className="mt-1 text-xl font-semibold sm:text-2xl">Every truck tracked. Every trip accounted for.</h2>
+              <h2 className="mt-1 text-xl font-semibold sm:text-2xl tracking-tight">Every truck tracked. Every trip accounted for.</h2>
             </div>
             <div className="flex flex-wrap gap-2">
-              <a href="/contact" className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500">
+              <a href="/contact" className="rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-emerald-500 shadow-sm">
                 Request a Quote
               </a>
             </div>
           </div>
 
-          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-5 grid gap-2.5 md:grid-cols-2 xl:grid-cols-3">
             {controls.map((item) => (
-              <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50 p-3 text-sm leading-6 text-slate-700">
+              <div key={item} className="rounded-2xl border border-slate-100 bg-slate-50 p-3.5 text-xs leading-relaxed text-slate-700">
                 {item}
               </div>
             ))}

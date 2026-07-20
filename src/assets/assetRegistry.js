@@ -45,6 +45,7 @@ import galleryImageOne from './images/gallery/aboutimage1.webp'
 import galleryImageTwo from './images/gallery/aboutimage2.webp'
 import galleryImageThree from './images/gallery/aboutimage3.webp'
 import founderImage from './images/gallery/founder.webp'
+import gallery1 from './images/gallery/gallery1.jpg'
 
 // Social and UI icons
 import socialEmailIcon from './Icons/social/email.webp'
@@ -90,6 +91,7 @@ export {
   galleryImageOne,
   galleryImageTwo,
   galleryImageThree,
+  gallery1,
   socialEmailIcon,
   socialInstagramIcon,
   socialLinkedInIcon,
@@ -103,6 +105,6 @@ export const assetCategories = {
   hero: ['heroBackground', 'heroPattern'],
   facility: ['facilityMainImage', 'facilityHopperImage', 'facilityConveyorImage', 'facilityFeedersImage'],
   products: ['productHeaderImage', 'productBannerImage', 'productNpkBagImage', 'productUreaBagImage', 'productAmmoniaBagImage','productActivateBagImage','productPotassiumBagImage','productBlessCocoaBagImage'],
-  gallery: ['galleryImageOne', 'galleryImageTwo', 'galleryImageThree'],
+  gallery: ['galleryImageOne', 'galleryImageTwo', 'galleryImageThree','gallery1'],
   icons: ['socialEmailIcon', 'socialInstagramIcon', 'socialLinkedInIcon', 'socialPlaceholderIcon', 'socialWhatsappIcon'],
 }

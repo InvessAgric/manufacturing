@@ -14,56 +14,56 @@ function NavBar() {
   return (
     <>
       {/* Main navigation bar (fixed/floating) */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[1050px] flex items-center justify-between bg-white/10 text-white px-3 py-2 rounded-xl shadow-xl backdrop-blur-md z-50">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[1150px] flex items-center justify-between bg-white/10 text-white px-3 py-2 rounded-xl shadow-xl backdrop-blur-md z-50">
         {/* Left: logo area */}
         <div className="nav-left shrink-0">
           {/* Logo links back to home and closes mobile menu when clicked */}
           <Link to="/" className="logo-link inline-flex items-center" onClick={close}>
             {/* Logo image element */}
-            <img src={brandLogoAlt} alt="InvessAgric" className=" h-8 lg:h-9" loading="lazy" />
+            <img src={brandLogoAlt} alt="InvessAgric" className=" h-15 lg:h-10" loading="lazy" />
           </Link>
         </div>
 
         {/* Center: navigation links (visible on md+ screens) */}
-<div className="nav-center bg-linear-to-r from-slate-950 via-slate-600 to-emerald-700 px-2 rounded-xl hidden lg:flex items-center gap-1">          {/* Section anchors with animated underline */}
+<div className="nav-center  bg-primary/60 px-2 rounded-xl hidden lg:flex items-center gap-1">          {/* Section anchors with animated underline */}
           <NavLink to="/" end className="relative inline-block px-2 py-1 group">
             {({ isActive }) => (
               <>
-                <span className={`font-bold ${isActive ? 'text-emerald-300' : 'text-white'}`}>Home</span>
-                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>Home</span>
+                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </>
             )}
           </NavLink>
 
           <Link to="/#stats" className="relative inline-block px-2 py-1 group font-bold text-white">
             Stats
-            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </Link>
 
           <Link to="/#manufacturing" className="relative inline-block px-2 py-1 group font-bold text-white">
             Manufacturing
-            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </Link>
 
           <Link to="/#equipment" className="relative inline-block px-2 py-1 group font-bold text-white">
             Equipment
-            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </Link>
 
           <Link to="/#gallery" className="relative inline-block px-2 py-1 group font-bold text-white">
             Gallery
-            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </Link>
 
           <Link to="/#quality" className="relative inline-block px-2 py-1 group font-bold text-white">
             Quality
-            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </Link>
           <NavLink to="/#fleet" className="relative inline-block px-2 py-1 group">
             {({ isActive }) => (
               <>
-                <span className={`font-bold ${isActive ? 'text-emerald-300' : 'text-white'}`}>Fleet</span>
-                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>Fleet</span>
+                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </>
             )}
           </NavLink>
@@ -71,8 +71,8 @@ function NavBar() {
           <NavLink to="/about" className="relative inline-block px-2 py-1 group">
             {({ isActive }) => (
               <>
-                <span className={`font-bold ${isActive ? 'text-emerald-300' : 'text-white'}`}>About</span>
-                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>About</span>
+                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </>
             )}
           </NavLink>
@@ -80,8 +80,8 @@ function NavBar() {
           <NavLink to="/product" className="relative inline-block px-2 py-1 group" onClick={close}>
             {({ isActive }) => (
               <>
-                <span className={`font-bold ${isActive ? 'text-emerald-300' : 'text-white'}`}>Products</span>
-                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>Products</span>
+                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </>
             )}
           </NavLink>
@@ -91,8 +91,8 @@ function NavBar() {
           <NavLink to="/team" className="relative inline-block px-2 py-1 group">
             {({ isActive }) => (
               <>
-                <span className={`font-bold ${isActive ? 'text-emerald-300' : 'text-white'}`}>Team</span>
-                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>Team</span>
+                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </>
             )}
           </NavLink>
@@ -102,7 +102,7 @@ function NavBar() {
         <div className="flex items-center gap-3">
           {/* Contact button shown on md+ screens */}
           <div className="hidden md:block nav-right">
-            <Link to="/contact" className="inline-flex items-center rounded-full border border-emerald-400/60 bg-emerald-500 px-3 py-1.5 text-xs font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-400 sm:text-sm">
+            <Link to="/contact" className="inline-flex items-center rounded-full border border-primary bg-background  px-3 py-1.5 text-xs font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-400 sm:text-sm">
               Contact Sales
             </Link>
           </div>
@@ -131,82 +131,82 @@ function NavBar() {
 
       {/* Mobile menu: rendered only when `open` is true */}
       {open && (
-        <div className="md:hidden fixed top-17 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1126px] bg-white/8 backdrop-blur-md rounded-xl p-4 z-40">
+        <div className="md:hidden fixed top-17 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1126px] bg-text/8 backdrop-blur-md rounded-xl p-4 z-40">
           <div className="flex flex-col gap-3">
             {/* Each mobile link closes the menu after navigation */}
-            <NavLink to="/" end onClick={close} className="text-emerald-950  font-bold block relative">
+            <NavLink to="/" end onClick={close} className="text-  font-bold block relative">
               {({ isActive }) => (
                 <>
-                  <span className={`${isActive ? 'text-emerald-300' : ''}`}>Home</span>
-                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+                  <span className={`${isActive ? 'text-accent' : ''}`}>Home</span>
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
                 </>
               )}
             </NavLink>
 
-            <Link to="/#stats" onClick={close} className="text-emerald-950  font-bold block relative">
+            <Link to="/#stats" onClick={close} className="text-  font-bold block relative">
               Stats
-              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </Link>
 
-            <Link to="/#manufacturing" onClick={close} className="text-emerald-950  font-bold block relative">
+            <Link to="/#manufacturing" onClick={close} className="text-  font-bold block relative">
               Manufacturing
-              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </Link>
 
-            <Link to="/#equipment" onClick={close} className="text-emerald-950  font-bold block relative">
+            <Link to="/#equipment" onClick={close} className="text-  font-bold block relative">
               Equipment
-              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </Link>
 
-            <Link to="/#gallery" onClick={close} className="text-emerald-950  font-bold block relative">
+            <Link to="/#gallery" onClick={close} className="text-  font-bold block relative">
               Gallery
-              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </Link>
 
-            <Link to="/#quality" onClick={close} className="text-emerald-950  font-bold block relative">
+            <Link to="/#quality" onClick={close} className="text-  font-bold block relative">
               Quality
-              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 w-0 group-hover:w-full transition-all" />
+              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </Link>
             
-            <NavLink to="/#fleet" onClick={close} className="text-emerald-950  font-bold block relative">
+            <NavLink to="/#fleet" onClick={close} className="text-  font-bold block relative">
               {({ isActive }) => (
                 <>
-                  <span className={`${isActive ? 'text-emerald-300' : ''}`}>Fleet</span>
-                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+                  <span className={`${isActive ? 'text-accent' : ''}`}>Fleet</span>
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
                 </>
               )}
             </NavLink>
 
-            <NavLink to="/about" onClick={close} className="text-emerald-950  font-bold block relative">
+            <NavLink to="/about" onClick={close} className="text-  font-bold block relative">
               {({ isActive }) => (
                 <>
-                  <span className={`${isActive ? 'text-emerald-300' : ''}`}>About</span>
-                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+                  <span className={`${isActive ? 'text-accent' : ''}`}>About</span>
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
                 </>
               )}
             </NavLink>
 
-            <NavLink to="/product" onClick={close} className="text-emerald-950  font-bold block relative">
+            <NavLink to="/product" onClick={close} className="text-  font-bold block relative">
               {({ isActive }) => (
                 <>
-                  <span className={`${isActive ? 'text-emerald-300' : ''}`}>Products</span>
-                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+                  <span className={`${isActive ? 'text-accent' : ''}`}>Products</span>
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
                 </>
               )}
             </NavLink>
 
 
-            <NavLink to="/team" onClick={close} className="text-emerald-950  font-bold block relative">
+            <NavLink to="/team" onClick={close} className="text-  font-bold block relative">
               {({ isActive }) => (
                 <>
-                  <span className={`${isActive ? 'text-emerald-300' : ''}`}>Team</span>
-                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-emerald-300 transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+                  <span className={`${isActive ? 'text-accent' : ''}`}>Team</span>
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
                 </>
               )}
             </NavLink>
 
             {/* Mobile CTA button */}
-            <Link to="/contact" onClick={close} className="mt-2 inline-flex items-center rounded-full border border-emerald-400/60 bg-emerald-500 px-2.5 py-1.5 text-xs font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-400 w-max">Contact Sales</Link>
+            <Link to="/contact" onClick={close} className="mt-2 inline-flex items-center rounded-full border border-primary bg-background px-2.5 py-1.5 text-xs font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark w-max">Contact Sales</Link>
           </div>
         </div>
       )}

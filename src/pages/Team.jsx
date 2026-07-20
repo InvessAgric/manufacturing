@@ -1,4 +1,4 @@
-import { socialInstagramIcon, socialLinkedInIcon } from '../assets/assetRegistry'
+import { socialInstagramIcon, socialLinkedInIcon ,founderImage} from '../assets/assetRegistry'
 
 // Team page: highlights the founder and the broader leadership and support teams.
 function Team() {
@@ -92,7 +92,7 @@ function Team() {
 					</div>
 
 					<div className="overflow-hidden rounded-[1.75rem] bg-slate-100">
-						<img src="/founder.jpg" alt="Founder Francis Dei" className="h-full w-full object-cover" loading="lazy" />
+						<img src={founderImage} alt="Founder Francis Dei" className="h-full w-full object-cover" loading="lazy" />
 					</div>
 				</section>
 

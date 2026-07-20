@@ -3,7 +3,7 @@ import { facilityMainImage } from '../assets/assetRegistry'
 // FacilitySection: explains the manufacturing plant and highlights the key operational strengths.
 export default function FacilitySection() {
   return (
-    <section id="manufacturing" className="bg-white py-16 text-slate-900">
+    <section id="manufacturing" className="bg-primary/20 py-16 text-slate-900">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="relative h-96 overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100 shadow-sm">
@@ -19,27 +19,27 @@ export default function FacilitySection() {
             </p>
 
             <div className="mt-5 flex flex-col gap-4 w-full">
-              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 shadow-sm">
-                <h3 className="text-md font-semibold text-slate-900">Precision blending systems</h3>
-                <p className="mt-2 text-slate-600 text-sm">
+              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-2 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">Precision blending systems</h3>
+                <p className="mt-2 text-slate-600 text-xs">
                   Automated ribbon blenders ensure consistent nutrient ratios across every batch.
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 shadow-sm">
-                <h3 className="text-md font-semibold text-slate-900">Reliable local supply</h3>
-                <p className="mt-2 text-slate-600 text-sm">
+              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-2 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">Reliable local supply</h3>
+                <p className="mt-2 text-slate-600 text-xs">
                   Reduces import lead times and supports Ghanaian agricultural productivity year-round.
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 shadow-sm">
-                <h3 className="text-md font-semibold text-slate-900">Traceable from source</h3>
-                <p className="mt-2 text-slate-600 text-sm">
+              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-2 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">Traceable from source</h3>
+                <p className="mt-2 text-slate-600 text-xs">
                   Every batch is logged from raw material intake through final packaging and dispatch.
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 shadow-sm">
-                <h3 className="text-xl font-semibold text-slate-900">Local agronomic support</h3>
-                <p className="mt-2 text-slate-600 text-sm">
+              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-2 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">Local agronomic support</h3>
+                <p className="mt-2 text-slate-600 text-xs">
                   We pair manufacturing expertise with advisory services to help farmers get the most from every application.
                 </p>
               </div>

@@ -3,7 +3,7 @@ import { socialEmailIcon, socialInstagramIcon, socialLinkedInIcon, socialPlaceho
 // FooterSection: renders the global site footer with contact details, navigation links, and social actions.
 export default function FooterSection() {
   return (
-    <footer className="border-t border-slate-800 bg-gradient-to-r from-slate-950 via-emarald-700 to- bg-emerald-800 py-8 text-slate-200  ">
+    <footer className="border-t border-slate-800  bg-primary-dark py-8 text-slate-200  ">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:min-h-[180px]">
           <div className="lg:max-w-lg md:flex items-center gap-3">

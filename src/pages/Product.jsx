@@ -134,7 +134,7 @@ function Product() {
             >
               <article>
                 <div className="mb-4 flex  h-36 items-center justify-center overflow-hidden rounded-[1.25rem] bg-slate-100">
-                  <img src={product.image} alt={product.alt} className="h-full object-contain" loading="lazy" />
+                  <img src={product.image} alt={product.alt} className="h-full object-contain" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900">{product.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{product.description}</p>

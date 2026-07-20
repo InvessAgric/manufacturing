@@ -1,4 +1,4 @@
-import { galleryImageOne, galleryImageTwo, galleryImageThree, heroBackground } from '../assets/assetRegistry'
+import { galleryImageOne, galleryImageTwo, galleryImageThree, heroBackground ,gallery1} from '../assets/assetRegistry'
 
 // GallerySection: presents a visual overview of the plant and production environment.
 export default function GallerySection() {
@@ -6,17 +6,17 @@ export default function GallerySection() {
     { label: 'Factory exterior', img: galleryImageOne },
     { label: 'Mixing area', img: galleryImageTwo },
     { label: 'Packing line', img: galleryImageThree },
-    { label: 'Warehouse', img: heroBackground },
+    { label: 'Warehouse', img: gallery1 },
   ]
 
   return (
     <section id="gallery" className="relative overflow-hidden bg-slate-950 py-16 text-white">
       <img
-        src={heroBackground}
+        src={gallery1}
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-25"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/95 via-emerald-900/90 to-green-950/95" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/20  via-primary/20 to-primary-dark/20" />
 
       <div className="relative mx-auto max-w-6xl px-6 text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-emerald-200/90">Factory gallery</p>

@@ -55,7 +55,7 @@ function About() {
             </div>
             <div className="flex items-center justify-center rounded-[1.75rem]  ">
               <div className="overflow-hidden rounded-[1.5rem]  shadow-sm">
-                <img src={founderImage} alt="Founder" className="h-78 w-full object-fill" />
+                <img src={founderImage} alt="Founder" className="h-78 w-full object-fill" loading="lazy" />
               </div>
             </div>
           </div>
@@ -155,9 +155,9 @@ function About() {
               unwavering focus on farmer success.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageOne} alt="Invess Agric event image 1" />
-              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageTwo} alt="Invess Agric event image 2" />
-              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageThree} alt="Invess Agric event image 3" />
+              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageOne} alt="Invess Agric event image 1" loading="lazy" />
+              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageTwo} alt="Invess Agric event image 2" loading="lazy" />
+              <img className="h-44 w-full rounded-[1.5rem] object-cover shadow-lg" src={galleryImageThree} alt="Invess Agric event image 3" loading="lazy" />
             </div>
           </div>
         </section>

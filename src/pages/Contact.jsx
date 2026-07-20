@@ -78,7 +78,7 @@ function Contact() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50"
                 >
-                  <img src={socialWhatsappIcon} alt="WhatsApp" className="h-5 w-5" />
+                  <img src={socialWhatsappIcon} alt="WhatsApp" className="h-5 w-5" loading="lazy" />
                   WhatsApp sales
                 </a>
                 <Link

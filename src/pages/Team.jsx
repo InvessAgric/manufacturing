@@ -81,18 +81,18 @@ function Team() {
 							<span>Facebook</span>
 						</a>
 						<a href={founder.socials[1].href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
-							<img src={founder.socials[1].icon} alt="LinkedIn" className="h-4 w-4" />
+							<img src={founder.socials[1].icon} alt="LinkedIn" className="h-4 w-4" loading="lazy" />
 							<span>LinkedIn</span>
 						</a>
 						<a href={founder.socials[2].href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
-							<img src={founder.socials[2].icon} alt="Instagram" className="h-4 w-4" />
+							<img src={founder.socials[2].icon} alt="Instagram" className="h-4 w-4" loading="lazy" />
 							<span>Instagram</span>
 						</a>
 					</div>
 					</div>
 
 					<div className="overflow-hidden rounded-[1.75rem] bg-slate-100">
-						<img src="/founder.jpg" alt="Founder Francis Dei" className="h-full w-full object-cover" />
+						<img src="/founder.jpg" alt="Founder Francis Dei" className="h-full w-full object-cover" loading="lazy" />
 					</div>
 				</section>
 

@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import Product from './pages/Product'
 import ProductDetail from './pages/ProductDetail'
 import Team from './pages/Team'
+import Fleet from './pages/Fleet'
 import NotFound from './pages/NotFound'
 import NavBar from './components/NavBar'
 import FooterSection from './components/FooterSection'
@@ -65,6 +66,7 @@ function App() {
           <Route path="/product" element={<Product />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/fleet" element={<Fleet />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -121,7 +123,7 @@ function App() {
           className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-3 text-sm font-semibold text-white shadow-xl shadow-emerald-500/20 transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-300"
           aria-label="Text us on WhatsApp"
         >
-          <img src={socialWhatsappIcon} alt="WhatsApp icon" className="h-6 w-6" />
+          <img src={socialWhatsappIcon} alt="WhatsApp icon" className="h-6 w-6" loading="lazy" />
           <span>Text us</span>
         </a>
       </div>

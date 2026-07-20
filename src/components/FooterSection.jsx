@@ -23,7 +23,7 @@ export default function FooterSection() {
               </p>
               <div className="mt-4 space-y-2 text-sm text-slate-300">
                 <p className="flex items-center gap-2">
-                  <img src={socialEmailIcon} alt="Email icon" className="h-4 w-4" />
+                  <img src={socialEmailIcon} alt="Email icon" className="h-4 w-4" loading="lazy" />
                   <span>info@invessagric.com</span>
                 </p>
                 <p className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export default function FooterSection() {
                   rel="noreferrer"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
-                  <img src={socialLinkedInIcon} alt="LinkedIn" className="h-5 w-5" />
+                  <img src={socialLinkedInIcon} alt="LinkedIn" className="h-5 w-5" loading="lazy" />
                 </a>
                 <a
                   href="https://www.instagram.com/invess_agric/"
@@ -134,7 +134,7 @@ export default function FooterSection() {
                   href="mailto:info@invessagric.com"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
-                  <img src={socialEmailIcon} alt="Email" className="h-5 w-5" />
+                  <img src={socialEmailIcon} alt="Email" className="h-5 w-5" loading="lazy" />
                 </a>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function FooterSection() {
               </div>
               <a
                 href="/contact"
-                className="inline-flex h-10 w-37.5 sm:w-auto max-w-xs items-center justify-center rounded-full px-5 text-sm font-semibold bg-slate-800 text-white transition hover:bg-green-600"
+                className="inline-flex min-h-9 items-center justify-center rounded-full border border-emerald-400/60 bg-emerald-500 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-400"
               >
                 Contact
               </a>

@@ -31,7 +31,7 @@ export default function ProductSection() {
           </div>
 
           <div className="overflow-hidden flex justify-center ">
-            <img src={productNpkBagNoBg} alt="Chaleee NPK 20:10:10+7S" className="h-40 max-h-60 object-fill object-center" />
+            <img src={productNpkBagNoBg} alt="Chaleee NPK 20:10:10+7S" className="h-40 max-h-60 object-fill object-center" loading="lazy" />
           </div>
         </div>
 
@@ -46,7 +46,7 @@ export default function ProductSection() {
 
         <div className="grid gap-3 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1 overflow-hidden flex justify-center">
-            <img src={productAmmoniaBagNoBg} alt="Sulphate of Ammonia 21%N 24%S" className="h-40 max-h-60 object-fill object-center" />
+            <img src={productAmmoniaBagNoBg} alt="Sulphate of Ammonia 21%N 24%S" className="h-40 max-h-60 object-fill object-center" loading="lazy" />
           </div>
 
           <div className="order-1 lg:order-2 space-y-3">
@@ -80,13 +80,13 @@ export default function ProductSection() {
           </div>
 
           <div className="overflow-hidden rounded-4xl flex justify-center">
-            <img src={productUreaBagNoBg} alt="Chaleee Urea 46%N" className="h-40 max-h-60 object-fill object-center" />
+            <img src={productUreaBagNoBg} alt="Chaleee Urea 46%N" className="h-40 max-h-60 object-fill object-center" loading="lazy" />
           </div>
         </div>
          <div className="mt-8">
             <Link
               to="/product"
-              className="inline-flex rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-200/30 transition hover:bg-emerald-700"
+              className="inline-flex rounded-full border border-emerald-400/60 bg-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-400"
             >
               Browse all products
             </Link>

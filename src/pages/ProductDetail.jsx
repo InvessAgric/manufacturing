@@ -74,7 +74,7 @@ function ProductDetail() {
             </div>
             <div className="overflow-hidden rounded-[1.25rem] bg-slate-100 p-4">
               {/* Display the primary product image centered in the hero card. */}
-              <img src={product.image} alt={product.alt} className="h-[70%] w-[70%] object-contain" />
+              <img src={product.image} alt={product.alt} className="h-[70%] w-[70%] object-contain" loading="lazy" />
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ function ProductDetail() {
                   {/* Render the currently visible plant-type cards in the gallery. */}
                   {visiblePlantTypes.map(({ label, image }) => (
                     <div key={label} className="overflow-hidden rounded-[1rem] border border-emerald-200 bg-white shadow-sm">
-                      <img src={image} alt={label} className="h-24 w-full object-cover" />
+                      <img src={image} alt={label} className="h-24 w-full object-cover" loading="lazy" />
                       <div className="px-3 py-2 text-sm font-medium text-slate-700">{label}</div>
                     </div>
                   ))}
@@ -222,7 +222,7 @@ function ProductDetail() {
                 className="block rounded-[1rem] border border-slate-200 bg-slate-50 p-4 text-slate-900 transition hover:-translate-y-1 hover:border-emerald-300 hover:bg-white"
               >
                 <div className="mb-3 h-28 overflow-hidden rounded-[0.9rem] bg-white p-3">
-                  <img src={item.image} alt={item.alt} className="h-full w-full object-contain" />
+                  <img src={item.image} alt={item.alt} className="h-full w-full object-contain" loading="lazy" />
                 </div>
                 <h3 className="text-base font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{item.summary}</p>

@@ -14,6 +14,19 @@ import facilityMainImage from './images/facility/Facility.webp'
 import facilityHopperImage from './images/facility/StorageHopper.webp'
 import facilityConveyorImage from './images/facility/ConveyorSystem.webp'
 import facilityFeedersImage from './images/facility/Feeders.webp'
+// Fleet visuals
+import fleetBg from './images/Truck Images/fleetbg.png'
+import truckImage from './images/Truck Images/truck.webp'
+import truckImage1 from './images/Truck Images/truck1.webp'
+import truckImage10 from './images/Truck Images/truck10.webp'
+import truckImage2 from './images/Truck Images/truck2.webp'
+import truckImage3 from './images/Truck Images/truck3.webp'
+import truckImage4 from './images/Truck Images/truck4.webp'
+import truckImage5 from './images/Truck Images/truck5.webp'
+import truckImage6 from './images/Truck Images/truck6.webp'
+import truckImage7 from './images/Truck Images/truck7.webp'
+import truckImage8 from './images/Truck Images/truck8.webp'
+import truckImage9 from './images/Truck Images/truck9.webp'
 
 // Product and catalog visuals
 import productHeaderImage from './images/products/productheader.webp'
@@ -50,6 +63,18 @@ export {
   facilityHopperImage,
   facilityConveyorImage,
   facilityFeedersImage,
+  fleetBg,
+  truckImage,
+  truckImage1,
+  truckImage10,
+  truckImage2,
+  truckImage3,
+  truckImage4,
+  truckImage5,
+  truckImage6,
+  truckImage7,
+  truckImage8,
+  truckImage9,
   productHeaderImage,
   productBannerImage,
   productNpkBagNoBg,

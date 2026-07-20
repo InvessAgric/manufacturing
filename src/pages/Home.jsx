@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import StatsSection from '../components/StatsSection'
 import FacilitySection from '../components/FacilitySection'
 import EquipmentSection from '../components/EquipmentSection'
+import FleetSection from '../components/FleetSection'
 import ProductSection from '../components/ProductSection'
 import GallerySection from '../components/GallerySection'
 import QualitySection from '../components/QualitySection'
@@ -15,6 +16,7 @@ function Home() {
       <StatsSection />
       <FacilitySection />
       <EquipmentSection />
+      <FleetSection />
       <ProductSection />
       <GallerySection />
       <QualitySection />

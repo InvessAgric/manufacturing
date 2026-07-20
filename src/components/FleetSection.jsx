@@ -3,8 +3,8 @@ import { fleetBg } from '../assets/assetRegistry'
 
 // FleetSection: highlights the transport and distribution support behind delivery operations.
 export default function FleetSection() {
-  const fleetHighlights = [
-    { title: '100 Trucks', text: 'Dedicated haulage moving cargo across Ghana and Burkina Faso.' },
+ const fleetHighlights = [
+    { title: 'Nationwide Reach', text: 'Coverage across Ghana with a dedicated corridor into Burkina Faso.' },
     { title: '6 Cargo Types', text: 'Fertilizer, cement, and cocoa moved with disciplined standards.' },
     { title: 'GPS-Tracked', text: 'Real-time transit monitoring for total control and visibility.' },
     { title: 'Our Timetable', text: 'We coordinate around farm demand, not a third-party calendar.' }
@@ -58,7 +58,7 @@ export default function FleetSection() {
           </div>
 
           {/* Right Column: Hero Image Container with Blended Green Overlay */}
-          <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100 h-50 sm:h-96 lg:h-[480px] shadow-sm">
+          <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100 h-6S0 sm:h-96 lg:h-[480px] shadow-sm">
             <div className="relative h-full w-full overflow-hidden">
               <img
                 src={fleetBg}

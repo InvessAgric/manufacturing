@@ -27,11 +27,11 @@ export default function Fleet() {
     return () => clearInterval(timer)
   }, [])
 
-  const highlights = [
-    { value: '100', label: 'Trucks in operation' },
+ const highlights = [
     { value: '6', label: 'Commodity lines hauled' },
-    { value: 'Ghana + BF', label: 'Cross-border routes' },
-    { value: 'GPS-Tracked', label: 'Real-time monitoring' }
+    { value: 'Nationwide', label: 'Ghana distribution network' },
+    { value: 'Cross-Border', label: 'Ghana → Burkina Faso corridor' },
+    { value: 'GPS-Tracked', label: 'Real-time transit visibility' }
   ]
 
   const services = [

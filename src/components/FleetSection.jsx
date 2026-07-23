@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { fleetBg } from '../assets/assetRegistry'
+import useParallax from '../hooks/useParallax'
 
 // FleetSection: highlights the transport and distribution support behind delivery operations.
 export default function FleetSection() {
+  const fleetImageRef = useParallax(0.1, 36, 1.08)
+
  const fleetHighlights = [
     { title: 'Nationwide Reach', text: 'Coverage across Ghana with a dedicated corridor into Burkina Faso.' },
     { title: '6 Cargo Types', text: 'Fertilizer, cement, and cocoa moved with disciplined standards.' },
@@ -61,10 +64,12 @@ export default function FleetSection() {
           <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100 h-6S0 sm:h-96 lg:h-[480px] shadow-sm">
             <div className="relative h-full w-full overflow-hidden">
               <img
+                ref={fleetImageRef}
                 src={fleetBg}
                 alt="Fleet dispatch and distribution support"
-                className="h-full w-full object-cover object-center"
+                className="parallax-media h-full w-full object-cover object-center"
                 loading="lazy"
+                decoding="async"
               />
               
               {/* Green Overlay */}

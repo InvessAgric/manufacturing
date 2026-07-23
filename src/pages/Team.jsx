@@ -74,17 +74,17 @@ function Team() {
 						<div className="rounded-3xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-700">Trusted farm solutions</div>
 					</div>
 					<div className="mt-6 flex flex-wrap gap-3">
-						<a href={founder.socials[0].href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
+						<a href={founder.socials[0].href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
 							<svg viewBox="0 0 24 24" className="h-4 w-4 fill-current text-emerald-700" aria-hidden="true">
 								<path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.2v-2.9h2.2V9.3c0-2.2 1.3-3.5 3.3-3.5.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3l-.4 2.9h-1.9v7A10 10 0 0 0 22 12Z" />
 							</svg>
 							<span>Facebook</span>
 						</a>
-						<a href={founder.socials[1].href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
+						<a href={founder.socials[1].href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
 							<img src={founder.socials[1].icon} alt="LinkedIn" className="h-4 w-4" loading="lazy" />
 							<span>LinkedIn</span>
 						</a>
-						<a href={founder.socials[2].href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
+						<a href={founder.socials[2].href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-700 transition hover:border-emerald-400 hover:bg-emerald-50">
 							<img src={founder.socials[2].icon} alt="Instagram" className="h-4 w-4" loading="lazy" />
 							<span>Instagram</span>
 						</a>

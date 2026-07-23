@@ -3,6 +3,10 @@ import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom'
 import { socialWhatsappIcon } from '../assets/assetRegistry'
 
+const emailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const emailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
 function Contact() {
   // Controls the kind of enquiry being submitted: sales, product, or career.
   const [purpose, setPurpose] = useState('general')
@@ -13,35 +17,47 @@ function Contact() {
   const [telephone, setTelephone] = useState('')
   const [productName, setProductName] = useState('')
   const [details, setDetails] = useState('')
+  const isEmailJsConfigured = Boolean(emailJsServiceId && emailJsTemplateId && emailJsPublicKey)
 
   // Sends the enquiry payload through EmailJS and resets the form on success.
   const handleSubmit = (event) => {
     event.preventDefault()
 
+    if (!isEmailJsConfigured) {
+      window.alert('Contact form is temporarily unavailable. Please contact us by email or phone directly.')
+      return
+    }
+
+    const trimmedName = name.trim()
+    const trimmedEmail = email.trim()
+    const trimmedTelephone = telephone.trim()
+    const trimmedProductName = productName.trim()
+    const trimmedDetails = details.trim()
+
     const requestDetails = [
-      `Name: ${name || 'Not provided'}`,
-      `Email: ${email || 'Not provided'}`,
-      `Telephone: ${telephone || 'Not provided'}`,
+      `Name: ${trimmedName || 'Not provided'}`,
+      `Email: ${trimmedEmail || 'Not provided'}`,
+      `Telephone: ${trimmedTelephone || 'Not provided'}`,
       `Enquiry type: ${purpose === 'product' ? 'Product enquiry' : purpose === 'career' ? 'Career enquiry' : 'General sales enquiry'}`,
-      purpose === 'product' ? `Product: ${productName || 'Not specified'}` : null,
-      `Message: ${details || 'No additional details provided'}`,
+      purpose === 'product' ? `Product: ${trimmedProductName || 'Not specified'}` : null,
+      `Message: ${trimmedDetails || 'No additional details provided'}`,
     ]
       .filter(Boolean)
       .join('\n')
 
     emailjs.send(
-      'service_oxiv95g',
-      'template_msg',
+      emailJsServiceId,
+      emailJsTemplateId,
       {
-        from_name: name,
-        from_email: email,
-        telephone,
+        from_name: trimmedName,
+        from_email: trimmedEmail,
+        telephone: trimmedTelephone,
         enquiry_type: purpose === 'product' ? 'Product enquiry' : purpose === 'career' ? 'Career enquiry' : 'General sales enquiry',
-        product_name: productName || 'Not specified',
+        product_name: trimmedProductName || 'Not specified',
         message: requestDetails,
         to_email: 'info@invessagric.com',
       },
-      'public_key_xxx'
+      emailJsPublicKey
     )
       .then(() => {
         window.alert('Your enquiry has been sent successfully.')
@@ -75,7 +91,7 @@ function Contact() {
                 <a
                   href="https://wa.me/233242022517?text=Hello%20Invess%20Agric"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50"
                 >
                   <img src={socialWhatsappIcon} alt="WhatsApp" className="h-5 w-5" loading="lazy" />
@@ -212,6 +228,7 @@ function Contact() {
 
               <button
                 type="submit"
+                disabled={!isEmailJsConfigured}
                 className="inline-flex rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
               >
                 Send sales enquiry
@@ -255,6 +272,7 @@ function Contact() {
                 className="h-72 w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                sandbox="allow-scripts allow-same-origin allow-popups"
               />
             </div>
           </div>

@@ -197,13 +197,13 @@ function About() {
               </p>
             </div>
             <div className="grid gap-3 text-sm text-slate-200">
-              <a href="https://www.facebook.com/invessagric" target="_blank" rel="noreferrer" className="rounded-3xl bg-slate-800 px-5 py-4 transition hover:bg-green-600/90">
+              <a href="https://www.facebook.com/invessagric" target="_blank" rel="noopener noreferrer" className="rounded-3xl bg-slate-800 px-5 py-4 transition hover:bg-green-600/90">
                 Facebook /invessagric
               </a>
-              <a href="https://gh.linkedin.com/company/invess-agriculture-ltd" target="_blank" rel="noreferrer" className="rounded-3xl bg-slate-800 px-5 py-4 transition hover:bg-green-600/90">
+              <a href="https://gh.linkedin.com/company/invess-agriculture-ltd" target="_blank" rel="noopener noreferrer" className="rounded-3xl bg-slate-800 px-5 py-4 transition hover:bg-green-600/90">
                 LinkedIn Invess Agriculture Ltd.
               </a>
-              <a href="https://www.instagram.com/invess_agric/" target="_blank" rel="noreferrer" className="rounded-3xl bg-slate-800 px-5 py-4 transition hover:bg-green-600/90">
+              <a href="https://www.instagram.com/invess_agric/" target="_blank" rel="noopener noreferrer" className="rounded-3xl bg-slate-800 px-5 py-4 transition hover:bg-green-600/90">
                 Instagram @invess_agric
               </a>
             </div>

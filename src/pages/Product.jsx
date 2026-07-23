@@ -64,6 +64,8 @@ function Product() {
           src={productHeaderImage}
           alt="Product header"
           className="h-72 w-full object-cover opacity-80 sm:h-96"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/60 to-emerald-950/80" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
@@ -113,6 +115,8 @@ function Product() {
             src={productBannerImage}
             alt="Product banner"
             className="h-52 w-full object-contain shadow-2xl shadow-slate-500   sm:h-72"
+            loading="lazy"
+            decoding="async"
           />
         <PaginationControls
           title="Featured products"
@@ -134,7 +138,7 @@ function Product() {
             >
               <article>
                 <div className="mb-4 flex  h-36 items-center justify-center overflow-hidden rounded-[1.25rem] bg-slate-100">
-                  <img src={product.image} alt={product.alt} className="h-full object-contain" />
+                  <img src={product.image} alt={product.alt} className="h-full object-contain" loading="lazy" decoding="async" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900">{product.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{product.description}</p>

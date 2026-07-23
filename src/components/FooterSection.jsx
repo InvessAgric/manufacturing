@@ -12,6 +12,8 @@ export default function FooterSection() {
                 src={brandLogo}
                 alt="Invess Agric logo"
                 className="h-14 w-auto rounded-full bg-white/10 p-2"
+                loading="lazy"
+                decoding="async"
               />
               <p className="text-base font-semibold text-emerald-100">
                 Invess Agric Manufacturing Limited
@@ -31,6 +33,8 @@ export default function FooterSection() {
                     src={socialPlaceholderIcon}
                     alt="Location icon"
                     className="h-4 w-4"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <span>No. 269 Daya Square, Kwei Okyerema Street, Dzorwulu</span>
                 </p>
@@ -38,7 +42,7 @@ export default function FooterSection() {
                   <a
                     href="https://www.google.com/maps?q=JR63%2B57X%20Invess%20Agriculture%20and%20Manufacturing%20limited%2C%20Kojo%20Ashong%20Ave%2C%20Accra%2C%20Ghana"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     View on Google Maps
                   </a>
@@ -113,7 +117,7 @@ export default function FooterSection() {
                 <a
                   href="https://gh.linkedin.com/company/invess-agriculture-ltd"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
                   <img src={socialLinkedInIcon} alt="LinkedIn" className="h-5 w-5" loading="lazy" />
@@ -121,13 +125,15 @@ export default function FooterSection() {
                 <a
                   href="https://www.instagram.com/invess_agric/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
                   <img
                     src={socialInstagramIcon}
                     alt="Instagram"
                     className="h-5 w-5"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </a>
                 <a

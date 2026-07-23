@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import useParallax from '../hooks/useParallax'
 import {
   fleetBg,
   truckImage,
@@ -18,6 +19,8 @@ const carouselImages = [
 
 export default function Fleet() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const fleetHeroRef = useParallax(0.12, 52, 1.1)
+  const fleetCarouselRef = useParallax(0.09, 28, 1.06)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -74,7 +77,8 @@ export default function Fleet() {
     <section className="relative min-h-screen flex flex-col justify-between px-6 pt-24 pb-0 text-white overflow-hidden">
   {/* Blended Green Background Layout */}
   <div 
-    className="absolute inset-0 bg-cover bg-center"
+    ref={fleetHeroRef}
+    className="parallax-media absolute inset-0 bg-cover bg-center"
     style={{ backgroundImage: `url(${fleetBg})` }}
   />
   <div className="absolute inset-0 bg-emerald-950/85 mix-blend-multiply z-0" />
@@ -139,16 +143,15 @@ export default function Fleet() {
             {/* Auto-Changing Carousel Image Card */}
             <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-3 shadow-sm">
               <div className="relative w-full overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[16/11]">
-                {carouselImages.map((src, index) => (
-                  <img
-                    key={index}
-                    src={src}
-                    alt={`Invess haulage truck ${index + 1}`}
-                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
-                      index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                    }`}
-                  />
-                ))}
+                <img
+                  ref={fleetCarouselRef}
+                  key={currentIndex}
+                  src={carouselImages[currentIndex]}
+                  alt={`Invess haulage truck ${currentIndex + 1}`}
+                  className="parallax-media absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out"
+                  loading="lazy"
+                  decoding="async"
+                />
                 
                 {/* Visual Indicators/Dots */}
                 <div className="absolute bottom-4 left-0 right-0 z-20 flex justify-center gap-1.5">

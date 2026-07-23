@@ -146,26 +146,36 @@ function NavBar() {
             <Link to="/#stats" onClick={close} className="text-  font-bold block relative">
               Stats
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
+                              <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+
             </Link>
 
             <Link to="/#manufacturing" onClick={close} className="text-  font-bold block relative">
               Manufacturing
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
+                             <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+
             </Link>
 
             <Link to="/#equipment" onClick={close} className="text-  font-bold block relative">
               Equipment
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
+                              <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+
             </Link>
 
             <Link to="/#gallery" onClick={close} className="text-  font-bold block relative">
               Gallery
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
+                              <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+
             </Link>
 
             <Link to="/#quality" onClick={close} className="text-  font-bold block relative">
               Quality
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
+                            <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+
             </Link>
             
             <NavLink to="/#fleet" onClick={close} className="text-  font-bold block relative">

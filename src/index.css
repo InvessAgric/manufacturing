@@ -7,6 +7,26 @@ section[id] {
   scroll-margin-top: 7rem;
 }
 
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+.parallax-media {
+  --parallax-y: 0px;
+  --parallax-scale: 1.08;
+  transform: translate3d(0, var(--parallax-y), 0) scale(var(--parallax-scale));
+  will-change: transform;
+  transition: transform 180ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-media {
+    transform: none;
+    transition: none;
+  }
+}
+
 .skeleton {
   position: relative;
   overflow: hidden;

@@ -50,6 +50,8 @@ export default function ProductSection() {
               src={productNpkBagNoBg}
               alt="Chaleee NPK 20:10:10+7S"
               className="h-40 max-h-60 object-fill object-center"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -75,6 +77,8 @@ export default function ProductSection() {
               src={productAmmoniaBagNoBg}
               alt="Sulphate of Ammonia 21%N 24%S"
               className="h-40 max-h-60 object-fill object-center"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -127,6 +131,8 @@ export default function ProductSection() {
               src={productUreaBagNoBg}
               alt="Chaleee Urea 46%N"
               className="h-40 max-h-60 object-fill object-center"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

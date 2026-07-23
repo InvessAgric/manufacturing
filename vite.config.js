@@ -5,6 +5,26 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
+            return 'react-vendor'
+          }
+
+          if (id.includes('node_modules/@emailjs/browser')) {
+            return 'email-vendor'
+          }
+
+          if (id.includes('node_modules/jotai')) {
+            return 'state-vendor'
+          }
+        }
+      }
+    }
+  },
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),

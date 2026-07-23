@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom'
 import { heroBackground } from '../assets/assetRegistry'
+import useParallax from '../hooks/useParallax'
 
 // Hero section for the landing page; introduces the brand and provides primary calls to action.
 export default function Hero() {
+  const heroImageRef = useParallax(0.14, 56, 1.1)
+
   return (
     <div className="relative h-screen overflow-hidden text-white">
       <img
+        ref={heroImageRef}
         src={heroBackground}
         alt="Hero background"
-        className="absolute  inset-0 h-full w-full object-cover"
+        className="parallax-media absolute inset-0 h-full w-full object-cover"
+        fetchPriority="high"
+        decoding="async"
       />
       <div className="absolute inset-0 bg-black/40" />
       <section className="relative flex h-full items-center justify-center py-16">

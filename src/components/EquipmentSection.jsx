@@ -46,6 +46,8 @@ export default function EquipmentSection() {
                 src={item.image}
                 alt={item.title}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
 
               <div className="absolute inset-0 bg-slate-950/50"></div>

@@ -1,17 +1,18 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Product from './pages/Product'
-import ProductDetail from './pages/ProductDetail'
-import Team from './pages/Team'
-import Fleet from './pages/Fleet'
-import NotFound from './pages/NotFound'
+import { Suspense, lazy, useEffect, useState } from 'react'
 import NavBar from './components/NavBar'
 import FooterSection from './components/FooterSection'
 import { socialWhatsappIcon } from './assets/assetRegistry'
 import './App.css'
+
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Contact = lazy(() => import('./pages/Contact'))
+const Product = lazy(() => import('./pages/Product'))
+const ProductDetail = lazy(() => import('./pages/ProductDetail'))
+const Team = lazy(() => import('./pages/Team'))
+const Fleet = lazy(() => import('./pages/Fleet'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Smoothly scroll the page to the target hash fragment when a route link points to an in-page section.
 function ScrollToHash() {
@@ -23,10 +24,29 @@ function ScrollToHash() {
     }
 
     const id = hash.replace('#', '')
-    const element = document.getElementById(id)
+    let attempts = 0
+    let timeoutId
 
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const scrollWhenReady = () => {
+      const element = document.getElementById(id)
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        return
+      }
+
+      attempts += 1
+      if (attempts < 20) {
+        timeoutId = window.setTimeout(scrollWhenReady, 50)
+      }
+    }
+
+    scrollWhenReady()
+
+    return () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId)
+      }
     }
   }, [hash, pathname, key])
 
@@ -52,6 +72,15 @@ function App() {
     setIsChatOpen(false)
   }
 
+  const routeFallback = (
+    <div className="mx-auto max-w-6xl px-6 py-28">
+      <div className="h-8 w-48 rounded-lg bg-slate-200/70 skeleton" />
+      <div className="mt-5 h-4 w-full rounded bg-slate-200/60 skeleton" />
+      <div className="mt-3 h-4 w-5/6 rounded bg-slate-200/60 skeleton" />
+      <div className="mt-3 h-4 w-2/3 rounded bg-slate-200/60 skeleton" />
+    </div>
+  )
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <NavBar />
@@ -59,16 +88,18 @@ function App() {
 
       <main className="app-content flex-1">
         {/* Register the site routes for the home, about, contact, product, team, and fallback pages. */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/product/:slug" element={<ProductDetail />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/fleet" element={<Fleet />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={routeFallback}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/product/:slug" element={<ProductDetail />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/fleet" element={<Fleet />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </main>
 
       <FooterSection />
@@ -119,7 +150,7 @@ function App() {
         <a
           href="https://wa.me/233535903939?text=Hello%20Invess%20Agric"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-3 text-sm font-semibold text-white shadow-xl shadow-emerald-500/20 transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-300"
           aria-label="Text us on WhatsApp"
         >

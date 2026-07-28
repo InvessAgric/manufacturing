@@ -12,6 +12,8 @@ const Product = lazy(() => import('./pages/Product'))
 const ProductDetail = lazy(() => import('./pages/ProductDetail'))
 const Team = lazy(() => import('./pages/Team'))
 const Fleet = lazy(() => import('./pages/Fleet'))
+const Blog = lazy(() => import('./pages/Blog'))
+const Admin = lazy(() => import('./pages/Admin'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Smoothly scroll the page to the target hash fragment when a route link points to an in-page section.
@@ -97,6 +99,8 @@ function App() {
             <Route path="/product/:slug" element={<ProductDetail />} />
             <Route path="/team" element={<Team />} />
             <Route path="/fleet" element={<Fleet />} />
+            {/* <Route path="/blog" element={<Blog />} />
+            <Route path="/admin" element={<Admin />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

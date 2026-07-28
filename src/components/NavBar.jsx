@@ -1,15 +1,35 @@
 // Import the `useState` hook to manage component state for the mobile navigation toggle.
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { brandLogoAlt } from '../assets/assetRegistry'
 
 // NavBar component: provides the responsive top navigation and mobile menu for the site.
 function NavBar() {
   // Tracks whether the mobile navigation drawer is currently open.
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   // Closes the mobile menu after a navigation action.
   const close = () => setOpen(false)
+
+  const goToSection = (id) => {
+    close()
+
+    if (location.pathname !== '/') {
+      navigate(`/#${id}`)
+      return
+    }
+
+    const target = document.getElementById(id)
+    if (target) {
+      window.history.replaceState(null, '', `/#${id}`)
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+
+    navigate(`/#${id}`)
+  }
 
   return (
     <>
@@ -35,38 +55,34 @@ function NavBar() {
             )}
           </NavLink>
 
-          <Link to="/#stats" className="relative inline-block px-2 py-1 group font-bold text-white">
+          <button type="button" onClick={() => goToSection('stats')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
             Stats
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-          </Link>
+          </button>
 
-          <Link to="/#manufacturing" className="relative inline-block px-2 py-1 group font-bold text-white">
+          <button type="button" onClick={() => goToSection('manufacturing')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
             Manufacturing
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-          </Link>
+          </button>
 
-          <Link to="/#equipment" className="relative inline-block px-2 py-1 group font-bold text-white">
+          <button type="button" onClick={() => goToSection('equipment')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
             Equipment
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-          </Link>
+          </button>
 
-          <Link to="/#gallery" className="relative inline-block px-2 py-1 group font-bold text-white">
+          <button type="button" onClick={() => goToSection('gallery')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
             Gallery
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-          </Link>
+          </button>
 
-          <Link to="/#quality" className="relative inline-block px-2 py-1 group font-bold text-white">
+          <button type="button" onClick={() => goToSection('quality')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
             Quality
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-          </Link>
-          <NavLink to="/#fleet" className="relative inline-block px-2 py-1 group">
-            {({ isActive }) => (
-              <>
-                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>Fleet</span>
-                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-              </>
-            )}
-          </NavLink>
+          </button>
+          <button type="button" onClick={() => goToSection('fleet')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
+            Fleet
+            <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
+          </button>
 
           <NavLink to="/about" className="relative inline-block px-2 py-1 group">
             {({ isActive }) => (
@@ -96,6 +112,24 @@ function NavBar() {
               </>
             )}
           </NavLink>
+
+          {/* <NavLink to="/blog" className="relative inline-block px-2 py-1 group">
+            {({ isActive }) => (
+              <>
+                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>Blog</span>
+                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+              </>
+            )}
+          </NavLink>
+
+          <NavLink to="/admin" className="relative inline-block px-2 py-1 group">
+            {({ isActive }) => (
+              <>
+                <span className={`font-bold ${isActive ? 'text-accent' : 'text-white'}`}>Admin</span>
+                <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+              </>
+            )}
+          </NavLink> */}
         </div>
 
         {/* Right side: contact CTA and mobile hamburger */}
@@ -143,49 +177,36 @@ function NavBar() {
               )}
             </NavLink>
 
-            <Link to="/#stats" onClick={close} className="text-  font-bold block relative">
+            <button type="button" onClick={() => goToSection('stats')} className="text-left font-bold block relative cursor-pointer">
               Stats
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-                              <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+            </button>
 
-            </Link>
-
-            <Link to="/#manufacturing" onClick={close} className="text-  font-bold block relative">
+            <button type="button" onClick={() => goToSection('manufacturing')} className="text-left font-bold block relative cursor-pointer">
               Manufacturing
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-                             <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+            </button>
 
-            </Link>
-
-            <Link to="/#equipment" onClick={close} className="text-  font-bold block relative">
+            <button type="button" onClick={() => goToSection('equipment')} className="text-left font-bold block relative cursor-pointer">
               Equipment
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-                              <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+            </button>
 
-            </Link>
-
-            <Link to="/#gallery" onClick={close} className="text-  font-bold block relative">
+            <button type="button" onClick={() => goToSection('gallery')} className="text-left font-bold block relative cursor-pointer">
               Gallery
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-                              <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+            </button>
 
-            </Link>
-
-            <Link to="/#quality" onClick={close} className="text-  font-bold block relative">
+            <button type="button" onClick={() => goToSection('quality')} className="text-left font-bold block relative cursor-pointer">
               Quality
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-                            <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
 
-            </Link>
+            </button>
             
-            <NavLink to="/#fleet" onClick={close} className="text-  font-bold block relative">
-              {({ isActive }) => (
-                <>
-                  <span className={`${isActive ? 'text-accent' : ''}`}>Fleet</span>
-                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
-                </>
-              )}
-            </NavLink>
+            <button type="button" onClick={() => goToSection('fleet')} className="text-left font-bold block relative cursor-pointer">
+              Fleet
+              <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
+            </button>
 
             <NavLink to="/about" onClick={close} className="text-  font-bold block relative">
               {({ isActive }) => (
@@ -214,6 +235,24 @@ function NavBar() {
                 </>
               )}
             </NavLink>
+
+            {/* <NavLink to="/blog" onClick={close} className="text-  font-bold block relative">
+              {({ isActive }) => (
+                <>
+                  <span className={`${isActive ? 'text-accent' : ''}`}>Blog</span>
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+                </>
+              )}
+            </NavLink>
+
+            <NavLink to="/admin" onClick={close} className="text-  font-bold block relative">
+              {({ isActive }) => (
+                <>
+                  <span className={`${isActive ? 'text-accent' : ''}`}>Admin</span>
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-accent transition-all ${isActive ? 'w-full' : 'w-0'}`} />
+                </>
+              )}
+            </NavLink> */}
 
             {/* Mobile CTA button */}
             <Link to="/contact" onClick={close} className="mt-2 inline-flex items-center rounded-full border border-primary bg-background px-2.5 py-1.5 text-xs font-semibold text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark w-max">Contact Sales</Link>

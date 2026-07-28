@@ -1,186 +1,460 @@
-import { productNpkBagNoBg, productAmmoniaBagNoBg, productUreaBagNoBg ,productActivateBagImage,productPotassiumBagImage,productBlessCocoaBagImage} from '../assets/assetRegistry'
+import {
+  productActivateBagImage,
+  productAmmoniaBagNoBg,
+  productBlessCocoaBagImage,
+  productNpkBagNoBg,
+  productPotassiumBagImage,
+  productUreaBagNoBg,
+} from '../assets/assetRegistry'
 
 export const products = [
   {
-    slug: 'chaleee-npk-20-10-10-7s',
-    title: 'Chaleee NPK 20:10:10+7S',
-    summary: 'Balanced NPK with sulphur for strong establishment.',
+    slug: 'urea-46n',
+    title: 'UREA (46%N)',
+    summary: 'High-nitrogen fertilizer for fast vegetative growth and yield support.',
     description:
-      'Balanced nitrogen, phosphorus and potassium with extra sulphur for strong crop establishment and healthier grain fill. It is ideal for maize, rice, vegetables and legumes.',
+      'UREA provides a concentrated 46% nitrogen source for crops that need rapid vegetative development and a timely growth response during critical stages.',
     bullets: [
-      'Ideal for maize, rice, vegetables and legumes',
-      'Anti-acid formula for stable soil pH',
-      'Packaged in 50kg bags for easy handling',
+      'High nitrogen concentration (46%)',
+      'Can be soil-applied or used as foliar spray',
+      'Fast release for quick crop response',
     ],
-    image: productNpkBagNoBg,
-    alt: 'Chaleee NPK 20:10:10+7S',
+    image: productUreaBagNoBg,
+    alt: 'UREA 46 percent nitrogen bag',
+    composition:
+      'UREA (46%N) is produced for efficient nitrogen delivery and dissolves readily in moisture, helping plants absorb nitrogen quickly for vigorous growth and strong canopy development.',
+    useCase: 'Nitrogen boost for active growth phases',
+    useCaseDetails:
+      'Best for cereals, tree crops, fruit crops, and other nitrogen-demanding fields where quick greening and vegetative support are required.',
+    manufacturingMessage:
+      'Manufactured to deliver reliable nitrogen performance with consistent granule quality and field-ready handling.',
+    packaging: 'Supplied in durable 50kg bags for farm and distributor use.',
+    features: [
+      'High nitrogen concentration (46%)',
+      'Dual application method: soil and foliar',
+      'Enhanced solubility',
+      'Rapid nutrient release',
+    ],
+    usedFor: [
+      'Tree crops such as citrus, mango, grapes, and apples',
+      'Cereal crops including rice, wheat, maize, and barley',
+      'Fruit and legume production systems',
+    ],
+    plant: ['Cereals', 'Tree Crops', 'Fruits', 'Legumes'],
+  },
+  {
+    slug: 'tsp-0460',
+    title: 'TSP (0:46:0)',
+    summary: 'Highly concentrated phosphorus fertilizer for root and flowering strength.',
+    description:
+      'TSP (Triple Superphosphate) is a phosphorus-rich fertilizer (0:46:0) designed to strengthen root development, flowering, and fruiting in phosphorus-demanding crops.',
+    bullets: [
+      'Contains 46% phosphorus',
+      'Supports vigorous root development',
+      'Environmentally responsible phosphorus source',
+    ],
+    image: productActivateBagImage,
+    alt: 'Triple superphosphate fertilizer',
+    composition:
+      'TSP provides a concentrated phosphorus source to improve nutrient uptake, flowering, and crop vigor, especially where soil phosphorus is limiting.',
+    useCase: 'Phosphorus supply for early establishment and reproductive growth',
+    useCaseDetails:
+      'Especially suitable for legumes and other crops with high phosphorus demand during early growth and reproductive stages.',
+    manufacturingMessage:
+      'Processed for consistency and field distribution, supporting efficient phosphorus use in modern crop nutrition programs.',
+    packaging: 'Supplied in standard 50kg fertilizer bags.',
+    features: [
+      'High phosphorus concentration (0:46:0)',
+      'Easy to handle and apply',
+      'Supports root and flower development',
+      'Designed to reduce nutrient wastage',
+    ],
+    usedFor: [
+      'Legume crops such as beans, peas, and lentils',
+      'Flower and fruit initiation programs',
+      'Soil fertility improvement in phosphorus-deficient fields',
+    ],
+    plant: ['Legumes', 'Beans', 'Peas', 'Lentils'],
   },
   {
     slug: 'sulphate-of-ammonia-21n-24s',
-    title: 'Sulphate of Ammonia — 21%N 24%S',
-    summary: 'Fast-acting nitrogen feed with sulphur for greener crops.',
+    title: 'Sulphate of Ammonia (21%N, 24%S)',
+    summary: 'Dual nitrogen-sulphur fertilizer for growth, protein synthesis, and crop quality.',
     description:
-      'A fast-acting nitrogen feed with sulphur to support strong vegetative growth and better crop quality. Suited for cocoa, oil palm, brassicas, onions and sugarcane.',
+      'Sulphate of Ammonia combines nitrogen and sulphur in a readily absorbable form to support vegetative growth, enzyme activity, and improved nutrient utilization.',
     bullets: [
-      'Supports rapid vegetative growth',
-      'Helps maintain soil acidity balance',
-      'Available in farm-friendly 50kg bags',
+      '21% nitrogen and 24% sulphur',
+      'Supports protein synthesis and enzyme function',
+      'Uniform granules for even field distribution',
     ],
     image: productAmmoniaBagNoBg,
-    alt: 'Sulphate of Ammonia',
-  },
-  {
-    slug: 'chaleee-urea-46n',
-    title: 'Chaleee Urea 46%N',
-    summary: 'High nitrogen concentration for rapid top-dressing.',
-    description:
-      'Concentrated nitrogen for quick greening during flowering and top-dressing windows. Best suited for maize, rice, sugarcane and vegetables.',
-    bullets: [
-      'Great for top-dressing applications',
-      'Delivers fast crop response',
-      'Supplied in durable 50kg packaging',
+    alt: 'Sulphate of ammonia fertilizer',
+    composition:
+      'A granular nitrogen-sulphur fertilizer formulated for efficient crop uptake, balanced nutrition, and improved growth performance across many cropping systems.',
+    useCase: 'Nitrogen and sulphur nutrition for high-demand crops',
+    useCaseDetails:
+      'Useful in cereals, legumes, vegetables, fruits, and ornamental systems where nitrogen and sulphur support yield and quality outcomes.',
+    manufacturingMessage:
+      'Produced with consistent granule quality for predictable field performance and practical application in large and small farms.',
+    packaging: 'Supplied in practical 50kg bags.',
+    features: [
+      'Readily available nutrients',
+      'Easy handling and application',
+      'Suitable for most crop systems',
+      'Supports balanced nitrogen-sulphur feeding',
     ],
-    image: productUreaBagNoBg,
-    alt: 'Chaleee Urea 46%N',
-  },
-  {
-    slug: 'chaleee-npk-15-15-15',
-    title: 'Chaleee NPK 15:15:15',
-    summary: 'Balanced nutrients for steady growth across many crops.',
-    description:
-      'A balanced formulation to support consistent vegetative growth and root development, ideal for mixed crop rotations and general-purpose application.',
-    bullets: [
-      'Good for multi-crop rotations',
-      'Supports healthy foliage and stems',
-      'Structured for reliable field performance',
+    usedFor: [
+      'Field crops including cereals, legumes, and oilseeds',
+      'Vegetables such as tomato, pepper, cucumber, and leafy greens',
+      'Fruit crops and ornamental plants',
+      'Soil improvement through sulphur-supported nutrient release',
     ],
-    image: productActivateBagImage,
-    alt: 'Chaleee NPK 15:15:15',
+    plant: ['Cereals', 'Legumes', 'Vegetables', 'Fruits', 'Ornamentals'],
   },
   {
-    slug: 'chaleee-npk-10-20-10',
-    title: 'Chaleee NPK 10:20:10',
-    summary: 'Phosphorus-forward blend to strengthen early root growth.',
+    slug: 'potassium-nitrate-13046',
+    title: 'Potassium Nitrate (13:0:46)',
+    summary: 'Water-soluble potassium and nitrogen source for fruit quality and yield.',
     description:
-      'Designed to boost early root development and flower formation, this blend supports vegetables, fruits and other high-demand crops.',
+      'Potassium Nitrate provides high potassium with nitrogen in a water-soluble form to improve fruit color, flavor, size, and overall crop performance.',
     bullets: [
-      'Ideal for fruits and vegetables',
-      'Encourages early crop establishment',
-      'Provides steady nutrient release',
-    ],
-    image: productBlessCocoaBagImage,
-    alt: 'Chaleee NPK 10:20:10',
-  },
-  {
-    slug: 'invess-microboost',
-    title: 'Invess MicroBoost',
-    summary: 'Trace element concentrate to correct micronutrient deficiencies.',
-    description:
-      'A concentrated micro-nutrient formula to correct trace element shortages and support stronger plant metabolism and stress resistance.',
-    bullets: [
-      'Improves nutrient uptake',
-      'Supports plant metabolism',
-      'Enhances stress tolerance',
+      '13:0:46 nutrient ratio',
+      'Supports premium fruit quality',
+      'Suitable for fertigation and hydroponic systems',
     ],
     image: productPotassiumBagImage,
-    alt: 'Invess MicroBoost',
+    alt: 'Potassium nitrate fertilizer',
+    composition:
+      'Renowned for high potassium content, this fertilizer supports sugar synthesis, nutrient balance, and superior fruit quality in intensive crop systems.',
+    useCase: 'High-quality fruiting and potassium-demanding growth stages',
+    useCaseDetails:
+      'Used across horticulture, field crops, vegetable production, and controlled environments where soluble potassium is critical.',
+    manufacturingMessage:
+      'Prepared for reliable dissolution and efficient delivery through modern irrigation and fertigation systems.',
+    packaging: 'Supplied in moisture-protected bags for quality preservation.',
+    features: [
+      'White crystal powder form',
+      'Enhances fruit color and flavor',
+      'Easy to apply in soluble programs',
+      'Supports fast nutrient uptake',
+    ],
+    usedFor: [
+      'Fruit production programs focused on color and flavor',
+      'Vegetable crops with high potassium demand',
+      'Field crops requiring balanced potassium supply',
+      'Greenhouse and hydroponic systems',
+    ],
+    plant: ['Fruits', 'Vegetables', 'Field Crops', 'Greenhouse Crops'],
   },
   {
-    slug: 'soilguard-compost',
-    title: 'SoilGuard Compost',
-    summary: 'Organic soil conditioner for better structure and moisture retention.',
+    slug: 'npk-23105te',
+    title: 'NPK (23:10:5+7S+3MgO)',
+    summary: 'Nitrogen-forward NPK with sulphur and magnesium for vigorous growth.',
     description:
-      'A rich, organic soil conditioner that improves soil structure and moisture retention while promoting beneficial microbial activity.',
+      'This NPK blend provides strong nitrogen support with balanced phosphorus and potassium, plus sulphur and magnesium for healthier foliage, stems, and productivity.',
     bullets: [
-      'Boosts soil fertility',
-      'Improves water retention',
-      'Supports long-term field health',
+      '23:10:5 ratio with 7S and 3MgO',
+      'Includes trace elements for balanced nutrition',
+      'Suitable for top-dressing application',
     ],
     image: productNpkBagNoBg,
-    alt: 'SoilGuard Compost',
-  },
-  {
-    slug: 'cropshield-starter',
-    title: 'CropShield Starter',
-    summary: 'Starter blend for vigorous early growth and uniform emergence.',
-    description:
-      'Formulated to support seedling establishment and strong early-stage growth, reducing stress during emergence and early development.',
-    bullets: [
-      'Best for planting stages',
-      'Reduces emergence stress',
-      'Provides uniform nutrient support',
+    alt: 'NPK 23 10 5 plus sulphur and magnesium',
+    composition:
+      'A complex plant food formulation designed to supply macro and micro nutrients for healthy root development, stronger stems, robust foliage, and improved crop outcomes.',
+    useCase: 'Growth stimulation with balanced macro and micro nutrients',
+    useCaseDetails:
+      'Used for root development, foliage stimulation, flowering, fruiting, and overall productivity support in diverse crop programs.',
+    manufacturingMessage:
+      'Blended with precision to support predictable nutrient performance and dependable farm-level application.',
+    packaging: 'Packed in 50kg bags for farm distribution and handling.',
+    features: [
+      'Greyish-pink to light-brown granules',
+      'Complex plant food formulation',
+      'Environmentally considerate profile',
+      'Effective for top-dressing',
     ],
-    image: productAmmoniaBagNoBg,
-    alt: 'CropShield Starter',
-  },
-  {
-    slug: 'growthmax-foliar',
-    title: 'GrowthMax Foliar',
-    summary: 'Foliar nutrient boost for fast-response growth stages.',
-    description:
-      'A foliar application designed for quick nutrient uptake during key growth phases, helping crops green up rapidly and stay healthy.',
-    bullets: [
-      'Fast-response nutrient boost',
-      'Corrects deficiencies quickly',
-      'Supports greener foliage',
+    usedFor: [
+      'Supporting healthy root development',
+      'Stimulating vigorous foliage growth',
+      'Enhancing flowering and fruiting',
+      'Improving plant vitality and yield potential',
     ],
-    image: productUreaBagNoBg,
-    alt: 'GrowthMax Foliar',
+    plant: ['Cereals', 'Vegetables', 'Legumes', 'Fruits'],
   },
   {
-    slug: 'harvestpro-blend',
-    title: 'HarvestPro Blend',
-    summary: 'Finish-stage fertilizer that helps maximize yield and quality.',
+    slug: 'npk-201010te',
+    title: 'NPK (20:10:10+TE)',
+    summary: 'Balanced NPK with trace elements for broad crop nutrition.',
     description:
-      'A late-season blend engineered to support final crop maturity, increasing grain and fruit size while improving harvest quality.',
+      'NPK (20:10:10+TE) combines balanced macro nutrients with trace elements for strong growth, effective nutrient uptake, and reliable performance across many crops.',
     bullets: [
-      'Boosts final yield',
-      'Improves crop quality',
-      'Balances late-season nutrition',
+      'Good spread accuracy and field coverage',
+      'Well absorbed by plants',
+      'Good solubility and top-dressing performance',
     ],
-    image: productNpkBagNoBg,
-    alt: 'HarvestPro Blend',
-  },
-  {
-    slug: 'powerplant-npk',
-    title: 'PowerPlant NPK',
-    summary: 'High-energy blend for rapid vegetative growth.',
-    description:
-      'A nutrient-rich formulation to support vigorous stem and leaf growth in high-productivity crops and intensive farming systems.',
-    bullets: [
-      'Supports rapid growth',
-      'Maintains crop vigor',
-      'Designed for high-yield systems',
+    image: productBlessCocoaBagImage,
+    alt: 'NPK 20 10 10 with trace elements',
+    composition:
+      'A versatile NPK blend designed for balanced nutrient delivery, efficient uptake, and practical use through direct application or water-assisted nutrient programs.',
+    useCase: 'General-purpose crop feeding with trace element support',
+    useCaseDetails:
+      'Suitable for legumes, vegetables, cereals, and mixed cropping systems where balanced nutrition drives consistent growth and yield.',
+    manufacturingMessage:
+      'Formulated for consistency in color, spread behavior, and nutrient availability under varied field conditions.',
+    packaging: 'Supplied in standard 50kg fertilizer bags.',
+    features: [
+      'Available in grey and pink granules',
+      'High spread accuracy',
+      'Top-dressing efficient',
+      'Good solubility and nutrient absorption',
     ],
-    image: productAmmoniaBagNoBg,
-    alt: 'PowerPlant NPK',
-  },
-  {
-    slug: 'fieldforce-urea',
-    title: 'FieldForce Urea',
-    summary: 'Fast-release nitrogen for quick canopy development.',
-    description:
-      'A fast-release nitrogen source formulated for quick canopy build-up and greener crop performance in nitrogen-demanding systems.',
-    bullets: [
-      'Ideal for top-dressing',
-      'Encourages fast growth',
-      'Supports heavy nitrogen demand',
+    usedFor: [
+      'Legumes',
+      'Vegetables',
+      'Cereal crops',
+      'General balanced nutrient programs',
     ],
-    image: productUreaBagNoBg,
-    alt: 'FieldForce Urea',
+    plant: ['Legumes', 'Vegetables', 'Cereals'],
   },
   {
-    slug: 'agroplus-sulphate',
-    title: 'AgroPlus Sulphate',
-    summary: 'Sulphur-rich product to enhance protein and grain quality.',
+    slug: 'npk-151515te',
+    title: 'NPK (15:15:15+TE)',
+    summary: 'Evenly balanced NPK blend for basal application and broad adaptability.',
     description:
-      'A sulphur-rich formulation to support protein formation, grain quality and nutrient balance across broad-acre crops.',
+      'NPK (15:15:15+TE) provides equal proportions of major nutrients and trace elements, supporting root establishment, steady growth, and balanced development.',
     bullets: [
-      'Supports quality improvement',
-      'Aids oil and seed formation',
-      'Balances crop nutrition',
+      'Balanced 15:15:15 nutrient ratio',
+      'Adaptable to most soil types',
+      'Efficient for basal application',
     ],
     image: productNpkBagNoBg,
-    alt: 'AgroPlus Sulphate',
+    alt: 'NPK 15 15 15 with trace elements',
+    composition:
+      'Designed for pre-plant and soil-preparation stages, this formulation supplies balanced nutrients throughout the root zone to support early vigor and stable growth.',
+    useCase: 'Basal feeding before planting and at establishment',
+    useCaseDetails:
+      'Suitable for tree crops, vegetables, cereals, and fruits where a balanced nutrient base is required from the start.',
+    manufacturingMessage:
+      'Granulated for uniform field application and dependable nutrient performance across varied soils.',
+    packaging: 'Packed in 50kg bags for practical transport and use.',
+    features: [
+      'Greyish-pink granules',
+      'Balanced nutrient profile',
+      'Soil-type adaptability',
+      'Reliable basal-application performance',
+    ],
+    usedFor: [
+      'Tree crops and orchards',
+      'Vegetables',
+      'Cereals',
+      'Fruit crops',
+    ],
+    plant: ['Tree Crops', 'Vegetables', 'Cereals', 'Fruits'],
+  },
+  {
+    slug: 'mop-0060',
+    title: 'MOP (0:0:60)',
+    summary: 'High-potassium fertilizer for drought tolerance and crop quality improvement.',
+    description:
+      'MOP (Muriate of Potash) is a high-potassium fertilizer that supports root development, flowering, fruit quality, and plant resilience under stress conditions.',
+    bullets: [
+      'Contains 60% potassium',
+      'Improves drought resilience',
+      'Supports nutrient uptake and plant vigor',
+    ],
+    image: productPotassiumBagImage,
+    alt: 'MOP 0 0 60 fertilizer',
+    composition:
+      'With 0:0:60 composition, MOP provides concentrated potassium to optimize water-use efficiency, physiological stability, and quality-focused production.',
+    useCase: 'Potassium correction and stress resilience programs',
+    useCaseDetails:
+      'Used in field crops, horticulture, tree crops, nut crops, and forage systems where potassium demand is high.',
+    manufacturingMessage:
+      'Processed for stable granule quality and practical use in large-scale and smallholder crop production.',
+    packaging: 'Supplied in sturdy 50kg bags.',
+    features: [
+      'Reddish-brown granules',
+      'High potassium concentration (60%)',
+      'Supports drought tolerance',
+      'Improves crop quality and vigor',
+    ],
+    usedFor: [
+      'Field crops including maize, wheat, rice, soybeans, and cotton',
+      'Horticultural crops such as tomato, potato, pepper, citrus, and melon',
+      'Tree and nut crops',
+      'Forage crop programs',
+    ],
+    plant: ['Field Crops', 'Horticulture', 'Tree Crops', 'Forage'],
+  },
+  {
+    slug: 'lono',
+    title: 'Lono',
+    summary: 'High-performance liquid fertilizer for better flowering, fruiting, and tuber performance.',
+    description:
+      'Lono is formulated to improve flower, fruit, and tuber numbers, support stress resilience, and increase marketable yield quality across multiple crops.',
+    bullets: [
+      'Increases flower, fruit, and tuber count',
+      'Improves fruit and tuber size',
+      'Supports crop growth under stress',
+    ],
+    image: productActivateBagImage,
+    alt: 'Lono liquid fertilizer',
+    composition:
+      'A liquid nutrition solution developed to drive reproductive strength, improve size uniformity, and maintain crop performance during stress periods.',
+    useCase: 'Yield and quality enhancement in high-value crops',
+    useCaseDetails:
+      'Applicable across fruits, vegetables, tubers, and flowering crops where producers target better sizing, quality, and productivity.',
+    manufacturingMessage:
+      'Produced as a performance-oriented liquid formula for practical, repeatable crop support in field and horticultural systems.',
+    packaging: 'Available in liquid-fertilizer packaging for farm application programs.',
+    features: [
+      'Improved flower, fruit, and tuber numbers',
+      'More even size distribution',
+      'Improved growth during stress',
+      'Increased root growth and transplant support',
+    ],
+    usedFor: [
+      'Fruits and vegetables',
+      'Tubers and flowering plants',
+      'High-value crops including tomato, pepper, cucumber, and potato',
+    ],
+    plant: ['Fruits', 'Vegetables', 'Tubers', 'Flowering Plants'],
+  },
+  {
+    slug: 'dap-18460',
+    title: 'DAP (18:46:0)',
+    summary: 'Water-soluble phosphorus-rich fertilizer for root development and early crop growth.',
+    description:
+      'DAP combines nitrogen and high phosphorus in a soluble format to support root establishment, early vigor, flowering, and productive crop development.',
+    bullets: [
+      '18% nitrogen and 46% phosphorus',
+      'Water-soluble and plant-available',
+      'Suitable for soil and foliar application',
+    ],
+    image: productBlessCocoaBagImage,
+    alt: 'DAP 18 46 0 fertilizer',
+    composition:
+      'A soluble nutrient formulation designed for efficient phosphorus delivery and dependable uptake during key establishment and reproductive stages.',
+    useCase: 'Rooting and early growth support with phosphorus emphasis',
+    useCaseDetails:
+      'Used for fruits, vegetables, cereals, legumes, and flowering plants in both field and managed-crop systems.',
+    manufacturingMessage:
+      'Formulated to support uniform nutrient delivery and dependable agronomic response throughout the crop cycle.',
+    packaging: 'Available in 50kg bags for commercial and farm-level use.',
+    features: [
+      'Water-soluble formulation',
+      'Well absorbed by plants',
+      'Suitable for many crop types',
+      'Balanced nitrogen-phosphorus profile',
+    ],
+    usedFor: [
+      'Fruits and vegetables',
+      'Cereals and legumes',
+      'Flowering plants and general establishment programs',
+    ],
+    plant: ['Fruits', 'Vegetables', 'Cereals', 'Legumes'],
+  },
+  {
+    slug: 'calcium-nitrate-15-426',
+    title: 'Calcium Nitrate (15.4%:26%)',
+    summary: 'Water-soluble calcium and nitrogen fertilizer for stress resilience and fruit quality.',
+    description:
+      'Calcium Nitrate supports cell-wall strength, vegetative growth, and produce shelf life while helping crops tolerate stress and maintain quality.',
+    bullets: [
+      'Improves resistance to stress conditions',
+      'Enhances fruit and vegetable shelf life',
+      'Well absorbed and water-soluble',
+    ],
+    image: productActivateBagImage,
+    alt: 'Calcium nitrate fertilizer',
+    composition:
+      'Contains calcium and nitrogen in a soluble form to support structural strength, chlorophyll production, nutrient balance, and quality-focused crop outcomes.',
+    useCase: 'Quality and stress-management nutrition',
+    useCaseDetails:
+      'Effective in fruits, vegetables, and legumes, especially under high-temperature, drought, or quality-sensitive production conditions.',
+    manufacturingMessage:
+      'Produced for quick solubility and efficient uptake in intensive horticulture and precision nutrient programs.',
+    packaging: 'Supplied in protected packaging for stable storage and application.',
+    features: [
+      'Improves stress tolerance',
+      'Supports fruit firmness and shelf life',
+      'Highly soluble and plant-available',
+      'Efficient uptake profile',
+    ],
+    usedFor: [
+      'Fruits and vegetables',
+      'Legume production systems',
+      'Quality and shelf-life improvement programs',
+    ],
+    plant: ['Fruits', 'Vegetables', 'Legumes'],
+  },
+  {
+    slug: 'blended-npks',
+    title: 'Blended NPKs',
+    summary: 'Custom-balanced NPK blends for diverse crops and nutrition strategies.',
+    description:
+      'Blended NPK fertilizers combine nitrogen, phosphorus, potassium, and micro-nutrients in practical ratios tailored to crop requirements and growth stages.',
+    bullets: [
+      'Balanced macro and micronutrient formulation',
+      'Designed for optimal nutrient uptake',
+      'Suitable for a wide crop range',
+    ],
+    image: productNpkBagNoBg,
+    alt: 'Blended NPK fertilizers',
+    composition:
+      'Expertly blended plant nutrition formulas with macro and micro nutrients to improve crop vigor, flowering, fruiting, and overall yield performance.',
+    useCase: 'Flexible nutrient programs across crop types',
+    useCaseDetails:
+      'Used in cereals, vegetables, legumes, fruits, and tree crops where tailored nutrient ratios are required.',
+    manufacturingMessage:
+      'Blended with precision to align with crop nutrition plans and field-level productivity targets.',
+    packaging: 'Supplied in fertilizer bags suitable for distribution and farm use.',
+    features: [
+      'Balanced NPK formulation',
+      'Includes essential micronutrients',
+      'Enhanced solubility and availability',
+      'Designed for broad agronomic use',
+    ],
+    usedFor: [
+      'Cereals and staples',
+      'Vegetables and legumes',
+      'Fruits and tree crops',
+    ],
+    plant: ['Cereals', 'Vegetables', 'Legumes', 'Fruits', 'Tree Crops'],
+  },
+  {
+    slug: 'albina',
+    title: 'Albina',
+    summary: 'Advanced liquid product for calcium absorption, fruit quality, and shelf life.',
+    description:
+      'Albina uses LoCal technology to improve calcium absorption, reduce physiological disorders, and enhance flower set, fruit holding, firmness, and post-harvest quality.',
+    bullets: [
+      'Improves fruit firmness and shelf life',
+      'Reduces physiological disorders',
+      'Supports flower and fruit set',
+    ],
+    image: productActivateBagImage,
+    alt: 'Albina crop quality enhancer',
+    composition:
+      'Albina is formulated to support efficient calcium uptake and quality-focused crop development in fruit and vegetable systems under varying field conditions.',
+    useCase: 'Quality enhancement for fruit and vegetable production',
+    useCaseDetails:
+      'Particularly effective for berries, citrus, tomatoes, peppers, melons, leafy greens, cucurbits, and other quality-sensitive crops.',
+    manufacturingMessage:
+      'Developed for modern quality-driven crop programs where marketability, shelf life, and consistency are critical.',
+    packaging: 'Available in liquid-form packaging for efficient application.',
+    features: [
+      'Firmer fruit',
+      'Increased flower and fruit set',
+      'Extended post-harvest shelf life',
+      'Improved tolerance to heat and cold stress',
+      'Highly efficient calcium absorption',
+    ],
+    usedFor: [
+      'Fruit and vegetable crops with quality targets',
+      'Programs reducing blossom-end rot and bitter pit risks',
+      'Marketability and post-harvest improvement plans',
+    ],
+    plant: ['Berries', 'Citrus', 'Tomato', 'Pepper', 'Melons', 'Leafy Greens'],
   },
 ]

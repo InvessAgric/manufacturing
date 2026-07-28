@@ -1,56 +1,152 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { heroBackground } from '../assets/assetRegistry'
+import { founderImage, heroBackground, productHeaderImage } from '../assets/assetRegistry'
 import useParallax from '../hooks/useParallax'
+
+const heroSlides = [
+  {
+    id: 'home',
+    image: heroBackground,
+    overlay: 'bg-black/45',
+    badge: 'Blended fertilizer manufacturing · Accra, Ghana',
+    title: "Manufacturing Ghana's future in crop nutrition",
+    description:
+      'Premium blended fertilizers produced with advanced manufacturing technology and strict quality standards, built for Ghanaian agriculture.',
+    primaryCta: { type: 'anchor', label: 'Explore our plant', href: '#manufacturing' },
+    secondaryCta: { type: 'link', label: 'Contact sales', to: '/contact' },
+  },
+  {
+    id: 'about',
+    image: founderImage,
+    overlay: 'bg-emerald-950/60',
+    badge: 'About us',
+    title: 'Know more about Invess Agriculture',
+    description:
+      'Learn our story, leadership, and commitment to delivering quality crop nutrition products that strengthen farming outcomes across Ghana.',
+    primaryCta: { type: 'link', label: 'Know about us', to: '/about' },
+    secondaryCta: { type: 'link', label: 'Meet our team', to: '/team' },
+  },
+  {
+    id: 'products',
+    image: productHeaderImage,
+    overlay: 'bg-slate-900/55',
+    badge: 'Our products',
+    title: 'Explore our complete product portfolio',
+    description:
+      'Browse our fertilizers and crop inputs developed for balanced plant nutrition, strong growth, and dependable yield performance.',
+    primaryCta: { type: 'link', label: 'View products', to: '/product' },
+    secondaryCta: { type: 'link', label: 'Request quotation', to: '/contact' },
+  },
+]
+
+function HeroCta({ cta, primary = false }) {
+  const className = primary
+    ? 'inline-flex items-center justify-center rounded-full border border-primary bg-primary px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark sm:text-sm'
+    : 'inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/20 sm:text-sm'
+
+  if (cta.type === 'anchor') {
+    return (
+      <a href={cta.href} className={className}>
+        {cta.label}
+      </a>
+    )
+  }
+
+  return (
+    <Link to={cta.to} className={className}>
+      {cta.label}
+    </Link>
+  )
+}
 
 // Hero section for the landing page; introduces the brand and provides primary calls to action.
 export default function Hero() {
   const heroImageRef = useParallax(0.14, 56, 1.1)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    }, 6000)
+
+    return () => window.clearInterval(intervalId)
+  }, [])
+
+  const slide = heroSlides[currentSlide]
+
+  const goPrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+  }
+
+  const goNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+  }
 
   return (
     <div className="relative h-screen overflow-hidden text-white">
       <img
         ref={heroImageRef}
-        src={heroBackground}
+        src={slide.image}
         alt="Hero background"
-        className="parallax-media absolute inset-0 h-full w-full object-cover"
+        className="parallax-media absolute inset-0 h-full w-full object-cover transition-all duration-700"
         fetchPriority="high"
         decoding="async"
       />
-      <div className="absolute inset-0 bg-black/40" />
+      <div className={`absolute inset-0 ${slide.overlay} transition-all duration-700`} />
       <section className="relative flex h-full items-center justify-center py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <div className="rounded-[32px] h-100 bg-white/10 border border-white/12 p-8 md:p-14 shadow-2xl backdrop-blur-md">
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-green-100/90">
-              Blended fertilizer manufacturing · Accra, Ghana
+              {slide.badge}
             </p>
 
             <h1 className="mt-6 text-3xl font-extrabold leading-tight sm:text-5xl">
-              Manufacturing Ghana's future in{' '}
-              <span className="italic text-white/95">crop nutrition</span>
+              {slide.title}
             </h1>
 
             <p className="mt-6 max-w-3xl text-base leading-7 sm:text-lg text-green-100/90">
-              Premium blended fertilizers produced with advanced manufacturing
-              technology and strict quality standards — built for Ghanaian agriculture.
+              {slide.description}
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-center">
-              <a
-                href="#manufacturing"
-                className="inline-flex items-center justify-center rounded-full border border-primary  bg-primary px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-dark sm:text-sm"
+              <HeroCta cta={slide.primaryCta} primary />
+              <HeroCta cta={slide.secondaryCta} />
+            </div>
+
+            <div className="mt-6 flex items-center justify-center gap-2">
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label="Previous slide"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20"
               >
-                Explore our plant
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/20 sm:text-sm"
+                ‹
+              </button>
+
+              <div className="flex items-center gap-2">
+                {heroSlides.map((item, index) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => setCurrentSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                    className={`h-2.5 rounded-full transition-all ${currentSlide === index ? 'w-7 bg-white' : 'w-2.5 bg-white/40'}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label="Next slide"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20"
               >
-                Contact sales
-              </Link>
+                ›
+              </button>
             </div>
           </div>
         </div>
-        </section>
+      </section>
     </div>
   )
 }

@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "convert:webp": "node scripts/convert-images-to-webp.mjs",
+    "convert:webp:team": "node scripts/convert-images-to-webp.mjs \"src/assets/images/our-team\""
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

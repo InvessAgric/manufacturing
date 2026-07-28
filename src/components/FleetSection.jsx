@@ -67,13 +67,13 @@ export default function FleetSection() {
                 ref={fleetImageRef}
                 src={fleetBg}
                 alt="Fleet dispatch and distribution support"
-                className="parallax-media h-full w-full object-cover object-center"
+                className="parallax-media h-full w-full object-cover object-center brightness-65 contrast-110 saturate-125 blur-[1px]"
                 loading="lazy"
                 decoding="async"
               />
               
               {/* Green Overlay */}
-              <div className="absolute inset-0 bg-emerald-900/40 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/75 via-emerald-900/60 to-emerald-950/65 mix-blend-multiply" />
             </div>
             
             {/* Context Floating Card */}

@@ -1,4 +1,8 @@
 import { socialInstagramIcon, socialLinkedInIcon ,founderImage} from '../assets/assetRegistry'
+import enosImage from '../assets/images/our-team/enos.webp'
+import evansImage from '../assets/images/our-team/Evans-Poku-Boateng.webp'
+import rejoiceImage from '../assets/images/our-team/Rejoice.webp'
+import rolfImage from '../assets/images/our-team/Rolf.webp'
 
 // Team page: highlights the founder and the broader leadership and support teams.
 function Team() {
@@ -19,22 +23,61 @@ function Team() {
 			group: 'Management',
 			title: 'Leadership and oversight',
 			members: [
-				{ name: 'Kwame Mensah', role: 'Operations Director', bio: 'Drives efficient manufacturing and plant performance.' },
-				{ name: 'Akosua Boateng', role: 'Quality Assurance Manager', bio: 'Ensures that every product meets our safety and quality standards.' },
+				{
+					name: 'Rolf Schadendorf',
+					role: 'CFO and Head of Business Development',
+					bio: 'Leads financial strategy, partnerships, and long-term commercial growth initiatives.',
+					image: rolfImage,
+					socials: [
+						{ name: 'Facebook', href: '' },
+					],
+				},
+				{
+					name: 'Rejoice Yawa Quao',
+					role: 'General Manager',
+					bio: 'Oversees business operations and coordinates execution across key departments.',
+					image: rejoiceImage,
+					socials: [
+						{ name: 'LinkedIn', href: '' },
+					],
+				},
+				{
+					name: 'Evans Poku Boateng',
+					role: 'Commercial Manager',
+					bio: 'Drives market expansion, customer relationships, and go-to-market execution.',
+					image: evansImage,
+				},
 			],
 		},
 		{
 			group: 'Finance',
 			title: 'Financial planning and compliance',
 			members: [
-				{ name: 'Kojo Adjei', role: 'Finance Controller', bio: 'Manages budgeting, cash flow, and fiscal accountability.' },
-				{ name: 'Esi Owusu', role: 'Accounts Specialist', bio: 'Supports invoicing, payroll, and supplier payments.' },
+				{ name: 'Fred Amegavor', role: 'Head of Finance', bio: 'Leads financial planning, controls, and performance reporting.' },
+				{
+					name: 'Enos Nii Odai Botchway',
+					role: 'Finance and Compliance',
+					bio: 'Supports finance operations, compliance workflows, and reporting quality.',
+					image: enosImage,
+					socials: [
+						{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/enos-nii-odai-botchway-8b7123143/' },
+					],
+				},
+				{
+					name: 'Javier Rubio',
+					role: 'Project Manager',
+					bio: 'Coordinates project delivery, timelines, and cross-functional execution.',
+					socials: [
+						{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/javier-rubio-56110055?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAuVXxkBqyJtK1k2MCkCVixdlWFUI4fLEJQ&lipi=urn%3Ali%3Apage%3Ad_flagship3_company%3BsIdMABuCSB%2B3uwxy6hsKHw%3D%3D' },
+					],
+				},
 			],
 		},
 		{
 			group: 'Warehouse',
 			title: 'Storage and distribution',
 			members: [
+				{ name: 'Bright Dzorkpey', role: 'Warehouse Manager', bio: 'Leads warehouse operations, inventory flow, and safe dispatch coordination.' },
 				{ name: 'Nana Yeboah', role: 'Warehouse Supervisor', bio: 'Oversees inventory, safety, and warehouse logistics.' },
 				{ name: 'Ama Serwaa', role: 'Inventory Coordinator', bio: 'Keeps stock levels accurate and ready for dispatch.' },
 			],
@@ -43,6 +86,7 @@ function Team() {
 			group: 'Sales',
 			title: 'Customer engagement and growth',
 			members: [
+				{ name: 'Prince Baafi Yeboah', role: 'Head of Sales', bio: 'Leads sales strategy, customer acquisition, and channel performance across markets.' },
 				{ name: 'Yaw Owusu', role: 'Sales Manager', bio: 'Leads customer relationships and market expansion.' },
 				{ name: 'Adwoa Frimpong', role: 'Customer Success Lead', bio: 'Ensures clients receive the right products and support.' },
 			],
@@ -62,13 +106,13 @@ function Team() {
 						United by a shared passion for agriculture, we work together every day to enhance crop productivity, strengthen farm supply chains, and bring practical solutions to farmers and communities.
 					</p>
 				</header>
-				<section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] items-center rounded-4xl bg-linear-to-br from-emerald-100/80 via-white to-slate-100 p-8 shadow-lg ring-1 ring-emerald-200">
+				<section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] items-start rounded-4xl bg-linear-to-br from-emerald-100/80 via-white to-slate-100 p-6 lg:p-7 shadow-lg ring-1 ring-emerald-200">
 					<div className="space-y-4">
 						<p className="text-sm uppercase tracking-[0.3em] text-emerald-900">Founder</p>
-						<h2 className="text-3xl font-semibold text-slate-900">{founder.name}</h2>
-						<p className="text-base leading-7 text-slate-600">{founder.title}</p>
-					<p className="mt-4 text-slate-700 leading-7">{founder.bio}</p>
-					<p className="mt-4 text-slate-700 leading-7">{founder.extra}</p>
+						<h2 className="text-2xl lg:text-3xl font-semibold text-slate-900">{founder.name}</h2>
+						<p className="text-sm lg:text-base leading-6 text-slate-600">{founder.title}</p>
+					<p className="mt-3 text-sm lg:text-base text-slate-700 leading-6">{founder.bio}</p>
+					<p className="mt-3 text-sm text-slate-600 leading-6 hidden xl:block">{founder.extra}</p>
 					<div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
 						<div className="rounded-3xl bg-emerald-900/10 px-4 py-3 text-sm font-semibold text-emerald-900">Agronomy-led leadership</div>
 						<div className="rounded-3xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-700">Trusted farm solutions</div>
@@ -91,8 +135,8 @@ function Team() {
 					</div>
 					</div>
 
-					<div className="overflow-hidden rounded-[1.75rem] bg-slate-100">
-						<img src={founderImage} alt="Founder Francis Dei" className="h-full w-full object-cover" loading="lazy" />
+					<div className="overflow-hidden rounded-[1.75rem] bg-slate-100 h-56 sm:h-72 lg:h-full max-h-[430px] lg:max-h-[460px]">
+						<img src={founderImage} alt="Founder Francis Dei" className="h-full w-full object-cover object-top" loading="lazy" />
 					</div>
 				</section>
 
@@ -109,12 +153,31 @@ function Team() {
 						<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 							{team.members.map((member) => (
 								<article key={member.name} className="rounded-3xl border border-emerald-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-									<div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-lg font-semibold text-emerald-800">
-										{member.name.split(' ').map((part) => part[0]).slice(0, 2).join('')}
-									</div>
+									{member.image ? (
+										<img src={member.image} alt={member.name} className="mb-4 h-16 w-16 rounded-full object-cover" loading="lazy" />
+									) : (
+										<div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-lg font-semibold text-emerald-800">
+											{member.name.split(' ').map((part) => part[0]).slice(0, 2).join('')}
+										</div>
+									)}
 									<h3 className="text-lg font-semibold text-slate-900">{member.name}</h3>
 									<p className="mt-1 text-sm font-medium text-emerald-700">{member.role}</p>
 									<p className="mt-3 text-sm leading-6 text-slate-600">{member.bio}</p>
+									{member.socials?.length ? (
+										<div className="mt-4 flex flex-wrap gap-2">
+											{member.socials.map((social) => (
+												social.href ? (
+														<a key={`${member.name}-${social.name}`} href={social.href} target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700 hover:border-emerald-400 hover:bg-emerald-50">
+															{social.name}
+														</a>
+													) : (
+														<span key={`${member.name}-${social.name}`} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-500">
+															{social.name}
+														</span>
+													)
+											))}
+										</div>
+									) : null}
 								</article>
 							))}
 						</div>

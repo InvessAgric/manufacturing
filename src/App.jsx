@@ -12,6 +12,7 @@ const Product = lazy(() => import('./pages/Product'))
 const ProductDetail = lazy(() => import('./pages/ProductDetail'))
 const Team = lazy(() => import('./pages/Team'))
 const Fleet = lazy(() => import('./pages/Fleet'))
+const Gallery = lazy(() => import('./pages/Gallery'))
 const Blog = lazy(() => import('./pages/Blog'))
 const Admin = lazy(() => import('./pages/Admin'))
 const NotFound = lazy(() => import('./pages/NotFound'))
@@ -99,6 +100,7 @@ function App() {
             <Route path="/product/:slug" element={<ProductDetail />} />
             <Route path="/team" element={<Team />} />
             <Route path="/fleet" element={<Fleet />} />
+            <Route path="/gallery" element={<Gallery />} />
             {/* <Route path="/blog" element={<Blog />} />
             <Route path="/admin" element={<Admin />} /> */}
             <Route path="*" element={<NotFound />} />

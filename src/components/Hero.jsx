@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { founderImage, heroBackground, productHeaderImage } from '../assets/assetRegistry'
+import {
+  adNpkImage,
+  adUreaImage,
+  founderImage,
+  heroBackground,
+  productHeaderImage,
+} from '../assets/assetRegistry'
 import useParallax from '../hooks/useParallax'
 
 const heroSlides = [
@@ -36,6 +42,28 @@ const heroSlides = [
       'Browse our fertilizers and crop inputs developed for balanced plant nutrition, strong growth, and dependable yield performance.',
     primaryCta: { type: 'link', label: 'View products', to: '/product' },
     secondaryCta: { type: 'link', label: 'Request quotation', to: '/contact' },
+  },
+  {
+    id: 'npk-campaign',
+    image: adNpkImage,
+    overlay: 'bg-emerald-950/55',
+    badge: 'Featured campaign',
+    title: 'NPK nutrition campaigns now lead into the catalog',
+    description:
+      'Use the home hero to jump straight into our nitrogen-forward NPK range for vigorous growth and balanced field performance.',
+    primaryCta: { type: 'link', label: 'Open NPK product', to: '/product/npk-23105te' },
+    secondaryCta: { type: 'link', label: 'Browse all products', to: '/product' },
+  },
+  {
+    id: 'urea-campaign',
+    image: adUreaImage,
+    overlay: 'bg-slate-950/55',
+    badge: 'Featured campaign',
+    title: 'Urea campaign slides now connect to the product page',
+    description:
+      'Visitors can move from the hero banner directly into the UREA 46%N product detail page instead of stopping at a generic ad view.',
+    primaryCta: { type: 'link', label: 'Open UREA product', to: '/product/urea-46n' },
+    secondaryCta: { type: 'link', label: 'Talk to sales', to: '/contact' },
   },
 ]
 
@@ -95,7 +123,7 @@ export default function Hero() {
       <div className={`absolute inset-0 ${slide.overlay} transition-all duration-700`} />
       <section className="relative flex h-full items-center justify-center py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <div className="rounded-[32px] h-100 bg-white/10 border border-white/12 p-8 md:p-14 shadow-2xl backdrop-blur-md">
+          <div className="h-100 rounded-4xl border border-white/12 bg-white/10 p-6 shadow-2xl backdrop-blur-md sm:p-8 md:p-14">
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-green-100/90">
               {slide.badge}
             </p>

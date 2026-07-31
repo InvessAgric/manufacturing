@@ -14,7 +14,7 @@ import facilityHopperImage from './images/facility/StorageHopper-opt.webp'
 import facilityConveyorImage from './images/facility/ConveyorSystem-opt.webp'
 import facilityFeedersImage from './images/facility/Feeders-opt.webp'
 // Fleet visuals
-import fleetBg from './images/Truck Images/fleetbg-opt.png'
+import fleetBg from './images/Truck Images/fleetbg-opt.jpeg'
 import truckImage from './images/Truck Images/truck.webp'
 import truckImage1 from './images/Truck Images/truck1.webp'
 import truckImage10 from './images/Truck Images/truck10.webp'
@@ -30,21 +30,46 @@ import truckImage9 from './images/Truck Images/truck9.webp'
 // Product and catalog visuals
 import productHeaderImage from './images/products/productheader.webp'
 import productBannerImage from './images/products/productbanner.webp'
-import productNpkBagImage from './images/products/Invess-Chaleee-NPK-nobg.webp'
-import productNpkBagNoBg from './images/products/Invess-Chaleee-NPK-nobg.webp'
-import productUreaBagImage from './images/products/Invess-Chaleee-Urea-nobg.webp'
-import productUreaBagNoBg from './images/products/Invess-Chaleee-Urea-nobg.webp'
-import productAmmoniaBagImage from './images/products/Invess-SOA-Sulphate-of-Ammonia-nobg.webp'
-import productAmmoniaBagNoBg from './images/products/Invess-SOA-Sulphate-of-Ammonia-nobg.webp'
-import productActivateBagImage from './images/products/ACTIVATE.webp'
-import productPotassiumBagImage from './images/products/Potassium_Nitrate.webp'
-import productBlessCocoaBagImage from './images/products/BLESS_COCOA.webp'
+import productNpkBagImage from './images/products/newprob/CHALEEE NPK.webp'
+import productNpkBagNoBg from './images/products/newprob/CHALEEE NPK.webp'
+import productUreaBagImage from './images/products/newprob/CHALEEE UREA.webp'
+import productUreaBagNoBg from './images/products/newprob/CHALEEE UREA.webp'
+import productAmmoniaBagImage from './images/products/newprob/SOA.webp'
+import productAmmoniaBagNoBg from './images/products/newprob/SOA.webp'
+import productTspBagImage from './images/products/newprob/TSP.webp'
+import productPotassiumBagImage from './images/products/newprob/Potassium Nitrate.webp'
+import productBlessCocoaBagImage from './images/products/newprob/BLESS COCOA.webp'
+import productDapBagImage from './images/products/newprob/DAP.webp'
+import productMopBagImage from './images/products/newprob/MOP.webp'
+import productYellowMaizeBagImage from './images/products/newprob/Yellow Maize.webp'
+
+// Ads and campaign visuals
+import adActivateImage from './images/ADs/activate.jpg'
+import adCoacofertImage from './images/ADs/coacofert.jpg'
+import adNpkImage from './images/ADs/npk.jpg'
+import adProductImage from './images/ADs/product.jpg'
+import adSulInFarmImage from './images/ADs/sul in farm.jpg'
+import adSulphateImage from './images/ADs/sulphate.jpg'
+import adTomatoesImage from './images/ADs/Tomatoes_ad.jpg'
+import adUreaImage from './images/ADs/urea.jpg'
 // Gallery and story visuals
 import galleryImageOne from './images/gallery/aboutimage1-opt.webp'
 import galleryImageTwo from './images/gallery/aboutimage2-opt.webp'
 import galleryImageThree from './images/gallery/aboutimage3-opt.webp'
 import founderImage from './images/gallery/founder.webp'
 import gallery1 from './images/gallery/gallery1-opt.jpg'
+import akuseOfficeImage from './images/Akuse Office.jpg'
+import dzorwuluOfficeImage from './images/Dzorwulu_office.jpeg'
+import dzorwuluOfficeImageTwo from './images/Dzorwulu_office2.jpeg'
+import hopperTopViewImage from './images/Hopper top view.jpg'
+import industrialSewingSystemImage from './images/Industrial sewing system.jpg'
+import conveyorSystemRawImage from './images/conveyorSystem.jpeg'
+import feedersRawImage from './images/feeders.jpeg'
+import feederWithConveyorImage from './images/feederwithconvey.jpeg'
+import storageWarehouseImage from './images/storageWarehouse.jpg'
+import warehouseImage from './images/warehouse.jpg'
+import warehouseInsideImage from './images/warehouseInside.jpg'
+import warehouseOutsideImage from './images/warehouseOutside.jpg'
 
 // Social and UI icons
 import socialEmailIcon from './Icons/social/email.webp'
@@ -77,18 +102,41 @@ export {
   productBannerImage,
   productNpkBagNoBg,
   productNpkBagImage,
-  productActivateBagImage,
+  productTspBagImage,
   productBlessCocoaBagImage,
+  productDapBagImage,
+  productMopBagImage,
   productPotassiumBagImage,
   productUreaBagImage,
+  productYellowMaizeBagImage,
   productUreaBagNoBg,
   productAmmoniaBagImage,
   productAmmoniaBagNoBg,
+  adActivateImage,
+  adCoacofertImage,
+  adNpkImage,
+  adProductImage,
+  adSulInFarmImage,
+  adSulphateImage,
+  adTomatoesImage,
+  adUreaImage,
   founderImage,
   galleryImageOne,
   galleryImageTwo,
   galleryImageThree,
   gallery1,
+  akuseOfficeImage,
+  dzorwuluOfficeImage,
+  dzorwuluOfficeImageTwo,
+  hopperTopViewImage,
+  industrialSewingSystemImage,
+  conveyorSystemRawImage,
+  feedersRawImage,
+  feederWithConveyorImage,
+  storageWarehouseImage,
+  warehouseImage,
+  warehouseInsideImage,
+  warehouseOutsideImage,
   socialEmailIcon,
   socialInstagramIcon,
   socialLinkedInIcon,

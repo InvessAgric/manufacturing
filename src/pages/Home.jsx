@@ -1,7 +1,14 @@
 // Home page: composes the landing experience from the main marketing sections.
 import { Suspense, lazy } from 'react'
 import Hero from '../components/Hero'
+import AdCarousel from '../components/AdCarousel'
 import StatsSection from '../components/StatsSection'
+import {
+  adCoacofertImage,
+  adNpkImage,
+  adTomatoesImage,
+  adUreaImage,
+} from '../assets/assetRegistry'
 
 const FacilitySection = lazy(() => import('../components/FacilitySection'))
 const EquipmentSection = lazy(() => import('../components/EquipmentSection'))
@@ -9,6 +16,33 @@ const FleetSection = lazy(() => import('../components/FleetSection'))
 const ProductSection = lazy(() => import('../components/ProductSection'))
 const GallerySection = lazy(() => import('../components/GallerySection'))
 const QualitySection = lazy(() => import('../components/QualitySection'))
+
+const homeAds = [
+  {
+    src: adTomatoesImage,
+    alt: 'Tomatoes campaign ad',
+    title: 'Tomatoes campaign',
+    caption: 'Crop-specific nutrition messaging for stronger fruit set and harvest quality.',
+  },
+  {
+    src: adNpkImage,
+    alt: 'NPK fertilizer ad',
+    title: 'NPK blends',
+    caption: 'Balanced inputs for improved rooting, growth and yield performance.',
+  },
+  {
+    src: adCoacofertImage,
+    alt: 'Coacofert campaign ad',
+    title: 'Coacofert support',
+    caption: 'Promotional creative focused on cocoa nutrition and field-ready supply.',
+  },
+  {
+    src: adUreaImage,
+    alt: 'Urea fertilizer ad',
+    title: 'Urea solutions',
+    caption: 'Nitrogen-driven crop support for fast visible growth response.',
+  },
+]
 
 function SectionFallback() {
   return (
@@ -26,6 +60,13 @@ function Home() {
       {/* Landing hero remains visually prominent, while the rest of the page uses neutral surfaces. */}
       <Hero />
       <StatsSection />
+
+      <AdCarousel
+        eyebrow="Campaign highlights"
+        title="Fresh ad visuals across the site"
+        description="A rotating set of campaign images now appears on the landing page so visitors see current promotions right away."
+        images={homeAds}
+      />
 
       <Suspense fallback={<SectionFallback />}>
         <FacilitySection />

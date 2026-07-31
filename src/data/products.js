@@ -1,19 +1,22 @@
 import {
-  productActivateBagImage,
   productAmmoniaBagNoBg,
   productBlessCocoaBagImage,
+  productDapBagImage,
+  productMopBagImage,
   productNpkBagNoBg,
   productPotassiumBagImage,
+  productTspBagImage,
   productUreaBagNoBg,
+  productYellowMaizeBagImage,
 } from '../assets/assetRegistry'
 
 export const products = [
   {
     slug: 'urea-46n',
-    title: 'UREA (46%N)',
+    title: 'CHALEEE UREA (46%N)',
     summary: 'High-nitrogen fertilizer for fast vegetative growth and yield support.',
     description:
-      'UREA provides a concentrated 46% nitrogen source for crops that need rapid vegetative development and a timely growth response during critical stages.',
+      'CHALEEE UREA provides a concentrated 46% nitrogen source for crops that need rapid vegetative development and a timely growth response during critical stages.',
     bullets: [
       'High nitrogen concentration (46%)',
       'Can be soil-applied or used as foliar spray',
@@ -43,17 +46,17 @@ export const products = [
     plant: ['Cereals', 'Tree Crops', 'Fruits', 'Legumes'],
   },
   {
-    slug: 'tsp-0460',
-    title: 'TSP (0:46:0)',
-    summary: 'Highly concentrated phosphorus fertilizer for root and flowering strength.',
+    slug: 'tsp-050',
+    title: 'TSP (0:50:0)',
+    summary: 'Highly concentrated phosphorus fertilizer for strong root development and reproductive growth.',
     description:
-      'TSP (Triple Superphosphate) is a phosphorus-rich fertilizer (0:46:0) designed to strengthen root development, flowering, and fruiting in phosphorus-demanding crops.',
+      'TSP (Triple Superphosphate) is a phosphorus-rich fertilizer (0:50:0) designed to strengthen root development, flowering, and fruiting in phosphorus-demanding crops.',
     bullets: [
-      'Contains 46% phosphorus',
+      'Contains 50% phosphorus',
       'Supports vigorous root development',
-      'Environmentally responsible phosphorus source',
+      'Ideal for phosphorus-deficient soils',
     ],
-    image: productActivateBagImage,
+    image: productTspBagImage,
     alt: 'Triple superphosphate fertilizer',
     composition:
       'TSP provides a concentrated phosphorus source to improve nutrient uptake, flowering, and crop vigor, especially where soil phosphorus is limiting.',
@@ -64,7 +67,7 @@ export const products = [
       'Processed for consistency and field distribution, supporting efficient phosphorus use in modern crop nutrition programs.',
     packaging: 'Supplied in standard 50kg fertilizer bags.',
     features: [
-      'High phosphorus concentration (0:46:0)',
+      'High phosphorus concentration (0:50:0)',
       'Easy to handle and apply',
       'Supports root and flower development',
       'Designed to reduce nutrient wastage',
@@ -78,10 +81,10 @@ export const products = [
   },
   {
     slug: 'sulphate-of-ammonia-21n-24s',
-    title: 'Sulphate of Ammonia (21%N, 24%S)',
+    title: 'SOA (21%N, 24%S)',
     summary: 'Dual nitrogen-sulphur fertilizer for growth, protein synthesis, and crop quality.',
     description:
-      'Sulphate of Ammonia combines nitrogen and sulphur in a readily absorbable form to support vegetative growth, enzyme activity, and improved nutrient utilization.',
+      'SOA combines nitrogen and sulphur in a readily absorbable form to support vegetative growth, enzyme activity, and improved nutrient utilization.',
     bullets: [
       '21% nitrogen and 24% sulphur',
       'Supports protein synthesis and enzyme function',
@@ -148,10 +151,10 @@ export const products = [
   },
   {
     slug: 'npk-23105te',
-    title: 'NPK (23:10:5+7S+3MgO)',
+    title: 'CHALEEE NPK (23:10:5+7S+3MgO)',
     summary: 'Nitrogen-forward NPK with sulphur and magnesium for vigorous growth.',
     description:
-      'This NPK blend provides strong nitrogen support with balanced phosphorus and potassium, plus sulphur and magnesium for healthier foliage, stems, and productivity.',
+      'CHALEEE NPK provides strong nitrogen support with balanced phosphorus and potassium, plus sulphur and magnesium for healthier foliage, stems, and productivity.',
     bullets: [
       '23:10:5 ratio with 7S and 3MgO',
       'Includes trace elements for balanced nutrition',
@@ -182,21 +185,21 @@ export const products = [
     plant: ['Cereals', 'Vegetables', 'Legumes', 'Fruits'],
   },
   {
-    slug: 'npk-201010te',
-    title: 'NPK (20:10:10+TE)',
-    summary: 'Balanced NPK with trace elements for broad crop nutrition.',
+    slug: 'npk-2010107s',
+    title: 'CHALEEE NPK (20:10:10+7S)',
+    summary: 'Balanced NPK with sulphur for broad crop nutrition and strong growth.',
     description:
-      'NPK (20:10:10+TE) combines balanced macro nutrients with trace elements for strong growth, effective nutrient uptake, and reliable performance across many crops.',
+      'CHALEEE NPK combines balanced macro nutrients with sulphur for strong growth, effective nutrient uptake, and reliable performance across many crops.',
     bullets: [
       'Good spread accuracy and field coverage',
       'Well absorbed by plants',
-      'Good solubility and top-dressing performance',
+      'Includes sulphur for improved crop nutrition',
     ],
-    image: productBlessCocoaBagImage,
-    alt: 'NPK 20 10 10 with trace elements',
+    image: productNpkBagNoBg,
+    alt: 'CHALEEE NPK 20 10 10 plus sulphur',
     composition:
       'A versatile NPK blend designed for balanced nutrient delivery, efficient uptake, and practical use through direct application or water-assisted nutrient programs.',
-    useCase: 'General-purpose crop feeding with trace element support',
+    useCase: 'General-purpose crop feeding with sulphur support',
     useCaseDetails:
       'Suitable for legumes, vegetables, cereals, and mixed cropping systems where balanced nutrition drives consistent growth and yield.',
     manufacturingMessage:
@@ -262,7 +265,7 @@ export const products = [
       'Improves drought resilience',
       'Supports nutrient uptake and plant vigor',
     ],
-    image: productPotassiumBagImage,
+    image: productMopBagImage,
     alt: 'MOP 0 0 60 fertilizer',
     composition:
       'With 0:0:60 composition, MOP provides concentrated potassium to optimize water-use efficiency, physiological stability, and quality-focused production.',
@@ -286,40 +289,7 @@ export const products = [
     ],
     plant: ['Field Crops', 'Horticulture', 'Tree Crops', 'Forage'],
   },
-  {
-    slug: 'lono',
-    title: 'Lono',
-    summary: 'High-performance liquid fertilizer for better flowering, fruiting, and tuber performance.',
-    description:
-      'Lono is formulated to improve flower, fruit, and tuber numbers, support stress resilience, and increase marketable yield quality across multiple crops.',
-    bullets: [
-      'Increases flower, fruit, and tuber count',
-      'Improves fruit and tuber size',
-      'Supports crop growth under stress',
-    ],
-    image: productActivateBagImage,
-    alt: 'Lono liquid fertilizer',
-    composition:
-      'A liquid nutrition solution developed to drive reproductive strength, improve size uniformity, and maintain crop performance during stress periods.',
-    useCase: 'Yield and quality enhancement in high-value crops',
-    useCaseDetails:
-      'Applicable across fruits, vegetables, tubers, and flowering crops where producers target better sizing, quality, and productivity.',
-    manufacturingMessage:
-      'Produced as a performance-oriented liquid formula for practical, repeatable crop support in field and horticultural systems.',
-    packaging: 'Available in liquid-fertilizer packaging for farm application programs.',
-    features: [
-      'Improved flower, fruit, and tuber numbers',
-      'More even size distribution',
-      'Improved growth during stress',
-      'Increased root growth and transplant support',
-    ],
-    usedFor: [
-      'Fruits and vegetables',
-      'Tubers and flowering plants',
-      'High-value crops including tomato, pepper, cucumber, and potato',
-    ],
-    plant: ['Fruits', 'Vegetables', 'Tubers', 'Flowering Plants'],
-  },
+
   {
     slug: 'dap-18460',
     title: 'DAP (18:46:0)',
@@ -331,7 +301,7 @@ export const products = [
       'Water-soluble and plant-available',
       'Suitable for soil and foliar application',
     ],
-    image: productBlessCocoaBagImage,
+    image: productDapBagImage,
     alt: 'DAP 18 46 0 fertilizer',
     composition:
       'A soluble nutrient formulation designed for efficient phosphorus delivery and dependable uptake during key establishment and reproductive stages.',
@@ -365,7 +335,7 @@ export const products = [
       'Enhances fruit and vegetable shelf life',
       'Well absorbed and water-soluble',
     ],
-    image: productActivateBagImage,
+    image: productYellowMaizeBagImage,
     alt: 'Calcium nitrate fertilizer',
     composition:
       'Contains calcium and nitrogen in a soluble form to support structural strength, chlorophyll production, nutrient balance, and quality-focused crop outcomes.',
@@ -422,39 +392,5 @@ export const products = [
     ],
     plant: ['Cereals', 'Vegetables', 'Legumes', 'Fruits', 'Tree Crops'],
   },
-  {
-    slug: 'albina',
-    title: 'Albina',
-    summary: 'Advanced liquid product for calcium absorption, fruit quality, and shelf life.',
-    description:
-      'Albina uses LoCal technology to improve calcium absorption, reduce physiological disorders, and enhance flower set, fruit holding, firmness, and post-harvest quality.',
-    bullets: [
-      'Improves fruit firmness and shelf life',
-      'Reduces physiological disorders',
-      'Supports flower and fruit set',
-    ],
-    image: productActivateBagImage,
-    alt: 'Albina crop quality enhancer',
-    composition:
-      'Albina is formulated to support efficient calcium uptake and quality-focused crop development in fruit and vegetable systems under varying field conditions.',
-    useCase: 'Quality enhancement for fruit and vegetable production',
-    useCaseDetails:
-      'Particularly effective for berries, citrus, tomatoes, peppers, melons, leafy greens, cucurbits, and other quality-sensitive crops.',
-    manufacturingMessage:
-      'Developed for modern quality-driven crop programs where marketability, shelf life, and consistency are critical.',
-    packaging: 'Available in liquid-form packaging for efficient application.',
-    features: [
-      'Firmer fruit',
-      'Increased flower and fruit set',
-      'Extended post-harvest shelf life',
-      'Improved tolerance to heat and cold stress',
-      'Highly efficient calcium absorption',
-    ],
-    usedFor: [
-      'Fruit and vegetable crops with quality targets',
-      'Programs reducing blossom-end rot and bitter pit risks',
-      'Marketability and post-harvest improvement plans',
-    ],
-    plant: ['Berries', 'Citrus', 'Tomato', 'Pepper', 'Melons', 'Leafy Greens'],
-  },
+ 
 ]

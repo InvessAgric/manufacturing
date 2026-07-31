@@ -1,28 +1,23 @@
 import { galleryImageOne, galleryImageTwo, galleryImageThree, gallery1 } from '../assets/assetRegistry'
-import useParallax from '../hooks/useParallax'
+import { Link } from 'react-router-dom'
 
 // GallerySection: presents a visual overview of the plant and production environment.
 export default function GallerySection() {
-  const galleryBackgroundRef = useParallax(0.08, 32, 1.06)
-
   const items = [
-    { label: 'Factory exterior', img: galleryImageOne },
-    { label: 'Mixing area', img: galleryImageTwo },
-    { label: 'Packing line', img: galleryImageThree },
-    { label: 'Warehouse', img: gallery1 },
+    { label: 'Presidential Sword Cutting', img: galleryImageOne },
+    { label: 'Packing line', img: galleryImageTwo },
+    { label: 'Mixing area ', img: galleryImageThree },
+    { label: 'Manufacturing Warehouse', img: gallery1 },
   ]
 
   return (
     <section id="gallery" className="relative overflow-hidden bg-slate-950 py-16 text-white">
       <img
-        ref={galleryBackgroundRef}
         src={gallery1}
         alt=""
-        className="parallax-media absolute inset-0 h-full w-full object-cover opacity-25"
-        loading="lazy"
-        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover opacity-25"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/20  via-primary/20 to-primary-dark/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary-dark/20 via-primary/20 to-primary-dark/20" />
 
       <div className="relative mx-auto max-w-6xl px-6 text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-emerald-200/90">Factory gallery</p>
@@ -41,8 +36,6 @@ export default function GallerySection() {
                   src={item.img}
                   alt={item.label}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                  decoding="async"
                 />
 
                 <div className="absolute inset-x-0 bottom-3 px-3">
@@ -51,8 +44,13 @@ export default function GallerySection() {
                   </span>
                 </div>
               </div>
+
+              
             </div>
           ))}
+          <Link to="/gallery" className="mt-6 inline-block text-sm font-semibold text-emerald-200 hover:text-emerald-100">
+            View More Galleries
+          </Link>
         </div>
       </div>
     </section>

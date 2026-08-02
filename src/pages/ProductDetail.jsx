@@ -74,14 +74,14 @@ function ProductDetail() {
             </div>
             <div className="overflow-hidden rounded-[1.25rem] bg-slate-100 p-4">
               {/* Display the primary product image centered in the hero card. */}
-              <img src={product.image} alt={product.alt} className="h-[70%] w-[70%] object-contain" loading="lazy" />
+              <img src={product.detailImage || product.image} alt={product.alt} className="h-full w-full rounded-[1rem] object-cover" loading="lazy" />
             </div>
           </div>
         </div>
 
         {/* Detailed information section: shows benefits, composition, usage, packaging, and other supporting details. */}
         <div className="grid gap-5 lg:grid-cols-3">
-          <div className="rounded-[1.25rem] bg-white p-4 shadow-lg ring-1 ring-slate-200 sm:p-5">
+          <div className="flex flex-col rounded-[1.25rem] bg-white p-4 shadow-lg ring-1 ring-slate-200 sm:p-5">
             <h2 className="text-lg font-semibold text-slate-900">Key benefits</h2>
             <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
               {/* Render each benefit bullet as a short, scannable list item. */}
@@ -92,6 +92,11 @@ function ProductDetail() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-4 flex-1 rounded-[1rem] border border-slate-200 bg-slate-50 p-4">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-900">Practical guidance</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600">{product.useCaseDetails}</p>
+            </div>
           </div>
 
           <div className="rounded-[1.25rem] bg-white p-4 shadow-lg ring-1 ring-slate-200 sm:p-5 lg:col-span-2">
@@ -104,6 +109,9 @@ function ProductDetail() {
                 <p className="mt-2 text-sm leading-7 text-slate-600">{product.useCaseDetails}</p>
               </div>
               <div className="rounded-[1rem] bg-emerald-50 p-4">
+                <div className="mb-4 hidden lg:block">
+                  <img src={product.detailImage || product.image} alt={`${product.alt} overview`} className="h-32 w-full rounded-[0.9rem] object-cover" loading="lazy" />
+                </div>
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Plant types</h3>
                   <div className="flex gap-2">
@@ -142,6 +150,36 @@ function ProductDetail() {
             <div className="mt-5 rounded-[1rem] border border-emerald-200 bg-emerald-50 p-4">
               <h3 className="text-base font-semibold text-emerald-900">Manufacturing message</h3>
               <p className="mt-2 text-sm leading-7 text-emerald-800">{product.manufacturingMessage}</p>
+            </div>
+
+            <div className="mt-5 rounded-[1rem] border border-emerald-200 bg-white p-4 shadow-sm">
+              <h3 className="text-base font-semibold text-emerald-900">How it helps plants</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600">{product.agronomy?.whyItWorks}</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[0.9rem] bg-emerald-50 p-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Best crops</h4>
+                  <ul className="mt-2 space-y-1 text-sm text-slate-600">
+                    {(product.agronomy?.bestCrops || []).map((crop) => (
+                      <li key={crop} className="flex items-start gap-2">
+                        <span className="mt-1 block h-2 w-2 rounded-full bg-emerald-600" />
+                        <span>{crop}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-[0.9rem] bg-slate-50 p-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-900">When to use it</h4>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{product.agronomy?.applicationWindow}</p>
+                  <ul className="mt-3 space-y-1 text-sm text-slate-600">
+                    {(product.agronomy?.fieldNotes || []).map((note) => (
+                      <li key={note} className="flex items-start gap-2">
+                        <span className="mt-1 block h-2 w-2 rounded-full bg-emerald-600" />
+                        <span>{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">

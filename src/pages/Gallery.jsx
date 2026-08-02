@@ -49,7 +49,7 @@ const sections = [
 
 export default function Gallery() {
   return (
-    <section className="bg-slate-50 px-6 pb-16 pt-28 text-slate-900">
+    <section className="bg-slate-50 px-6 pb-16 pt-20 text-slate-900 sm:pt-24">
       <div className="mx-auto max-w-6xl space-y-10">
         <header className="rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-emerald-100 sm:p-10 text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-emerald-700">Invess Gallery</p>

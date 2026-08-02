@@ -6,6 +6,8 @@ import {
   founderImage,
   heroBackground,
   productHeaderImage,
+  productNpk151515Image,
+  storageWarehouseImage,
 } from '../assets/assetRegistry'
 import useParallax from '../hooks/useParallax'
 
@@ -23,12 +25,12 @@ const heroSlides = [
   },
   {
     id: 'about',
-    image: founderImage,
+    image: storageWarehouseImage,
     overlay: 'bg-emerald-950/60',
-    badge: 'About us',
-    title: 'Know more about Invess Agriculture',
+    badge: 'Manufacturing excellence',
+    title: 'Built around efficient fertilizer manufacturing and dependable supply',
     description:
-      'Learn our story, leadership, and commitment to delivering quality crop nutrition products that strengthen farming outcomes across Ghana.',
+      'From plant operations to product delivery, we focus on quality systems, consistent output, and reliable support for farms and distributors across Ghana.',
     primaryCta: { type: 'link', label: 'Know about us', to: '/about' },
     secondaryCta: { type: 'link', label: 'Meet our team', to: '/team' },
   },
@@ -36,10 +38,10 @@ const heroSlides = [
     id: 'products',
     image: productHeaderImage,
     overlay: 'bg-slate-900/55',
-    badge: 'Our products',
-    title: 'Explore our complete product portfolio',
+    badge: 'Our manufacturing portfolio',
+    title: 'Explore the fertilizer products shaped by our manufacturing strength',
     description:
-      'Browse our fertilizers and crop inputs developed for balanced plant nutrition, strong growth, and dependable yield performance.',
+      'Discover crop nutrition solutions produced with precision blending, strict quality control, and a strong commitment to field performance.',
     primaryCta: { type: 'link', label: 'View products', to: '/product' },
     secondaryCta: { type: 'link', label: 'Request quotation', to: '/contact' },
   },
@@ -47,21 +49,32 @@ const heroSlides = [
     id: 'npk-campaign',
     image: adNpkImage,
     overlay: 'bg-emerald-950/55',
-    badge: 'Featured campaign',
-    title: 'NPK nutrition campaigns now lead into the catalog',
+    badge: 'Manufacturing focus',
+    title: 'NPK formulations developed for modern crop nutrition manufacturing',
     description:
-      'Use the home hero to jump straight into our nitrogen-forward NPK range for vigorous growth and balanced field performance.',
+      'Our nitrogen-rich blends are produced to meet demanding field needs with balanced growth support and dependable performance.',
     primaryCta: { type: 'link', label: 'Open NPK product', to: '/product/npk-23105te' },
     secondaryCta: { type: 'link', label: 'Browse all products', to: '/product' },
+  },
+  {
+    id: 'npk-151515-campaign',
+    image: productNpk151515Image,
+    overlay: 'bg-slate-950/55',
+    badge: 'Balanced fertilizer manufacturing',
+    title: 'NPK 15:15:15 crafted for dependable crop nutrition manufacturing',
+    description:
+      'Our balanced formulation is produced to support consistent growth, practical field performance, and strong delivery across diverse farming systems.',
+    primaryCta: { type: 'link', label: 'Open NPK 15:15:15', to: '/product' },
+    secondaryCta: { type: 'link', label: 'Talk to sales', to: '/contact' },
   },
   {
     id: 'urea-campaign',
     image: adUreaImage,
     overlay: 'bg-slate-950/55',
-    badge: 'Featured campaign',
-    title: 'Urea campaign slides now connect to the product page',
+    badge: 'Manufacturing capability',
+    title: 'Urea production built for fast, reliable agricultural support',
     description:
-      'Visitors can move from the hero banner directly into the UREA 46%N product detail page instead of stopping at a generic ad view.',
+      'See how our manufacturing approach supports high-quality nitrogen inputs for strong vegetative growth and practical farm use.',
     primaryCta: { type: 'link', label: 'Open UREA product', to: '/product/urea-46n' },
     secondaryCta: { type: 'link', label: 'Talk to sales', to: '/contact' },
   },

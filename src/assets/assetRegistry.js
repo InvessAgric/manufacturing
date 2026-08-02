@@ -31,18 +31,19 @@ import truckImage9 from './images/Truck Images/truck9.webp'
 import productHeaderImage from './images/products/productheader.webp'
 import productBannerImage from './images/products/productbanner.webp'
 import productNpkBagImage from './images/products/newprob/CHALEEE NPK.webp'
-import productNpkBagNoBg from './images/products/newprob/CHALEEE NPK.webp'
+import productNpkBagNoBg from './images/products/newprob/CHALEEE_NPK-removebg-preview.png'
+import productNpk151515Image from './images/products/newprob/npk15.15.15-removebg-preview.png'
 import productUreaBagImage from './images/products/newprob/CHALEEE UREA.webp'
-import productUreaBagNoBg from './images/products/newprob/CHALEEE UREA.webp'
+import productUreaBagNoBg from './images/products/newprob/CHALEEE_UREA-removebg-preview.png'
 import productAmmoniaBagImage from './images/products/newprob/SOA.webp'
-import productAmmoniaBagNoBg from './images/products/newprob/SOA.webp'
+import productAmmoniaBagNoBg from './images/products/newprob/SOA-removebg-preview.png'
 import productTspBagImage from './images/products/newprob/TSP.webp'
 import productPotassiumBagImage from './images/products/newprob/Potassium Nitrate.webp'
 import productBlessCocoaBagImage from './images/products/newprob/BLESS COCOA.webp'
 import productDapBagImage from './images/products/newprob/DAP.webp'
 import productMopBagImage from './images/products/newprob/MOP.webp'
 import productYellowMaizeBagImage from './images/products/newprob/Yellow Maize.webp'
-
+import activateImage from './images/products/newprob/ACTIVATE.webp'
 // Ads and campaign visuals
 import adActivateImage from './images/ADs/activate.webp'
 import adCoacofertImage from './images/ADs/coacofert.webp'
@@ -52,6 +53,12 @@ import adSulInFarmImage from './images/ADs/sul in farm.webp'
 import adSulphateImage from './images/ADs/sulphate.webp'
 import adTomatoesImage from './images/ADs/Tomatoes_ad.webp'
 import adUreaImage from './images/ADs/urea.webp'
+import adMaizeUreaBannerImage from './images/ADs/maize_urea_banner.webp'
+import adNpkCornBannerImage from './images/ADs/nkp_corn_banner.webp'
+import adPalmBannerImage from './images/ADs/palm_banner.webp'
+import adRiceUreaBannerImage from './images/ADs/rice_ura_banner.webp'
+import adSulphateBannerImage from './images/ADs/sulphatebanner.webp'
+import adTomatoesBannerImage from './images/ADs/tomatoesadbanner.webp'
 // Gallery and story visuals
 import galleryImageOne from './images/gallery/aboutimage1-opt.webp'
 import galleryImageTwo from './images/gallery/aboutimage2-opt.webp'
@@ -66,7 +73,7 @@ import industrialSewingSystemImage from './images/Industrial sewing system.webp'
 import conveyorSystemRawImage from './images/conveyorSystem.webp'
 import feedersRawImage from './images/feeders.webp'
 import feederWithConveyorImage from './images/feederwithconvey.webp'
-import storageWarehouseImage from './images/storageWarehouse.webp'
+import storageWarehouseImage from './images/storageWarehouse.png'
 import warehouseImage from './images/warehouse.webp'
 import warehouseInsideImage from './images/warehouseInside.webp'
 import warehouseOutsideImage from './images/warehouseOutside.webp'
@@ -102,6 +109,7 @@ export {
   productBannerImage,
   productNpkBagNoBg,
   productNpkBagImage,
+  productNpk151515Image,
   productTspBagImage,
   productBlessCocoaBagImage,
   productDapBagImage,
@@ -112,6 +120,7 @@ export {
   productUreaBagNoBg,
   productAmmoniaBagImage,
   productAmmoniaBagNoBg,
+  activateImage,
   adActivateImage,
   adCoacofertImage,
   adNpkImage,
@@ -120,6 +129,12 @@ export {
   adSulphateImage,
   adTomatoesImage,
   adUreaImage,
+  adMaizeUreaBannerImage,
+  adNpkCornBannerImage,
+  adPalmBannerImage,
+  adRiceUreaBannerImage,
+  adSulphateBannerImage,
+  adTomatoesBannerImage,
   founderImage,
   galleryImageOne,
   galleryImageTwo,

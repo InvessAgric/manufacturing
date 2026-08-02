@@ -3,7 +3,7 @@ import { galleryImageOne, galleryImageTwo, galleryImageThree,founderImage } from
 // About page: introduces the company story, values, mission, and public-facing impact.
 function About() {
   return (
-    <section className="   bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.14),transparent_40%),linear-gradient(180deg,#f8fafc_0%,#eaf7ec_100%)] px-6 py-16 text-slate-900">
+    <section className="pt-20 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.14),transparent_40%),linear-gradient(180deg,#f8fafc_0%,#eaf7ec_100%)] px-6 py-16 text-slate-900 sm:pt-10">
       <div className="mx-auto max-w-6xl space-y-20">
         <header className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] mt-10 lg:items-center">
           <div className="space-y-6">

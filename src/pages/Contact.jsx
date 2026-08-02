@@ -73,7 +73,7 @@ function Contact() {
       })
   }
   return (
-    <section className="bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.16),transparent_35%),linear-gradient(180deg,#f8fafc_0%,#ecfdf5_100%)] px-6 py-16 text-slate-900">
+    <section className="bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.16),transparent_35%),linear-gradient(180deg,#f8fafc_0%,#ecfdf5_100%)] px-6 py-16 pt-8 text-slate-900 sm:pt-10">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-lime-600 p-8 text-white shadow-2xl shadow-emerald-900/20 sm:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">

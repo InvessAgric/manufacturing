@@ -34,7 +34,7 @@ function NavBar() {
   return (
     <>
       {/* Main navigation bar (fixed/floating) */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[1150px] flex items-center justify-between bg-white/10 text-white px-3 py-2 rounded-xl shadow-xl backdrop-blur-md z-50">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-287.5 flex items-center justify-between bg-white/10 text-white px-3 py-2 rounded-xl shadow-xl backdrop-blur-md z-50">
         {/* Left: logo area */}
         <div className="nav-left shrink-0">
           {/* Logo links back to home and closes mobile menu when clicked */}
@@ -165,7 +165,7 @@ function NavBar() {
 
       {/* Mobile menu: rendered only when `open` is true */}
       {open && (
-        <div className="md:hidden fixed top-17 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1126px] bg-text/8 backdrop-blur-md rounded-xl p-4 z-40">
+        <div className="md:hidden fixed top-24 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-281.5 bg-text/8 backdrop-blur-md rounded-xl p-4 z-40 mt-2">
           <div className="flex flex-col gap-3">
             {/* Each mobile link closes the menu after navigation */}
             <NavLink to="/" end onClick={close} className="text-  font-bold block relative">

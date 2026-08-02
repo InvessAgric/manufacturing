@@ -56,17 +56,11 @@ function SectionFallback() {
 
 function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-8 sm:pt-10">
       {/* Landing hero remains visually prominent, while the rest of the page uses neutral surfaces. */}
       <Hero />
       <StatsSection />
 
-      <AdCarousel
-        eyebrow="Campaign highlights"
-        title="Fresh ad visuals across the site"
-        description="A rotating set of campaign images now appears on the landing page so visitors see current promotions right away."
-        images={homeAds}
-      />
 
       <Suspense fallback={<SectionFallback />}>
         <FacilitySection />
@@ -86,6 +80,13 @@ function Home() {
       <Suspense fallback={<SectionFallback />}>
         <QualitySection />
       </Suspense>
+      
+      {/* <AdCarousel
+        eyebrow="Campaign highlights"
+        title="Fresh ad visuals across the site"
+        description="A rotating set of campaign images now appears on the landing page so visitors see current promotions right away."
+        images={homeAds}
+      /> */}
     </div>
   )
 }

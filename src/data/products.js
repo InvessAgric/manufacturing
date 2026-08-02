@@ -4,10 +4,12 @@ import {
   productDapBagImage,
   productMopBagImage,
   productNpkBagNoBg,
+  productNpk151515Image,
   productPotassiumBagImage,
   productTspBagImage,
   productUreaBagNoBg,
   productYellowMaizeBagImage,
+  activateImage
 } from '../assets/assetRegistry'
 
 export const products = [
@@ -114,41 +116,7 @@ export const products = [
     ],
     plant: ['Cereals', 'Legumes', 'Vegetables', 'Fruits', 'Ornamentals'],
   },
-  {
-    slug: 'potassium-nitrate-13046',
-    title: 'Potassium Nitrate (13:0:46)',
-    summary: 'Water-soluble potassium and nitrogen source for fruit quality and yield.',
-    description:
-      'Potassium Nitrate provides high potassium with nitrogen in a water-soluble form to improve fruit color, flavor, size, and overall crop performance.',
-    bullets: [
-      '13:0:46 nutrient ratio',
-      'Supports premium fruit quality',
-      'Suitable for fertigation and hydroponic systems',
-    ],
-    image: productPotassiumBagImage,
-    alt: 'Potassium nitrate fertilizer',
-    composition:
-      'Renowned for high potassium content, this fertilizer supports sugar synthesis, nutrient balance, and superior fruit quality in intensive crop systems.',
-    useCase: 'High-quality fruiting and potassium-demanding growth stages',
-    useCaseDetails:
-      'Used across horticulture, field crops, vegetable production, and controlled environments where soluble potassium is critical.',
-    manufacturingMessage:
-      'Prepared for reliable dissolution and efficient delivery through modern irrigation and fertigation systems.',
-    packaging: 'Supplied in moisture-protected bags for quality preservation.',
-    features: [
-      'White crystal powder form',
-      'Enhances fruit color and flavor',
-      'Easy to apply in soluble programs',
-      'Supports fast nutrient uptake',
-    ],
-    usedFor: [
-      'Fruit production programs focused on color and flavor',
-      'Vegetable crops with high potassium demand',
-      'Field crops requiring balanced potassium supply',
-      'Greenhouse and hydroponic systems',
-    ],
-    plant: ['Fruits', 'Vegetables', 'Field Crops', 'Greenhouse Crops'],
-  },
+
   {
     slug: 'npk-23105te',
     title: 'CHALEEE NPK (23:10:5+7S+3MgO)',
@@ -160,7 +128,7 @@ export const products = [
       'Includes trace elements for balanced nutrition',
       'Suitable for top-dressing application',
     ],
-    image: productNpkBagNoBg,
+    image: activateImage,
     alt: 'NPK 23 10 5 plus sulphur and magnesium',
     composition:
       'A complex plant food formulation designed to supply macro and micro nutrients for healthy root development, stronger stems, robust foliage, and improved crop outcomes.',
@@ -230,7 +198,7 @@ export const products = [
       'Adaptable to most soil types',
       'Efficient for basal application',
     ],
-    image: productNpkBagNoBg,
+    image: productNpk151515Image,
     alt: 'NPK 15 15 15 with trace elements',
     composition:
       'Designed for pre-plant and soil-preparation stages, this formulation supplies balanced nutrients throughout the root zone to support early vigor and stable growth.',
@@ -324,40 +292,7 @@ export const products = [
     ],
     plant: ['Fruits', 'Vegetables', 'Cereals', 'Legumes'],
   },
-  {
-    slug: 'calcium-nitrate-15-426',
-    title: 'Calcium Nitrate (15.4%:26%)',
-    summary: 'Water-soluble calcium and nitrogen fertilizer for stress resilience and fruit quality.',
-    description:
-      'Calcium Nitrate supports cell-wall strength, vegetative growth, and produce shelf life while helping crops tolerate stress and maintain quality.',
-    bullets: [
-      'Improves resistance to stress conditions',
-      'Enhances fruit and vegetable shelf life',
-      'Well absorbed and water-soluble',
-    ],
-    image: productYellowMaizeBagImage,
-    alt: 'Calcium nitrate fertilizer',
-    composition:
-      'Contains calcium and nitrogen in a soluble form to support structural strength, chlorophyll production, nutrient balance, and quality-focused crop outcomes.',
-    useCase: 'Quality and stress-management nutrition',
-    useCaseDetails:
-      'Effective in fruits, vegetables, and legumes, especially under high-temperature, drought, or quality-sensitive production conditions.',
-    manufacturingMessage:
-      'Produced for quick solubility and efficient uptake in intensive horticulture and precision nutrient programs.',
-    packaging: 'Supplied in protected packaging for stable storage and application.',
-    features: [
-      'Improves stress tolerance',
-      'Supports fruit firmness and shelf life',
-      'Highly soluble and plant-available',
-      'Efficient uptake profile',
-    ],
-    usedFor: [
-      'Fruits and vegetables',
-      'Legume production systems',
-      'Quality and shelf-life improvement programs',
-    ],
-    plant: ['Fruits', 'Vegetables', 'Legumes'],
-  },
+ 
   {
     slug: 'blended-npks',
     title: 'Blended NPKs',

@@ -10,7 +10,7 @@ function AdCarousel({ eyebrow, title, description, images, variant = 'feature' }
 
     const timer = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % images.length)
-    }, 4500)
+    }, 5500)
 
     return () => window.clearInterval(timer)
   }, [images])
@@ -21,9 +21,9 @@ function AdCarousel({ eyebrow, title, description, images, variant = 'feature' }
 
   const currentImage = images[activeIndex]
   const isBanner = variant === 'banner'
-  const bannerSectionClassName = 'mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8'
+  const bannerSectionClassName = 'mx-auto w-full max-w-full px-0 py-0 sm:px-0 sm:py-0'
   const featureSectionClassName = 'mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14'
-  const bannerFrameClassName = 'relative overflow-hidden rounded-[1.75rem] bg-slate-900 shadow-2xl shadow-slate-900/20 sm:rounded-[2.5rem]'
+  const bannerFrameClassName = 'relative overflow-hidden rounded-none bg-slate-900 shadow-none sm:rounded-none'
   const featureFrameClassName = 'overflow-hidden rounded-[1.75rem] bg-white p-4 shadow-xl shadow-slate-200 ring-1 ring-slate-200 sm:rounded-[2.5rem] sm:p-5 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch'
 
   const moveToPrevious = () => {
@@ -37,11 +37,11 @@ function AdCarousel({ eyebrow, title, description, images, variant = 'feature' }
   return (
     <section className={isBanner ? bannerSectionClassName : featureSectionClassName}>
       <div className={isBanner ? bannerFrameClassName : featureFrameClassName}>
-        <div className={isBanner ? 'relative aspect-5/6 min-h-96 sm:aspect-video lg:aspect-16/6' : 'rounded-3xl bg-slate-950 p-4 text-white sm:rounded-4xl sm:p-6 lg:p-8'}>
+        <div className={isBanner ? 'relative h-62.5 min-h-62.5 w-full overflow-hidden sm:h-62.5' : 'rounded-3xl bg-slate-950 p-4 text-white sm:rounded-4xl sm:p-6 lg:p-8'}>
           <img
             src={currentImage.src}
             alt={currentImage.alt}
-            className={isBanner ? 'h-full w-full object-cover opacity-90' : 'h-full w-full rounded-3xl object-cover'}
+            className={isBanner ? 'h-full w-full object-cover opacity-90' : 'h-full w-full rounded-3xl '}
             loading="lazy"
             decoding="async"
           />
@@ -49,11 +49,11 @@ function AdCarousel({ eyebrow, title, description, images, variant = 'feature' }
           <div
             className={
               isBanner
-                ? 'absolute inset-0 flex flex-col justify-end p-4 text-white sm:p-8 lg:p-10'
+                ? 'absolute inset-0 flex flex-col justify-between p-4 text-white sm:p-8 lg:p-10'
                 : 'mt-4 grid gap-4 text-white sm:mt-6'
             }
           >
-            <div className={isBanner ? 'max-w-[18rem] sm:max-w-2xl' : undefined}>
+            <div className={isBanner ? 'max-w-[18rem] pt-2 sm:max-w-2xl' : undefined}>
               {eyebrow ? <p className="text-[0.65rem] uppercase tracking-[0.32em] text-emerald-200/90 sm:text-xs sm:tracking-[0.35em]">{eyebrow}</p> : null}
               {title ? <h2 className="mt-3 text-xl font-semibold leading-tight sm:text-3xl lg:text-4xl">{title}</h2> : null}
               {description ? <p className={isBanner ? 'mt-3 max-w-2xl text-sm leading-6 text-slate-100 sm:mt-4 sm:text-base sm:leading-7' : 'mt-3 text-sm leading-6 text-slate-200 sm:mt-4 sm:leading-7'}>{description}</p> : null}

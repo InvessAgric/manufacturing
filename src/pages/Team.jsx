@@ -94,7 +94,7 @@ function Team() {
 	]
 
 	return (
-		<section className="bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.12),transparent_35%),linear-gradient(180deg,#eef6f0_0%,#f8faf8_100%)] px-6 py-14 text-slate-900">
+		<section className="bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.12),transparent_35%),linear-gradient(180deg,#eef6f0_0%,#f8faf8_100%)] px-6 py-14  text-slate-900 pt-20">
 			<div className="mx-auto max-w-6xl space-y-14">
 				<header className="space-y-6 text-center rounded-4xl bg-white/90 p-8 shadow-sm ring-1 ring-emerald-100">
 					<p className="text-xs uppercase tracking-[0.45em] text-emerald-800">Meet our team</p>

@@ -43,7 +43,23 @@ import productBlessCocoaBagImage from './images/products/newprob/BLESS COCOA.web
 import productDapBagImage from './images/products/newprob/DAP.webp'
 import productMopBagImage from './images/products/newprob/MOP.webp'
 import productYellowMaizeBagImage from './images/products/newprob/Yellow Maize.webp'
+import productBoronImage from './images/products/newprob/boron.png'
 import activateImage from './images/products/newprob/ACTIVATE.webp'
+import cabbagePlantImage from './images/Plants/cabbagePlant.avif'
+import cassavaPlantImage from './images/Plants/cassavaPlant.webp'
+import cocoaPlantImage from './images/Plants/cocoa.webp'
+import cottonPlantImage from './images/Plants/cottonPlant.avif'
+import groundnutPlantImage from './images/Plants/groundnut.webp'
+import maizePlantImage from './images/Plants/maizePlant.avif'
+import mangoPlantImage from './images/Plants/mangoPlant.webp'
+import milletPlantImage from './images/Plants/milletPlant.avif'
+import onionPlantImage from './images/Plants/onionPlant.avif'
+import plantainPlantImage from './images/Plants/plantainPlant.avif'
+import ricePlantImage from './images/Plants/ricePlant.webp'
+import sorghumPlantImage from './images/Plants/sorghumPlant.webp'
+import soyaPlantImage from './images/Plants/soyaPlant.webp'
+import sugarcanePlantImage from './images/Plants/sugarcanPlant.webp'
+import tomatoPlantImage from './images/Plants/tomatoPlant.avif'
 // Ads and campaign visuals
 import adActivateImage from './images/ADs/activate.webp'
 import adCoacofertImage from './images/ADs/coacofert.webp'
@@ -117,7 +133,23 @@ export {
   productPotassiumBagImage,
   productUreaBagImage,
   productYellowMaizeBagImage,
+  productBoronImage,
   productUreaBagNoBg,
+  cabbagePlantImage,
+  cassavaPlantImage,
+  cocoaPlantImage,
+  cottonPlantImage,
+  groundnutPlantImage,
+  maizePlantImage,
+  mangoPlantImage,
+  milletPlantImage,
+  onionPlantImage,
+  plantainPlantImage,
+  ricePlantImage,
+  sorghumPlantImage,
+  soyaPlantImage,
+  sugarcanePlantImage,
+  tomatoPlantImage,
   productAmmoniaBagImage,
   productAmmoniaBagNoBg,
   activateImage,

@@ -56,7 +56,7 @@ function SectionFallback() {
 
 function Home() {
   return (
-    <div className="min-h-screen pt-8 sm:pt-10">
+    <div className="min-h-screen ">
       {/* Landing hero remains visually prominent, while the rest of the page uses neutral surfaces. */}
       <Hero />
       <StatsSection />

@@ -1,4 +1,4 @@
-import { socialEmailIcon, socialInstagramIcon, socialLinkedInIcon, socialPlaceholderIcon, brandLogo } from "../assets/assetRegistry";
+import { brandLogo } from "../assets/assetRegistry";
 
 // FooterSection: renders the global site footer with contact details, navigation links, and social actions.
 export default function FooterSection() {
@@ -15,7 +15,7 @@ export default function FooterSection() {
                 loading="lazy"
                 decoding="async"
               />
-              <p className="text-base font-semibold text-emerald-100">
+              <p className="text-base font-medium   text-emerald-100">
                 Invess Agric Manufacturing Limited
               </p>
               <p className="mt-2 text-sm text-slate-400">
@@ -25,17 +25,11 @@ export default function FooterSection() {
               </p>
               <div className="mt-4 space-y-2 text-sm text-slate-300">
                 <p className="flex items-center gap-2">
-                  <img src={socialEmailIcon} alt="Email icon" className="h-4 w-4" loading="lazy" />
+                  <i className="fi fi-rr-envelope text-emerald-300" aria-hidden="true" />
                   <span>info@invessagric.com</span>
                 </p>
                 <p className="flex items-center gap-2">
-                  <img
-                    src={socialPlaceholderIcon}
-                    alt="Location icon"
-                    className="h-4 w-4"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <i className="fi fi-rr-marker text-emerald-300" aria-hidden="true" />
                   <span>No. 269 Daya Square, Kwei Okyerema Street, Dzorwulu</span>
                 </p>
                 <p className="text-green-300 hover:text-white">
@@ -58,22 +52,26 @@ export default function FooterSection() {
               </p>
               <ul className="mt-3 space-y-2 text-sm text-slate-300">
                 <li>
-                  <a href="/" className="hover:text-white">
+                  <a href="/" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-home text-emerald-300" aria-hidden="true" />
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="/#stats" className="hover:text-white">
+                  <a href="/#stats" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-chart-line-up text-emerald-300" aria-hidden="true" />
                     Stats
                   </a>
                 </li>
                 <li>
-                  <a href="/#manufacturing" className="hover:text-white">
+                  <a href="/#manufacturing" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-industry text-emerald-300" aria-hidden="true" />
                     Manufacturing
                   </a>
                 </li>
                 <li>
-                  <a href="/#equipment" className="hover:text-white">
+                  <a href="/#equipment" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-tools text-emerald-300" aria-hidden="true" />
                     Equipment
                   </a>
                 </li>
@@ -86,22 +84,26 @@ export default function FooterSection() {
               </p>
               <ul className="mt-3 space-y-2 text-sm text-slate-300">
                 <li>
-                  <a href="/#gallery" className="hover:text-white">
+                  <a href="/#gallery" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-picture text-emerald-300" aria-hidden="true" />
                     Gallery
                   </a>
                 </li>
                 <li>
-                  <a href="/#quality" className="hover:text-white">
+                  <a href="/#quality" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-badge-check text-emerald-300" aria-hidden="true" />
                     Quality
                   </a>
                 </li>
                 <li>
-                  <a href="/about" className="hover:text-white">
+                  <a href="/about" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-info text-emerald-300" aria-hidden="true" />
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="/team" className="hover:text-white">
+                  <a href="/team" className="inline-flex items-center gap-2 hover:text-white">
+                    <i className="fi fi-rr-users text-emerald-300" aria-hidden="true" />
                     Team
                   </a>
                 </li>
@@ -120,7 +122,8 @@ export default function FooterSection() {
                   rel="noopener noreferrer"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
-                  <img src={socialLinkedInIcon} alt="LinkedIn" className="h-5 w-5" loading="lazy" />
+                  <i className="fi fi-brands-linkedin" aria-hidden="true" />
+                  <span className="sr-only">LinkedIn</span>
                 </a>
                 <a
                   href="https://www.instagram.com/invess_agric/"
@@ -128,32 +131,29 @@ export default function FooterSection() {
                   rel="noopener noreferrer"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
-                  <img
-                    src={socialInstagramIcon}
-                    alt="Instagram"
-                    className="h-5 w-5"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <i className="fi fi-brands-instagram" aria-hidden="true" />
+                  <span className="sr-only">Instagram</span>
                 </a>
                 <a
                   href="mailto:info@invessagric.com"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-emerald-100 transition hover:bg-emerald-600"
                 >
-                  <img src={socialEmailIcon} alt="Email" className="h-5 w-5" loading="lazy" />
+                  <i className="fi fi-rr-envelope" aria-hidden="true" />
+                  <span className="sr-only">Email</span>
                 </a>
               </div>
             </div>
             <div className="flex mt-3 flex-col items-center justify-center gap-3 sm:flex-row sm:items-center">
               <div className="space-y-2 text-center sm:text-left">
                 <p className="text-sm font-semibold text-emerald-100">CONTACT US</p>
-                <p className="text-sm text-slate-300">sales@invessagric.com</p>
-                <p className="text-sm text-slate-300">+233 24 202 2517</p>
+                <p className="inline-flex items-center gap-2 text-sm text-slate-300"><i className="fi fi-rr-envelope" aria-hidden="true" />sales@invessagric.com</p>
+                <p className="inline-flex items-center gap-2 text-sm text-slate-300"><i className="fi fi-rr-phone-call" aria-hidden="true" />+233 24 202 2517</p>
               </div>
               <a
                 href="/contact"
                 className="inline-flex min-h-9 items-center justify-center rounded-full border border-emerald-400/60 bg-emerald-500 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-400"
               >
+                <i className="fi fi-rr-paper-plane-top mr-2" aria-hidden="true" />
                 Contact
               </a>
             </div>

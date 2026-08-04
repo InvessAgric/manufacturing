@@ -51,18 +51,10 @@ function Team() {
 		},
 		{
 			group: 'Finance',
-			title: 'Financial planning and compliance',
+			title: 'Financial planning and operations',
 			members: [
 				{ name: 'Fred Amegavor', role: 'Head of Finance', bio: 'Leads financial planning, controls, and performance reporting.' },
-				{
-					name: 'Enos Nii Odai Botchway',
-					role: 'Finance and Compliance',
-					bio: 'Supports finance operations, compliance workflows, and reporting quality.',
-					image: enosImage,
-					socials: [
-						{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/enos-nii-odai-botchway-8b7123143/' },
-					],
-				},
+				{ name: 'Nadia Ahiakpor', role: 'Finance', bio: 'Supports finance operations, reporting workflows, and day-to-day financial administration.' },
 				{
 					name: 'Javier Rubio',
 					role: 'Project Manager',
@@ -74,12 +66,28 @@ function Team() {
 			],
 		},
 		{
+			group: 'Compliance',
+			title: 'Governance and regulatory adherence',
+			members: [
+				{ name: 'Daniel Amankwah', role: 'Compliance', bio: 'Supports compliance monitoring and helps maintain adherence to internal policies and regulatory requirements.' },
+				{
+					name: 'Enos Nii Odai Botchway',
+					role: 'Compliance Support',
+					bio: 'Supports compliance workflows, controls documentation, and reporting quality.',
+					image: enosImage,
+					socials: [
+						{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/enos-nii-odai-botchway-8b7123143/' },
+					],
+				},
+			],
+		},
+		{
 			group: 'Warehouse',
 			title: 'Storage and distribution',
 			members: [
 				{ name: 'Bright Dzorkpey', role: 'Warehouse Manager', bio: 'Leads warehouse operations, inventory flow, and safe dispatch coordination.' },
+				{ name: 'Joshua Appiah', role: 'Warehouse Team', bio: 'Supports day-to-day warehouse operations, inventory handling, and dispatch readiness.' },
 				{ name: 'Nana Yeboah', role: 'Warehouse Supervisor', bio: 'Oversees inventory, safety, and warehouse logistics.' },
-				{ name: 'Ama Serwaa', role: 'Inventory Coordinator', bio: 'Keeps stock levels accurate and ready for dispatch.' },
 			],
 		},
 		{
@@ -87,8 +95,7 @@ function Team() {
 			title: 'Customer engagement and growth',
 			members: [
 				{ name: 'Prince Baafi Yeboah', role: 'Head of Sales', bio: 'Leads sales strategy, customer acquisition, and channel performance across markets.' },
-				{ name: 'Yaw Owusu', role: 'Sales Manager', bio: 'Leads customer relationships and market expansion.' },
-				{ name: 'Adwoa Frimpong', role: 'Customer Success Lead', bio: 'Ensures clients receive the right products and support.' },
+				{ name: 'Selase Gborson', role: 'Sales', bio: 'Supports customer engagement, account follow-up, and sales coordination across target markets.' },
 			],
 		},
 	]
@@ -147,7 +154,7 @@ function Team() {
 								<p className="text-sm uppercase tracking-[0.3em] text-emerald-700">{team.group}</p>
 								<h2 className="text-3xl font-semibold text-slate-900">{team.title}</h2>
 							</div>
-							<p className="max-w-xl text-slate-600">{team.group === 'Management' ? 'Guiding the business with strategic planning and strong operational oversight.' : team.group === 'Finance' ? 'Tracking capital, ensuring compliance, and keeping the business on budget.' : team.group === 'Warehouse' ? 'Safely storing and delivering products from our manufacturing facility.' : 'Supporting customers and growing relationships in the market.'}</p>
+							<p className="max-w-xl text-slate-600">{team.group === 'Management' ? 'Guiding the business with strategic planning and strong operational oversight.' : team.group === 'Finance' ? 'Tracking capital performance, reporting, and budget discipline.' : team.group === 'Compliance' ? 'Maintaining governance standards and regulatory adherence across operations.' : team.group === 'Warehouse' ? 'Safely storing and delivering products from our manufacturing facility.' : 'Supporting customers and growing relationships in the market.'}</p>
 						</div>
 
 						<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

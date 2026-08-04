@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom'
 import { socialWhatsappIcon } from '../assets/assetRegistry'
 
-const emailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const emailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const emailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim()
+const emailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim()
+const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim()
+const contactToEmail = import.meta.env.VITE_CONTACT_TO_EMAIL?.trim() || 'info@invessagric.com'
 
 function Contact() {
   // Controls the kind of enquiry being submitted: sales, product, or career.
@@ -17,7 +18,21 @@ function Contact() {
   const [telephone, setTelephone] = useState('')
   const [productName, setProductName] = useState('')
   const [details, setDetails] = useState('')
+  const [submitState, setSubmitState] = useState('idle')
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const isEmailJsConfigured = Boolean(emailJsServiceId && emailJsTemplateId && emailJsPublicKey)
+
+  useEffect(() => {
+    if (submitState === 'idle') {
+      return undefined
+    }
+
+    const timerId = window.setTimeout(() => {
+      setSubmitState('idle')
+    }, 3000)
+
+    return () => window.clearTimeout(timerId)
+  }, [submitState])
 
   // Sends the enquiry payload through EmailJS and resets the form on success.
   const handleSubmit = (event) => {
@@ -27,6 +42,8 @@ function Contact() {
       window.alert('Contact form is temporarily unavailable. Please contact us by email or phone directly.')
       return
     }
+
+    setIsSubmitting(true)
 
     const trimmedName = name.trim()
     const trimmedEmail = email.trim()
@@ -45,22 +62,20 @@ function Contact() {
       .filter(Boolean)
       .join('\n')
 
-    emailjs.send(
-      emailJsServiceId,
-      emailJsTemplateId,
-      {
-        from_name: trimmedName,
-        from_email: trimmedEmail,
-        telephone: trimmedTelephone,
-        enquiry_type: purpose === 'product' ? 'Product enquiry' : purpose === 'career' ? 'Career enquiry' : 'General sales enquiry',
-        product_name: trimmedProductName || 'Not specified',
-        message: requestDetails,
-        to_email: 'info@invessagric.com',
-      },
-      emailJsPublicKey
-    )
+    const enquiryParams = {
+      from_name: trimmedName,
+      from_email: trimmedEmail,
+      telephone: trimmedTelephone,
+      enquiry_type: purpose === 'product' ? 'Product enquiry' : purpose === 'career' ? 'Career enquiry' : 'General sales enquiry',
+      product_name: trimmedProductName || 'Not specified',
+      message: requestDetails,
+      to_email: contactToEmail,
+      reply_to: trimmedEmail,
+    }
+
+    emailjs.send(emailJsServiceId, emailJsTemplateId, enquiryParams, emailJsPublicKey)
       .then(() => {
-        window.alert('Your enquiry has been sent successfully.')
+        setSubmitState('success')
         setName('')
         setEmail('')
         setTelephone('')
@@ -68,8 +83,12 @@ function Contact() {
         setDetails('')
         setPurpose('general')
       })
-      .catch(() => {
-        window.alert('Sorry, your enquiry could not be sent right now. Please contact us by email directly.')
+      .catch((error) => {
+        console.error('Unable to send enquiry email', error)
+        setSubmitState('error')
+      })
+      .finally(() => {
+        setIsSubmitting(false)
       })
   }
   return (
@@ -226,17 +245,70 @@ function Contact() {
                 />
               </div>
 
+              {submitState === 'success' && (
+                <div className="rounded-[1.25rem] border border-emerald-200 bg-emerald-50 p-4 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-lg text-white">
+                      ✓
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-emerald-800">Message sent successfully</p>
+                      <p className="mt-1 text-sm text-emerald-700">
+                        A confirmation has been sent to your inbox. We’ll get back to you shortly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {submitState === 'error' && (
+                <div className="rounded-[1.25rem] border border-rose-200 bg-rose-50 p-4 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-600 text-lg text-white">
+                      !
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-rose-800">We couldn’t send your message</p>
+                      <p className="mt-1 text-sm text-rose-700">
+                        Please contact us directly by email or phone if this keeps happening.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <button
                 type="submit"
-                disabled={!isEmailJsConfigured}
-                className="inline-flex rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                disabled={!isEmailJsConfigured || isSubmitting}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-emerald-300"
               >
-                Send sales enquiry
+                {isSubmitting ? (
+                  <>
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                    Sending...
+                  </>
+                ) : (
+                  'Send sales enquiry'
+                )}
               </button>
             </form>
           </div>
 
           <div className="space-y-6">
+             <div className="overflow-hidden rounded-[2rem] border border-emerald-100 bg-white shadow-sm">
+              <div className="border-b border-emerald-100 bg-emerald-50 px-5 py-4">
+                <h3 className="text-lg font-semibold text-emerald-800">Our location</h3>
+                <p className="mt-1 text-sm text-emerald-700">View us on Google Maps</p>
+              </div>
+              <iframe
+                title="Invess Agric location"
+                src="https://www.google.com/maps?q=JR63%2B57X%20Invess%20Agriculture%20and%20Manufacturing%20limited%2C%20Kojo%20Ashong%20Ave%2C%20Accra%2C%20Ghana&output=embed"
+                className="h-72 w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                sandbox="allow-scripts allow-same-origin allow-popups"
+              />
+            </div>
             <div className="rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 p-8 text-white shadow-lg">
               <p className="text-sm uppercase tracking-[0.3em] text-emerald-100">Office hours</p>
               <div className="mt-6 space-y-4 text-sm text-emerald-50">
@@ -246,7 +318,7 @@ function Contact() {
                 </div>
                 <div className="flex items-center justify-between rounded-[1rem] bg-white/10 px-4 py-3">
                   <span>Saturday</span>
-                  <span className="font-semibold">9:00 AM – 2:00 PM</span>
+                  <span className="font-semibold">Closed</span>
                 </div>
                 <div className="flex items-center justify-between rounded-[1rem] bg-white/10 px-4 py-3">
                   <span>Sunday</span>
@@ -261,20 +333,7 @@ function Contact() {
               </a>
             </div>
 
-            <div className="overflow-hidden rounded-[2rem] border border-emerald-100 bg-white shadow-sm">
-              <div className="border-b border-emerald-100 bg-emerald-50 px-5 py-4">
-                <h3 className="text-lg font-semibold text-emerald-800">Our location</h3>
-                <p className="mt-1 text-sm text-emerald-700">View us on Google Maps</p>
-              </div>
-              <iframe
-                title="Invess Agric location"
-                src="https://www.google.com/maps?q=JR63%2B57X%20Invess%20Agriculture%20and%20Manufacturing%20limited%2C%20Kojo%20Ashong%20Ave%2C%20Accra%2C%20Ghana&output=embed"
-                className="h-72 w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                sandbox="allow-scripts allow-same-origin allow-popups"
-              />
-            </div>
+           
           </div>
         </div>
       </div>

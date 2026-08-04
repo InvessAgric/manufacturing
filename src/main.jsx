@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import '@flaticon/flaticon-uicons/css/regular/rounded.css'
+import '@flaticon/flaticon-uicons/css/brands/all.css'
 import './index.css'
 import App from './App.jsx'
 

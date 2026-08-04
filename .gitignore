@@ -10,7 +10,20 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.vite
+.cache
+coverage
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+!.env.example
 *.local
+
+# Deployment and local tooling
+.vercel
+.netlify
 
 # Editor directories and files
 .vscode/*
@@ -24,3 +37,4 @@ dist-ssr
 *.sw?
 nul
 
+*.log

@@ -1,5 +1,5 @@
-// Import the `useState` hook to manage component state for the mobile navigation toggle.
-import { useState } from 'react'
+// Import the hooks needed for navigating, tracking the current route, and highlighting the active section.
+import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { brandLogoAlt } from '../assets/assetRegistry'
 
@@ -7,6 +7,7 @@ import { brandLogoAlt } from '../assets/assetRegistry'
 function NavBar() {
   // Tracks whether the mobile navigation drawer is currently open.
   const [open, setOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -15,6 +16,7 @@ function NavBar() {
 
   const goToSection = (id) => {
     close()
+    setActiveSection(id)
 
     if (location.pathname !== '/') {
       navigate(`/#${id}`)
@@ -30,6 +32,38 @@ function NavBar() {
 
     navigate(`/#${id}`)
   }
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setActiveSection('')
+      return
+    }
+
+    const sectionIds = ['stats', 'manufacturing', 'equipment', 'gallery', 'quality', 'fleet']
+
+    const updateActiveSection = () => {
+      const offset = window.scrollY + 180
+      let currentSection = ''
+
+      for (const id of sectionIds) {
+        const element = document.getElementById(id)
+        if (element && offset >= element.offsetTop) {
+          currentSection = id
+        }
+      }
+
+      setActiveSection(currentSection)
+    }
+
+    updateActiveSection()
+    window.addEventListener('scroll', updateActiveSection, { passive: true })
+    window.addEventListener('resize', updateActiveSection)
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection)
+      window.removeEventListener('resize', updateActiveSection)
+    }
+  }, [location.pathname])
 
   return (
     <>
@@ -55,32 +89,38 @@ function NavBar() {
             )}
           </NavLink>
 
-          <button type="button" onClick={() => goToSection('stats')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
-            Stats
+          <button type="button" onClick={() => goToSection('stats')} className="relative inline-flex items-center gap-1.5 px-2 py-1 group font-bold text-white cursor-pointer">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'stats' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70 group-hover:opacity-100'}`} />
+            <span>Stats</span>
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </button>
 
-          <button type="button" onClick={() => goToSection('manufacturing')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
-            Manufacturing
+          <button type="button" onClick={() => goToSection('manufacturing')} className="relative inline-flex items-center gap-1.5 px-2 py-1 group font-bold text-white cursor-pointer">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'manufacturing' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70 group-hover:opacity-100'}`} />
+            <span>Manufacturing</span>
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </button>
 
-          <button type="button" onClick={() => goToSection('equipment')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
-            Equipment
+          <button type="button" onClick={() => goToSection('equipment')} className="relative inline-flex items-center gap-1.5 px-2 py-1 group font-bold text-white cursor-pointer">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'equipment' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70 group-hover:opacity-100'}`} />
+            <span>Equipment</span>
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </button>
 
-          <button type="button" onClick={() => goToSection('gallery')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
-            Gallery
+          <button type="button" onClick={() => goToSection('gallery')} className="relative inline-flex items-center gap-1.5 px-2 py-1 group font-bold text-white cursor-pointer">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'gallery' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70 group-hover:opacity-100'}`} />
+            <span>Gallery</span>
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </button>
 
-          <button type="button" onClick={() => goToSection('quality')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
-            Quality
+          <button type="button" onClick={() => goToSection('quality')} className="relative inline-flex items-center gap-1.5 px-2 py-1 group font-bold text-white cursor-pointer">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'quality' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70 group-hover:opacity-100'}`} />
+            <span>Quality</span>
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </button>
-          <button type="button" onClick={() => goToSection('fleet')} className="relative inline-block px-2 py-1 group font-bold text-white cursor-pointer">
-            Fleet
+          <button type="button" onClick={() => goToSection('fleet')} className="relative inline-flex items-center gap-1.5 px-2 py-1 group font-bold text-white cursor-pointer">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'fleet' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70 group-hover:opacity-100'}`} />
+            <span>Fleet</span>
             <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
           </button>
 
@@ -177,34 +217,39 @@ function NavBar() {
               )}
             </NavLink>
 
-            <button type="button" onClick={() => goToSection('stats')} className="text-left font-bold block relative cursor-pointer">
-              Stats
+            <button type="button" onClick={() => goToSection('stats')} className="text-left font-bold inline-flex items-center gap-1.5 relative cursor-pointer">
+              <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'stats' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70'}`} />
+              <span>Stats</span>
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </button>
 
-            <button type="button" onClick={() => goToSection('manufacturing')} className="text-left font-bold block relative cursor-pointer">
-              Manufacturing
+            <button type="button" onClick={() => goToSection('manufacturing')} className="text-left font-bold inline-flex items-center gap-1.5 relative cursor-pointer">
+              <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'manufacturing' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70'}`} />
+              <span>Manufacturing</span>
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </button>
 
-            <button type="button" onClick={() => goToSection('equipment')} className="text-left font-bold block relative cursor-pointer">
-              Equipment
+            <button type="button" onClick={() => goToSection('equipment')} className="text-left font-bold inline-flex items-center gap-1.5 relative cursor-pointer">
+              <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'equipment' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70'}`} />
+              <span>Equipment</span>
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </button>
 
-            <button type="button" onClick={() => goToSection('gallery')} className="text-left font-bold block relative cursor-pointer">
-              Gallery
+            <button type="button" onClick={() => goToSection('gallery')} className="text-left font-bold inline-flex items-center gap-1.5 relative cursor-pointer">
+              <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'gallery' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70'}`} />
+              <span>Gallery</span>
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </button>
 
-            <button type="button" onClick={() => goToSection('quality')} className="text-left font-bold block relative cursor-pointer">
-              Quality
+            <button type="button" onClick={() => goToSection('quality')} className="text-left font-bold inline-flex items-center gap-1.5 relative cursor-pointer">
+              <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'quality' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70'}`} />
+              <span>Quality</span>
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
-
             </button>
             
-            <button type="button" onClick={() => goToSection('fleet')} className="text-left font-bold block relative cursor-pointer">
-              Fleet
+            <button type="button" onClick={() => goToSection('fleet')} className="text-left font-bold inline-flex items-center gap-1.5 relative cursor-pointer">
+              <span className={`inline-block h-1.5 w-1.5 rounded-full transition-all ${activeSection === 'fleet' ? 'bg-accent opacity-100' : 'bg-white/60 opacity-70'}`} />
+              <span>Fleet</span>
               <span className="absolute left-0 -bottom-0.5 h-0.5 bg-accent w-0 group-hover:w-full transition-all" />
             </button>
 

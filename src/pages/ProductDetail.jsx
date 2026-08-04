@@ -289,7 +289,7 @@ function ProductDetail() {
                     </button>
                   </div>
                 </div>
-                <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                <div className="mt-3 grid gap-2 grid-cols-3">
                   {/* Render the currently visible plant-type cards in the gallery. */}
                   {visiblePlantTypes.map(({ label, image }) => (
                     <div
@@ -433,7 +433,7 @@ function ProductDetail() {
             </div>
           </div>
 
-          <div className="mt-5 grid gap-4 lg:grid-cols-3">
+          <div className="mt-5 grid gap-4 grid-cols-3">
             {/* Render only the currently visible related product cards. */}
             {visibleProducts.map((item) => (
               <Link
@@ -449,8 +449,8 @@ function ProductDetail() {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-base font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
+                <h3 className="text-base text-center font-semibold">{item.title}</h3>
+                <p className="mt-2 hidden text-sm leading-6 text-slate-600">
                   {item.summary}
                 </p>
               </Link>

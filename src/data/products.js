@@ -20,10 +20,10 @@ import {
 export const products = [
   {
     slug: 'urea-46n',
-    title: 'CHALEEE UREA (46%N)',
+    title: ' UREA (46%N)',
     summary: 'High-nitrogen fertilizer for fast vegetative growth and yield support.',
     description:
-      'CHALEEE UREA supplies 46% nitrogen in a highly soluble form, making it a dependable choice for fast vegetative growth, greener foliage, and strong crop response during peak demand periods.',
+      ' UREA supplies 46% nitrogen in a highly soluble form, making it a dependable choice for fast vegetative growth, greener foliage, and strong crop response during peak demand periods.',
     bullets: [
       '46% nitrogen for rapid canopy development',
       'Suitable for split applications during active growth',
@@ -154,7 +154,7 @@ export const products = [
 
   {
     slug: 'npk-23105te',
-    title: 'CHALEEE NPK (23:10:5+7S+3MgO)',
+    title: ' NPK (23:10:5+7S+3MgO)',
     summary: 'Nitrogen-forward NPK with sulphur and magnesium for vigorous growth.',
     description:
       'This formulation combines nitrogen, phosphorus, potassium, sulphur, and magnesium for crops that need vigorous vegetative growth and balanced nutrient support through the season.',
@@ -201,10 +201,10 @@ export const products = [
   },
   {
     slug: 'npk-2010107s',
-    title: 'CHALEEE NPK (20:10:10+7S)',
+    title: ' NPK (20:10:10+7S)',
     summary: 'Balanced NPK with sulphur for broad crop nutrition and strong growth.',
     description:
-      'CHALEEE NPK 20:10:10+7S is a balanced formulation for broad-acre and mixed-crop programs where steady growth and efficient nutrient uptake matter.',
+      ' NPK 20:10:10+7S is a balanced formulation for broad-acre and mixed-crop programs where steady growth and efficient nutrient uptake matter.',
     bullets: [
       'Balanced N:P:K ratio with sulphur',
       'Supports general crop feeding and mid-season response',
@@ -212,7 +212,7 @@ export const products = [
     ],
     image: productNpkBagNoBg,
     detailImage: adNpkCornBannerImage,
-    alt: 'CHALEEE NPK 20 10 10 plus sulphur',
+    alt: ' NPK 20 10 10 plus sulphur',
     composition:
       'A versatile NPK blend designed for balanced nutrient delivery, efficient uptake, and practical use through direct application or water-assisted nutrient programs.',
     useCase: 'General-purpose crop feeding with sulphur support',
